@@ -16,6 +16,7 @@
 		7A8A1AB21A894275006642F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8A1AB01A894275006642F1 /* LaunchScreen.xib */; };
 		7A8A1ABE1A894275006642F1 /* Sub7Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1ABD1A894275006642F1 /* Sub7Tests.m */; };
 		7A8A1AF91A8A8A5E006642F1 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AF81A8A8A5E006642F1 /* CustomCollectionViewCell.m */; };
+		7A8A1AFC1A8ADF67006642F1 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AFB1A8ADF67006642F1 /* PageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		7A8A1ABD1A894275006642F1 /* Sub7Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sub7Tests.m; sourceTree = "<group>"; };
 		7A8A1AF71A8A8A5E006642F1 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
 		7A8A1AF81A8A8A5E006642F1 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		7A8A1AFA1A8ADF67006642F1 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		7A8A1AFB1A8ADF67006642F1 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,8 @@
 				7A8A1AA31A894275006642F1 /* AppDelegate.m */,
 				7A8A1AA81A894275006642F1 /* RootViewController.h */,
 				7A8A1AA91A894275006642F1 /* RootViewController.m */,
+				7A8A1AFA1A8ADF67006642F1 /* PageViewController.h */,
+				7A8A1AFB1A8ADF67006642F1 /* PageViewController.m */,
 				7A8A1AF71A8A8A5E006642F1 /* CustomCollectionViewCell.h */,
 				7A8A1AF81A8A8A5E006642F1 /* CustomCollectionViewCell.m */,
 				7A8A1AAB1A894275006642F1 /* Main.storyboard */,
@@ -232,6 +237,7 @@
 				7A8A1AAA1A894275006642F1 /* RootViewController.m in Sources */,
 				7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */,
 				7A8A1AF91A8A8A5E006642F1 /* CustomCollectionViewCell.m in Sources */,
+				7A8A1AFC1A8ADF67006642F1 /* PageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
