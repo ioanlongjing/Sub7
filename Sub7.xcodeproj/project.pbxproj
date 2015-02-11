@@ -32,6 +32,11 @@
 		7AA7F5C51A8AF38400946EEE /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5C01A8AF38400946EEE /* ParseCrashReporting.framework */; };
 		7AA7F5C61A8AF38400946EEE /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5C11A8AF38400946EEE /* ParseFacebookUtils.framework */; };
 		7AA7F5C71A8AF38400946EEE /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5C21A8AF38400946EEE /* ParseUI.framework */; };
+		7AA7F5CA1A8B095700946EEE /* CustomFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7F5C91A8B095700946EEE /* CustomFlowLayout.m */; };
+		7AA7F5CD1A8B10FE00946EEE /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7F5CC1A8B10FE00946EEE /* DetailViewController.m */; };
+		7AA7F5D01A8B117200946EEE /* MapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7F5CF1A8B117200946EEE /* MapDetailViewController.m */; };
+		7AA7F5D31A8B11AD00946EEE /* CustoSandoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7F5D21A8B11AD00946EEE /* CustoSandoViewController.m */; };
+		7AA7F5D51A8B131E00946EEE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5D41A8B131E00946EEE /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +82,15 @@
 		7AA7F5C01A8AF38400946EEE /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		7AA7F5C11A8AF38400946EEE /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		7AA7F5C21A8AF38400946EEE /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		7AA7F5C81A8B095700946EEE /* CustomFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFlowLayout.h; sourceTree = "<group>"; };
+		7AA7F5C91A8B095700946EEE /* CustomFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFlowLayout.m; sourceTree = "<group>"; };
+		7AA7F5CB1A8B10FE00946EEE /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		7AA7F5CC1A8B10FE00946EEE /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		7AA7F5CE1A8B117200946EEE /* MapDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDetailViewController.h; sourceTree = "<group>"; };
+		7AA7F5CF1A8B117200946EEE /* MapDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDetailViewController.m; sourceTree = "<group>"; };
+		7AA7F5D11A8B11AD00946EEE /* CustoSandoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustoSandoViewController.h; sourceTree = "<group>"; };
+		7AA7F5D21A8B11AD00946EEE /* CustoSandoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustoSandoViewController.m; sourceTree = "<group>"; };
+		7AA7F5D41A8B131E00946EEE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA7F5D51A8B131E00946EEE /* MapKit.framework in Frameworks */,
 				57D69F251A8AE3FC00307834 /* libsqlite3.dylib in Frameworks */,
 				57D69F231A8AE3F200307834 /* libz.dylib in Frameworks */,
 				57D69F211A8AE3E700307834 /* SystemConfiguration.framework in Frameworks */,
@@ -138,8 +153,16 @@
 				7A8A1AA31A894275006642F1 /* AppDelegate.m */,
 				7A8A1AA81A894275006642F1 /* RootViewController.h */,
 				7A8A1AA91A894275006642F1 /* RootViewController.m */,
+				7AA7F5CB1A8B10FE00946EEE /* DetailViewController.h */,
+				7AA7F5CC1A8B10FE00946EEE /* DetailViewController.m */,
 				7A8A1AF71A8A8A5E006642F1 /* CustomCollectionViewCell.h */,
 				7A8A1AF81A8A8A5E006642F1 /* CustomCollectionViewCell.m */,
+				7AA7F5D11A8B11AD00946EEE /* CustoSandoViewController.h */,
+				7AA7F5D21A8B11AD00946EEE /* CustoSandoViewController.m */,
+				7AA7F5CE1A8B117200946EEE /* MapDetailViewController.h */,
+				7AA7F5CF1A8B117200946EEE /* MapDetailViewController.m */,
+				7AA7F5C81A8B095700946EEE /* CustomFlowLayout.h */,
+				7AA7F5C91A8B095700946EEE /* CustomFlowLayout.m */,
 				7A8A1AAB1A894275006642F1 /* Main.storyboard */,
 				7A8A1AAE1A894275006642F1 /* Images.xcassets */,
 				7A8A1AB01A894275006642F1 /* LaunchScreen.xib */,
@@ -152,6 +175,7 @@
 		7A8A1A9E1A894275006642F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7AA7F5D41A8B131E00946EEE /* MapKit.framework */,
 				7AA7F5BE1A8AF38400946EEE /* Bolts.framework */,
 				7AA7F5BF1A8AF38400946EEE /* Parse.framework */,
 				7AA7F5C01A8AF38400946EEE /* ParseCrashReporting.framework */,
@@ -292,11 +316,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA7F5CA1A8B095700946EEE /* CustomFlowLayout.m in Sources */,
 				7A8A1AA41A894275006642F1 /* AppDelegate.m in Sources */,
 				7A8A1AA11A894275006642F1 /* main.m in Sources */,
 				7A8A1AAA1A894275006642F1 /* RootViewController.m in Sources */,
+				7AA7F5D31A8B11AD00946EEE /* CustoSandoViewController.m in Sources */,
+				7AA7F5D01A8B117200946EEE /* MapDetailViewController.m in Sources */,
 				7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */,
 				7A8A1AF91A8A8A5E006642F1 /* CustomCollectionViewCell.m in Sources */,
+				7AA7F5CD1A8B10FE00946EEE /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
