@@ -8,6 +8,10 @@
 
 #import <Parse/Parse.h>
 
-@interface Sando : PFObject
+@interface Sando : PFObject <PFSubclassing>
+
+@property NSString *name;
+@property NSNumber *price;
+@property NSData *pic;
 
 @end

@@ -9,5 +9,17 @@
 #import "Sando.h"
 
 @implementation Sando
+@dynamic name,price,pic;
+
++(NSString *)parseClassName
+{
+    NSString *sando = @"Sando";
+    return sando;
+}
+
++ (void)registerSubclass
+{
+    [self registerSubclass];
+}
 
 @end

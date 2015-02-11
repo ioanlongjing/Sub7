@@ -8,6 +8,10 @@
 
 #import <Parse/Parse.h>
 
-@interface Shop : PFObject
+@interface Shop : PFObject <PFSubclassing>
+
+@property NSString *name;
+@property NSString *address;
+@property BOOL *cashOnly;
 
 @end

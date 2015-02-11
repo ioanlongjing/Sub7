@@ -9,5 +9,16 @@
 #import "Shop.h"
 
 @implementation Shop
+@dynamic name,address,cashOnly;
 
++(NSString *)parseClassName
+{
+    NSString *shop = @"Shop";
+    return shop;
+}
+
++(void)registerSubclass
+{
+    [self registerSubclass];
+}
 @end
