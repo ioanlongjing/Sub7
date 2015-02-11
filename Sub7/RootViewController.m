@@ -7,7 +7,8 @@
 //
 
 #import "RootViewController.h"
-#import "SandwichCollectionViewCell.h"
+
+#import "CustomCollectionViewCell.h"
 #import <Parse/Parse.h>
 
 
@@ -60,7 +61,8 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    SandwichCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+
+    CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     cell.imageView.image = [self.sandwichImages objectAtIndex:indexPath.row];
     
     return cell;

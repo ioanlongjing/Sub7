@@ -6,8 +6,10 @@
 //  Copyright (c) 2015 Clint Chilcott. All rights reserved.
 //
 
-#import "SandwichCollectionViewCell.h"
 
-@implementation SandwichCollectionViewCell
+#import "CustomCollectionViewCell.h"
+
+
+@implementation CustomCollectionViewCell
 
 @end

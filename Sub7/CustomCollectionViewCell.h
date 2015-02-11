@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SandwichCollectionViewCell : UICollectionViewCell
+
+@interface CustomCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
