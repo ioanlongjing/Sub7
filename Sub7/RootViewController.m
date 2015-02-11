@@ -42,6 +42,7 @@
     [self.sandwichImages addObject:[UIImage imageNamed:@"09.png"]];
     [self.sandwichImages addObject:[UIImage imageNamed:@"10.png"]];
 
+
     
     //[self.collectionView setPagingEnabled:YES];
 
@@ -49,10 +50,6 @@
 
 }
 
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
-{
-
-}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -69,6 +66,12 @@
     return cell;
     
 }
+
+//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [self performSegueWithIdentifier:@"DetailSegue" sender:self];
+//    
+//}
 
 
 - (void)didReceiveMemoryWarning {
