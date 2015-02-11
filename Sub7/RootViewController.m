@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "CustomCollectionViewCell.h"
+#import <Parse/Parse.h>
 
 
 @interface RootViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
@@ -21,6 +22,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+//    // Test Parse Connection
+//    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+//    testObject[@"foo"] = @"bar";
+//    [testObject saveInBackground];
+    
+    
+    
     self.sandwichImages = [NSMutableArray new];
     [self.sandwichImages addObject:[UIImage imageNamed:@"01.png"]];
     [self.sandwichImages addObject:[UIImage imageNamed:@"02.png"]];

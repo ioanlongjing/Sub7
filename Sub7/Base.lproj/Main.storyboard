@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,6 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2Tr-IT-S8m"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5Dl-Mn-USp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Mrr-yS-eof">
@@ -179,14 +180,14 @@
                                 <exclude reference="Eg7-eZ-ipN"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="6DN-JC-L5V"/>
+                                <exclude reference="xs0-Vc-Bsv"/>
                                 <exclude reference="I2a-L7-I37"/>
                                 <exclude reference="IRa-9u-8yh"/>
                                 <exclude reference="Mrc-ZA-zFT"/>
                                 <exclude reference="NER-Rg-bkw"/>
                                 <exclude reference="SNs-fR-xT7"/>
                                 <exclude reference="c8r-NH-fuw"/>
-                                <exclude reference="6DN-JC-L5V"/>
-                                <exclude reference="xs0-Vc-Bsv"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -194,14 +195,14 @@
                                 <include reference="Eg7-eZ-ipN"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="6DN-JC-L5V"/>
+                                <include reference="xs0-Vc-Bsv"/>
                                 <include reference="I2a-L7-I37"/>
                                 <include reference="IRa-9u-8yh"/>
                                 <include reference="Mrc-ZA-zFT"/>
                                 <include reference="NER-Rg-bkw"/>
                                 <include reference="SNs-fR-xT7"/>
                                 <include reference="c8r-NH-fuw"/>
-                                <include reference="6DN-JC-L5V"/>
-                                <include reference="xs0-Vc-Bsv"/>
                             </mask>
                         </variation>
                     </view>
@@ -222,6 +223,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Lgh-zs-6Zt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zmS-ob-xhi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2wf-x3-q8V">
@@ -351,6 +353,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Qn5-Hh-l79"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rYv-jM-npI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Xlq-UZ-c9X">
@@ -400,6 +403,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fEz-20-fHU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yt5-3P-6Ab">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DDo-T1-Y3H">
