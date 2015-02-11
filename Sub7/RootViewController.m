@@ -23,10 +23,10 @@
 {
     [super viewDidLoad];
     
-    // Test Parse Connection
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
+//    // Test Parse Connection
+//    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+//    testObject[@"foo"] = @"bar";
+//    [testObject saveInBackground];
     
     
     
