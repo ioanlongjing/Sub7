@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FDD4FE81A8A8675002FF176 /* SandwichCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDD4FE71A8A8675002FF176 /* SandwichCollectionViewCell.m */; };
 		7A8A1AA11A894275006642F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AA01A894275006642F1 /* main.m */; };
 		7A8A1AA41A894275006642F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AA31A894275006642F1 /* AppDelegate.m */; };
 		7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AA51A894275006642F1 /* Sub7.xcdatamodeld */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FDD4FE61A8A8675002FF176 /* SandwichCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandwichCollectionViewCell.h; sourceTree = "<group>"; };
+		2FDD4FE71A8A8675002FF176 /* SandwichCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandwichCollectionViewCell.m; sourceTree = "<group>"; };
 		7A8A1A9B1A894275006642F1 /* Sub7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sub7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8A1A9F1A894275006642F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A8A1AA01A894275006642F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 				7A8A1AA31A894275006642F1 /* AppDelegate.m */,
 				7A8A1AA81A894275006642F1 /* ViewController.h */,
 				7A8A1AA91A894275006642F1 /* ViewController.m */,
+				2FDD4FE61A8A8675002FF176 /* SandwichCollectionViewCell.h */,
+				2FDD4FE71A8A8675002FF176 /* SandwichCollectionViewCell.m */,
 				7A8A1AAB1A894275006642F1 /* Main.storyboard */,
 				7A8A1AAE1A894275006642F1 /* Images.xcassets */,
 				7A8A1AB01A894275006642F1 /* LaunchScreen.xib */,
@@ -225,6 +230,7 @@
 				7A8A1AA41A894275006642F1 /* AppDelegate.m in Sources */,
 				7A8A1AA11A894275006642F1 /* main.m in Sources */,
 				7A8A1AAA1A894275006642F1 /* ViewController.m in Sources */,
+				2FDD4FE81A8A8675002FF176 /* SandwichCollectionViewCell.m in Sources */,
 				7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +422,7 @@
 				7A8A1AC31A894275006642F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A8A1AC41A894275006642F1 /* Build configuration list for PBXNativeTarget "Sub7Tests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +431,7 @@
 				7A8A1AC61A894275006642F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
