@@ -1,5 +1,5 @@
 //
-//  PageViewController.h
+//  MapDetailViewController.h
 //  Sub7
 //
 //  Created by Clint Chilcott on 2/10/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PageViewController : UIViewController
+@interface MapDetailViewController : UIViewController 
 
 @end

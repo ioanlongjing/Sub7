@@ -13,5 +13,6 @@
 @property NSString *name;
 @property NSNumber *price;
 @property NSData *pic;
+@property NSMutableArray *sandoNames;
 
 @end
