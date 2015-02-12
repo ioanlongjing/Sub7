@@ -9,7 +9,7 @@
 #import "Sando.h"
 
 @implementation Sando
-@dynamic name,price,pic;
+@dynamic name,price,pic,sandoNames;
 
 +(NSString *)parseClassName
 {
@@ -21,5 +21,7 @@
 {
     [self registerSubclass];
 }
+
+
 
 @end
