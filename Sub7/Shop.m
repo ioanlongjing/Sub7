@@ -21,4 +21,9 @@
 {
     [self registerSubclass];
 }
+
+//+(void)getParseData
+//{
+//    Shop *shop =[]
+//}
 @end

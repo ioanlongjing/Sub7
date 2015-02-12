@@ -11,6 +11,9 @@
 @interface CustomCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UILabel *sandoPriceLabel;
+@property (strong, nonatomic) IBOutlet UILabel *sandoNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *creatorLabel;
 
 
 @end

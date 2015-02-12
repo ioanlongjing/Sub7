@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5775F9041A8BEC1A00B91A00 /* Sando.m in Sources */ = {isa = PBXBuildFile; fileRef = 5775F9011A8BEC1A00B91A00 /* Sando.m */; };
+		5775F9051A8BEC1A00B91A00 /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5775F9031A8BEC1A00B91A00 /* Shop.m */; };
 		57D69F111A8AE39400307834 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F101A8AE39400307834 /* AudioToolbox.framework */; };
 		57D69F131A8AE39E00307834 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F121A8AE39E00307834 /* CFNetwork.framework */; };
 		57D69F151A8AE3AE00307834 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F141A8AE3AE00307834 /* CoreGraphics.framework */; };
@@ -50,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5775F9001A8BEC1A00B91A00 /* Sando.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sando.h; sourceTree = "<group>"; };
+		5775F9011A8BEC1A00B91A00 /* Sando.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sando.m; sourceTree = "<group>"; };
+		5775F9021A8BEC1A00B91A00 /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
+		5775F9031A8BEC1A00B91A00 /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
 		57D69F101A8AE39400307834 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		57D69F121A8AE39E00307834 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		57D69F141A8AE3AE00307834 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -128,6 +134,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5775F9061A8C526E00B91A00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7A8A1AF71A8A8A5E006642F1 /* CustomCollectionViewCell.h */,
+				7A8A1AF81A8A8A5E006642F1 /* CustomCollectionViewCell.m */,
+				7AA7F5C81A8B095700946EEE /* CustomFlowLayout.h */,
+				7AA7F5C91A8B095700946EEE /* CustomFlowLayout.m */,
+				5775F9001A8BEC1A00B91A00 /* Sando.h */,
+				5775F9011A8BEC1A00B91A00 /* Sando.m */,
+				5775F9021A8BEC1A00B91A00 /* Shop.h */,
+				5775F9031A8BEC1A00B91A00 /* Shop.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5775F9071A8C529200B91A00 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7A8A1AA81A894275006642F1 /* RootViewController.h */,
+				7A8A1AA91A894275006642F1 /* RootViewController.m */,
+				7AA7F5CB1A8B10FE00946EEE /* DetailViewController.h */,
+				7AA7F5CC1A8B10FE00946EEE /* DetailViewController.m */,
+				7AA7F5D11A8B11AD00946EEE /* CustoSandoViewController.h */,
+				7AA7F5D21A8B11AD00946EEE /* CustoSandoViewController.m */,
+				7AA7F5CE1A8B117200946EEE /* MapDetailViewController.h */,
+				7AA7F5CF1A8B117200946EEE /* MapDetailViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		7A8A1A921A894275006642F1 = {
 			isa = PBXGroup;
 			children = (
@@ -151,19 +187,9 @@
 			children = (
 				7A8A1AA21A894275006642F1 /* AppDelegate.h */,
 				7A8A1AA31A894275006642F1 /* AppDelegate.m */,
-				7A8A1AA81A894275006642F1 /* RootViewController.h */,
-				7A8A1AA91A894275006642F1 /* RootViewController.m */,
-				7AA7F5CB1A8B10FE00946EEE /* DetailViewController.h */,
-				7AA7F5CC1A8B10FE00946EEE /* DetailViewController.m */,
-				7A8A1AF71A8A8A5E006642F1 /* CustomCollectionViewCell.h */,
-				7A8A1AF81A8A8A5E006642F1 /* CustomCollectionViewCell.m */,
-				7AA7F5D11A8B11AD00946EEE /* CustoSandoViewController.h */,
-				7AA7F5D21A8B11AD00946EEE /* CustoSandoViewController.m */,
-				7AA7F5CE1A8B117200946EEE /* MapDetailViewController.h */,
-				7AA7F5CF1A8B117200946EEE /* MapDetailViewController.m */,
-				7AA7F5C81A8B095700946EEE /* CustomFlowLayout.h */,
-				7AA7F5C91A8B095700946EEE /* CustomFlowLayout.m */,
+				5775F9071A8C529200B91A00 /* View */,
 				7A8A1AAB1A894275006642F1 /* Main.storyboard */,
+				5775F9061A8C526E00B91A00 /* Model */,
 				7A8A1AAE1A894275006642F1 /* Images.xcassets */,
 				7A8A1AB01A894275006642F1 /* LaunchScreen.xib */,
 				7A8A1AA51A894275006642F1 /* Sub7.xcdatamodeld */,
@@ -321,10 +347,12 @@
 				7A8A1AA11A894275006642F1 /* main.m in Sources */,
 				7A8A1AAA1A894275006642F1 /* RootViewController.m in Sources */,
 				7AA7F5D31A8B11AD00946EEE /* CustoSandoViewController.m in Sources */,
+				5775F9051A8BEC1A00B91A00 /* Shop.m in Sources */,
 				7AA7F5D01A8B117200946EEE /* MapDetailViewController.m in Sources */,
 				7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */,
 				7A8A1AF91A8A8A5E006642F1 /* CustomCollectionViewCell.m in Sources */,
 				7AA7F5CD1A8B10FE00946EEE /* DetailViewController.m in Sources */,
+				5775F9041A8BEC1A00B91A00 /* Sando.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
