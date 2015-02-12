@@ -9,9 +9,14 @@
 #import <Parse/Parse.h>
 
 @interface Shop : PFObject <PFSubclassing>
++ (NSString *)parseClassName;
 
 @property NSString *name;
 @property NSString *address;
+@property NSString *city;
+@property NSString *state;
+@property NSNumber *zip;
 @property BOOL *cashOnly;
+
 
 @end

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CustoSandoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface CustoSandoViewController : UIViewController
 
 @end

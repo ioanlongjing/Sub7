@@ -8,6 +8,11 @@
 
 #import "CustomCollectionViewCell.h"
 
+@interface CustomCollectionViewCell ()
+
+@end
+
 @implementation CustomCollectionViewCell
+
 
 @end

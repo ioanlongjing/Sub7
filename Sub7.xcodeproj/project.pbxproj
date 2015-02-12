@@ -20,6 +20,8 @@
 		57D69F211A8AE3E700307834 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F201A8AE3E700307834 /* SystemConfiguration.framework */; };
 		57D69F231A8AE3F200307834 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F221A8AE3F200307834 /* libz.dylib */; };
 		57D69F251A8AE3FC00307834 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F241A8AE3FC00307834 /* libsqlite3.dylib */; };
+		7A0DD5C61A8D2CC100F2DA02 /* ShopEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DD5C51A8D2CC100F2DA02 /* ShopEditViewController.m */; };
+		7A0DD5CF1A8D343F00F2DA02 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DD5CE1A8D343F00F2DA02 /* TestViewController.m */; };
 		7A8A1AA11A894275006642F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AA01A894275006642F1 /* main.m */; };
 		7A8A1AA41A894275006642F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AA31A894275006642F1 /* AppDelegate.m */; };
 		7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AA51A894275006642F1 /* Sub7.xcdatamodeld */; };
@@ -34,7 +36,6 @@
 		7AA7F5C51A8AF38400946EEE /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5C01A8AF38400946EEE /* ParseCrashReporting.framework */; };
 		7AA7F5C61A8AF38400946EEE /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5C11A8AF38400946EEE /* ParseFacebookUtils.framework */; };
 		7AA7F5C71A8AF38400946EEE /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5C21A8AF38400946EEE /* ParseUI.framework */; };
-		7AA7F5CA1A8B095700946EEE /* CustomFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7F5C91A8B095700946EEE /* CustomFlowLayout.m */; };
 		7AA7F5CD1A8B10FE00946EEE /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7F5CC1A8B10FE00946EEE /* DetailViewController.m */; };
 		7AA7F5D01A8B117200946EEE /* MapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7F5CF1A8B117200946EEE /* MapDetailViewController.m */; };
 		7AA7F5D31A8B11AD00946EEE /* CustoSandoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7F5D21A8B11AD00946EEE /* CustoSandoViewController.m */; };
@@ -67,6 +68,10 @@
 		57D69F201A8AE3E700307834 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		57D69F221A8AE3F200307834 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		57D69F241A8AE3FC00307834 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		7A0DD5C41A8D2CC100F2DA02 /* ShopEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopEditViewController.h; sourceTree = "<group>"; };
+		7A0DD5C51A8D2CC100F2DA02 /* ShopEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopEditViewController.m; sourceTree = "<group>"; };
+		7A0DD5CD1A8D343F00F2DA02 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		7A0DD5CE1A8D343F00F2DA02 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		7A8A1A9B1A894275006642F1 /* Sub7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sub7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8A1A9F1A894275006642F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A8A1AA01A894275006642F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,7 +94,6 @@
 		7AA7F5C11A8AF38400946EEE /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		7AA7F5C21A8AF38400946EEE /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		7AA7F5C81A8B095700946EEE /* CustomFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFlowLayout.h; sourceTree = "<group>"; };
-		7AA7F5C91A8B095700946EEE /* CustomFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFlowLayout.m; sourceTree = "<group>"; };
 		7AA7F5CB1A8B10FE00946EEE /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		7AA7F5CC1A8B10FE00946EEE /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		7AA7F5CE1A8B117200946EEE /* MapDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDetailViewController.h; sourceTree = "<group>"; };
@@ -140,7 +144,6 @@
 				7A8A1AF71A8A8A5E006642F1 /* CustomCollectionViewCell.h */,
 				7A8A1AF81A8A8A5E006642F1 /* CustomCollectionViewCell.m */,
 				7AA7F5C81A8B095700946EEE /* CustomFlowLayout.h */,
-				7AA7F5C91A8B095700946EEE /* CustomFlowLayout.m */,
 				5775F9001A8BEC1A00B91A00 /* Sando.h */,
 				5775F9011A8BEC1A00B91A00 /* Sando.m */,
 				5775F9021A8BEC1A00B91A00 /* Shop.h */,
@@ -152,6 +155,8 @@
 		5775F9071A8C529200B91A00 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7A0DD5CD1A8D343F00F2DA02 /* TestViewController.h */,
+				7A0DD5CE1A8D343F00F2DA02 /* TestViewController.m */,
 				7A8A1AA81A894275006642F1 /* RootViewController.h */,
 				7A8A1AA91A894275006642F1 /* RootViewController.m */,
 				7AA7F5CB1A8B10FE00946EEE /* DetailViewController.h */,
@@ -160,6 +165,8 @@
 				7AA7F5D21A8B11AD00946EEE /* CustoSandoViewController.m */,
 				7AA7F5CE1A8B117200946EEE /* MapDetailViewController.h */,
 				7AA7F5CF1A8B117200946EEE /* MapDetailViewController.m */,
+				7A0DD5C41A8D2CC100F2DA02 /* ShopEditViewController.h */,
+				7A0DD5C51A8D2CC100F2DA02 /* ShopEditViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -342,9 +349,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AA7F5CA1A8B095700946EEE /* CustomFlowLayout.m in Sources */,
 				7A8A1AA41A894275006642F1 /* AppDelegate.m in Sources */,
+				7A0DD5CF1A8D343F00F2DA02 /* TestViewController.m in Sources */,
 				7A8A1AA11A894275006642F1 /* main.m in Sources */,
+				7A0DD5C61A8D2CC100F2DA02 /* ShopEditViewController.m in Sources */,
 				7A8A1AAA1A894275006642F1 /* RootViewController.m in Sources */,
 				7AA7F5D31A8B11AD00946EEE /* CustoSandoViewController.m in Sources */,
 				5775F9051A8BEC1A00B91A00 /* Shop.m in Sources */,
