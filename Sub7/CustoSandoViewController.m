@@ -8,11 +8,11 @@
 
 #import "CustoSandoViewController.h"
 
-@interface CustoSandoViewController ()
+@interface CustoSandoViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
-@implementation CustoSandoViewController <UITableViewDelegate, UITableViewDataSource>
+@implementation CustoSandoViewController
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

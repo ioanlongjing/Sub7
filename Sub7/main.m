@@ -1,4 +1,4 @@
-git s//
+//
 //  main.m
 //  Sub7
 //
