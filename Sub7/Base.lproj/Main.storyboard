@@ -639,7 +639,6 @@
                         <viewControllerLayoutGuide type="bottom" id="6vO-rc-da5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kHh-Bp-YQT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kf9-7Z-c62">
@@ -648,7 +647,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rrX-L8-RuC">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="60"/>
                                         </variation>
                                     </imageView>
                                 </subviews>
@@ -659,7 +658,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="540" width="400" height="60"/>
                                     <mask key="subviews">
                                         <include reference="rrX-L8-RuC"/>
                                     </mask>

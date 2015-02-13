@@ -16,4 +16,6 @@
 
 + (void)queryForAllSandoWithCompletion:(void (^)(NSArray *, NSError *))complete;
 
++ (void)queryForAllSandosWithCompletion:(void(^)(NSArray *resultsArray, NSError *error))complete;
+
 @end

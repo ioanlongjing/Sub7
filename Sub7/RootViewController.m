@@ -26,8 +26,12 @@
 {
     [super viewDidLoad];
 
-    Sando *sando = [Sando object];
-    Shop *shop = [Shop object];
+//    Sando *sando = [Sando object];
+//    Shop *shop = [Shop object];
+//
+//    self.sub = [PFObject objectWithClassName:@"Sando"];
+//    self.sub[@"name"] = @"BLT";
+//    self.sub[@"price"] = @234;
 
     PFRelation *relation = [shop relationForKey:@"createdBy"];
     [relation addObject:sando];
