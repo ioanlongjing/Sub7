@@ -8,22 +8,34 @@
 
 #import "CustoSandoViewController.h"
 
-@interface CustoSandoViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface CustoSandoViewController () <UICollisionBehaviorDelegate>
+@property UIDynamicAnimator *animator;
 
 @end
 
 @implementation CustoSandoViewController
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (void)viewDidAppear:(BOOL)animated
 {
-    return 1;
+    [super viewDidAppear:animated];
+    
+    UIView *testView = [[UIView alloc] initWithFrame:CGRectMake(5, 5, 5, 5)];
+    [self.view addSubview:testView];
+    
+    
+    UIDynamicAnimator *animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    
+    UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:self.view.subviews];
+    [animator addBehavior:gravityBehavior];
+
+    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:self.view.subviews];
+    collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+    collisionBehavior.collisionDelegate = self;
+    [animator addBehavior:collisionBehavior];
+    
+    self.animator = animator;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    //TODO: fix dis
-    return nil;
-}
+
 
 @end

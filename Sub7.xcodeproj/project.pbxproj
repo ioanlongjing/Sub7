@@ -21,6 +21,7 @@
 		57D69F231A8AE3F200307834 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F221A8AE3F200307834 /* libz.dylib */; };
 		57D69F251A8AE3FC00307834 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F241A8AE3FC00307834 /* libsqlite3.dylib */; };
 		7A0DD5C61A8D2CC100F2DA02 /* ShopEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DD5C51A8D2CC100F2DA02 /* ShopEditViewController.m */; };
+		7A0DD5D21A8E799200F2DA02 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DD5D11A8E799200F2DA02 /* TableViewCell.m */; };
 		7A8A1AA11A894275006642F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AA01A894275006642F1 /* main.m */; };
 		7A8A1AA41A894275006642F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AA31A894275006642F1 /* AppDelegate.m */; };
 		7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AA51A894275006642F1 /* Sub7.xcdatamodeld */; };
@@ -69,6 +70,8 @@
 		57D69F241A8AE3FC00307834 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		7A0DD5C41A8D2CC100F2DA02 /* ShopEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopEditViewController.h; sourceTree = "<group>"; };
 		7A0DD5C51A8D2CC100F2DA02 /* ShopEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopEditViewController.m; sourceTree = "<group>"; };
+		7A0DD5D01A8E799200F2DA02 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		7A0DD5D11A8E799200F2DA02 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		7A8A1A9B1A894275006642F1 /* Sub7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sub7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8A1A9F1A894275006642F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A8A1AA01A894275006642F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 				7A8A1AA31A894275006642F1 /* AppDelegate.m */,
 				5775F9071A8C529200B91A00 /* View */,
 				7A8A1AAB1A894275006642F1 /* Main.storyboard */,
+				7A0DD5D01A8E799200F2DA02 /* TableViewCell.h */,
+				7A0DD5D11A8E799200F2DA02 /* TableViewCell.m */,
 				5775F9061A8C526E00B91A00 /* Model */,
 				7A8A1AAE1A894275006642F1 /* Images.xcassets */,
 				7A8A1AB01A894275006642F1 /* LaunchScreen.xib */,
@@ -345,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A8A1AA41A894275006642F1 /* AppDelegate.m in Sources */,
+				7A0DD5D21A8E799200F2DA02 /* TableViewCell.m in Sources */,
 				7A8A1AA11A894275006642F1 /* main.m in Sources */,
 				7A0DD5C61A8D2CC100F2DA02 /* ShopEditViewController.m in Sources */,
 				7A8A1AAA1A894275006642F1 /* RootViewController.m in Sources */,

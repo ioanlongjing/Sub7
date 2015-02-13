@@ -11,9 +11,10 @@
 #import <Parse/Parse.h>
 #import "Sando.h"
 #import "Shop.h"
+#import "TableViewCell.h"
 
 
-@interface RootViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface RootViewController () <UITableViewDataSource, UITableViewDelegate>
 @property NSMutableArray *sandwichImages;
 @property NSMutableArray *shopNames;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -36,18 +37,18 @@
         }
     }];
     
-//    
-//    self.sandwichImages = [NSMutableArray new];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"01.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"02.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"03.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"04.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"05.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"06.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"07.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"08.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"09.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"10.png"]];
+    
+    self.sandwichImages = [NSMutableArray new];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"01.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"02.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"03.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"04.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"05.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"06.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"07.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"08.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"09.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"10.png"]];
 
 //    Sando *sando = [Sando object];
 //    Shop *shop = [Shop object];
@@ -78,44 +79,54 @@
 }
 
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    
-    return self.sandwichImages.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-
-    //cell.imageView.image = [self.sandwichImages objectAtIndex:indexPath.row];
-    NSNumber *priceCount = self.sub[@"price"];
-
-    PFFile *sandoImage = [self.sando objectForKey:@"image"];
-    [sandoImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error)
-    {
-        UIImage *image = [UIImage imageWithData:data];
-        cell.imageView.image = image;
-    }];
-
-//    cell.sandoNameLabel.text = self.sando.name;
-//    cell.sandoPriceLabel.text = [NSString stringWithFormat:@"%@",priceCount];
-//    cell.creatorLabel.text = self.shopNames[indexPath.row];
-
-    cell.sandoNameLabel.text = self.sub[@"name"];
-    cell.sandoPriceLabel.text = [NSString stringWithFormat:@"%@",priceCount];
-
-    [self.sub saveInBackground];
-
-    return cell;
-}
-
-//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 //{
-//    [self performSegueWithIdentifier:@"DetailSegue" sender:self];
 //    
+//    return self.sandwichImages.count;
 //}
+
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+////    cell = UITableViewCell
+//    
+//    return cell;
+//}
+
+//-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    return self.sandwichImages.count;
+//}
+
+//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+//    CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+//    cell.imageView.image = [self.sandwichImages objectAtIndex:indexPath.row];
+//    
+
+//    //cell.imageView.image = [self.sandwichImages objectAtIndex:indexPath.row];
+//    NSNumber *priceCount = self.sub[@"price"];
+//
+//    PFFile *sandoImage = [self.sando objectForKey:@"image"];
+//    [sandoImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error)
+//    {
+//        UIImage *image = [UIImage imageWithData:data];
+//        cell.imageView.image = image;
+//    }];
+//
+////    cell.sandoNameLabel.text = self.sando.name;
+////    cell.sandoPriceLabel.text = [NSString stringWithFormat:@"%@",priceCount];
+////    cell.creatorLabel.text = self.shopNames[indexPath.row];
+//
+//    cell.sandoNameLabel.text = self.sub[@"name"];
+//    cell.sandoPriceLabel.text = [NSString stringWithFormat:@"%@",priceCount];
+//
+//
+
+//    return cell;
+//}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
