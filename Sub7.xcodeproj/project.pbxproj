@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5775F9041A8BEC1A00B91A00 /* Sando.m in Sources */ = {isa = PBXBuildFile; fileRef = 5775F9011A8BEC1A00B91A00 /* Sando.m */; };
 		5775F9051A8BEC1A00B91A00 /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5775F9031A8BEC1A00B91A00 /* Shop.m */; };
+		578C811F1A8E874100B75827 /* CustomSandoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 578C811E1A8E874100B75827 /* CustomSandoAnnotation.m */; };
 		57D69F111A8AE39400307834 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F101A8AE39400307834 /* AudioToolbox.framework */; };
 		57D69F131A8AE39E00307834 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F121A8AE39E00307834 /* CFNetwork.framework */; };
 		57D69F151A8AE3AE00307834 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F141A8AE3AE00307834 /* CoreGraphics.framework */; };
@@ -21,7 +22,6 @@
 		57D69F231A8AE3F200307834 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F221A8AE3F200307834 /* libz.dylib */; };
 		57D69F251A8AE3FC00307834 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F241A8AE3FC00307834 /* libsqlite3.dylib */; };
 		7A0DD5C61A8D2CC100F2DA02 /* ShopEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DD5C51A8D2CC100F2DA02 /* ShopEditViewController.m */; };
-		7A0DD5CF1A8D343F00F2DA02 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DD5CE1A8D343F00F2DA02 /* TestViewController.m */; };
 		7A8A1AA11A894275006642F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AA01A894275006642F1 /* main.m */; };
 		7A8A1AA41A894275006642F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AA31A894275006642F1 /* AppDelegate.m */; };
 		7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AA51A894275006642F1 /* Sub7.xcdatamodeld */; };
@@ -30,7 +30,6 @@
 		7A8A1AAF1A894275006642F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8A1AAE1A894275006642F1 /* Images.xcassets */; };
 		7A8A1AB21A894275006642F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8A1AB01A894275006642F1 /* LaunchScreen.xib */; };
 		7A8A1ABE1A894275006642F1 /* Sub7Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1ABD1A894275006642F1 /* Sub7Tests.m */; };
-		7A8A1AF91A8A8A5E006642F1 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AF81A8A8A5E006642F1 /* CustomCollectionViewCell.m */; };
 		7AA7F5C31A8AF38400946EEE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5BE1A8AF38400946EEE /* Bolts.framework */; };
 		7AA7F5C41A8AF38400946EEE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5BF1A8AF38400946EEE /* Parse.framework */; };
 		7AA7F5C51A8AF38400946EEE /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5C01A8AF38400946EEE /* ParseCrashReporting.framework */; };
@@ -57,6 +56,8 @@
 		5775F9011A8BEC1A00B91A00 /* Sando.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sando.m; sourceTree = "<group>"; };
 		5775F9021A8BEC1A00B91A00 /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
 		5775F9031A8BEC1A00B91A00 /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
+		578C811D1A8E874100B75827 /* CustomSandoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSandoAnnotation.h; sourceTree = "<group>"; };
+		578C811E1A8E874100B75827 /* CustomSandoAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSandoAnnotation.m; sourceTree = "<group>"; };
 		57D69F101A8AE39400307834 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		57D69F121A8AE39E00307834 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		57D69F141A8AE3AE00307834 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -70,8 +71,6 @@
 		57D69F241A8AE3FC00307834 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		7A0DD5C41A8D2CC100F2DA02 /* ShopEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopEditViewController.h; sourceTree = "<group>"; };
 		7A0DD5C51A8D2CC100F2DA02 /* ShopEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopEditViewController.m; sourceTree = "<group>"; };
-		7A0DD5CD1A8D343F00F2DA02 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		7A0DD5CE1A8D343F00F2DA02 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		7A8A1A9B1A894275006642F1 /* Sub7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sub7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8A1A9F1A894275006642F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A8A1AA01A894275006642F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -86,14 +85,11 @@
 		7A8A1AB71A894275006642F1 /* Sub7Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sub7Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8A1ABC1A894275006642F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A8A1ABD1A894275006642F1 /* Sub7Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sub7Tests.m; sourceTree = "<group>"; };
-		7A8A1AF71A8A8A5E006642F1 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
-		7A8A1AF81A8A8A5E006642F1 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
 		7AA7F5BE1A8AF38400946EEE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		7AA7F5BF1A8AF38400946EEE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		7AA7F5C01A8AF38400946EEE /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		7AA7F5C11A8AF38400946EEE /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		7AA7F5C21A8AF38400946EEE /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		7AA7F5C81A8B095700946EEE /* CustomFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFlowLayout.h; sourceTree = "<group>"; };
 		7AA7F5CB1A8B10FE00946EEE /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		7AA7F5CC1A8B10FE00946EEE /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		7AA7F5CE1A8B117200946EEE /* MapDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDetailViewController.h; sourceTree = "<group>"; };
@@ -141,9 +137,8 @@
 		5775F9061A8C526E00B91A00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7A8A1AF71A8A8A5E006642F1 /* CustomCollectionViewCell.h */,
-				7A8A1AF81A8A8A5E006642F1 /* CustomCollectionViewCell.m */,
-				7AA7F5C81A8B095700946EEE /* CustomFlowLayout.h */,
+				578C811D1A8E874100B75827 /* CustomSandoAnnotation.h */,
+				578C811E1A8E874100B75827 /* CustomSandoAnnotation.m */,
 				5775F9001A8BEC1A00B91A00 /* Sando.h */,
 				5775F9011A8BEC1A00B91A00 /* Sando.m */,
 				5775F9021A8BEC1A00B91A00 /* Shop.h */,
@@ -155,8 +150,6 @@
 		5775F9071A8C529200B91A00 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7A0DD5CD1A8D343F00F2DA02 /* TestViewController.h */,
-				7A0DD5CE1A8D343F00F2DA02 /* TestViewController.m */,
 				7A8A1AA81A894275006642F1 /* RootViewController.h */,
 				7A8A1AA91A894275006642F1 /* RootViewController.m */,
 				7AA7F5CB1A8B10FE00946EEE /* DetailViewController.h */,
@@ -350,7 +343,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A8A1AA41A894275006642F1 /* AppDelegate.m in Sources */,
-				7A0DD5CF1A8D343F00F2DA02 /* TestViewController.m in Sources */,
 				7A8A1AA11A894275006642F1 /* main.m in Sources */,
 				7A0DD5C61A8D2CC100F2DA02 /* ShopEditViewController.m in Sources */,
 				7A8A1AAA1A894275006642F1 /* RootViewController.m in Sources */,
@@ -358,7 +350,7 @@
 				5775F9051A8BEC1A00B91A00 /* Shop.m in Sources */,
 				7AA7F5D01A8B117200946EEE /* MapDetailViewController.m in Sources */,
 				7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */,
-				7A8A1AF91A8A8A5E006642F1 /* CustomCollectionViewCell.m in Sources */,
+				578C811F1A8E874100B75827 /* CustomSandoAnnotation.m in Sources */,
 				7AA7F5CD1A8B10FE00946EEE /* DetailViewController.m in Sources */,
 				5775F9041A8BEC1A00B91A00 /* Sando.m in Sources */,
 			);
