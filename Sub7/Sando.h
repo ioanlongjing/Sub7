@@ -12,7 +12,8 @@
 
 @property NSString *name;
 @property NSNumber *price;
-@property NSData *pic;
-@property NSMutableArray *sandoNames;
+@property PFFile *pic;
+
++ (void)queryForAllSandoWithCompletion:(void (^)(NSArray *, NSError *))complete;
 
 @end

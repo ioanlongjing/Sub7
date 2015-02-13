@@ -17,6 +17,8 @@
 @property NSString *state;
 @property NSNumber *zip;
 @property BOOL *cashOnly;
+@property NSMutableArray *shopsArray;
 
++ (void)queryForAllShopsWithCompletion:(void (^)(NSArray *, NSError *))complete;
 
 @end

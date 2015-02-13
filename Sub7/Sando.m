@@ -9,7 +9,8 @@
 #import "Sando.h"
 
 @implementation Sando
-@dynamic name,price,pic,sandoNames;
+@dynamic name, price, pic;
+
 
 +(NSString *)parseClassName
 {
@@ -22,6 +23,13 @@
     [self registerSubclass];
 }
 
-
++ (void)queryForAllSandoWithCompletion:(void (^)(NSArray *, NSError *))complete
+{
+    PFQuery *query = [Sando query];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        [objectArray addObject:objects];
+        complete(objects, error);
+    }];
+}
 
 @end

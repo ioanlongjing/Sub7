@@ -16,10 +16,10 @@
 @interface RootViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property NSMutableArray *sandwichImages;
 @property NSMutableArray *shopNames;
+@property NSArray *shopArray;
+@property NSArray *sandoNames;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property Sando *sando;
 @property Shop *shop;
-@property PFObject *sub;
 @end
 
 @implementation RootViewController
@@ -41,39 +41,35 @@
 //    [self.sandwichImages addObject:[UIImage imageNamed:@"09.png"]];
 //    [self.sandwichImages addObject:[UIImage imageNamed:@"10.png"]];
 
-    Sando *sando = [Sando object];
-    Shop *shop = [Shop object];
+    Sando *sando = [Sando new];
+    Shop *shop = [Shop new];
 
-    self.sub = [PFObject objectWithClassName:@"Sando"];
-    self.sub[@"name"] = @"BLT";
-    self.sub[@"price"] = @234;
+//    sando.name = @"BLT";
+//    sando.price = @(2.34);
 
+    [Sando queryForAllSandoWithCompletion:^(NSArray *array, NSError *error) {
+        if (!error)
+        {
+            self.sandoNames = [NSArray arrayWithArray:array];
+            [self.collectionView reloadData];
+        }
+        else
+        {
+            NSLog(@"Query Failed: %@", error.localizedDescription);
+        }
+    }];
 
     PFRelation *relation = [shop relationForKey:@"createdBy"];
     [relation addObject:sando];
 
-    [self.sub saveInBackground];
-//    PFQuery *query = [Sando query];
-//    [query whereKey:@"createdBy" equalTo:self.shop.name];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-//     {
-//         for (Shop *shop in objects)
-//         {
-//             [self.shopNames addObject:shop];
-//         }
-//         [self.collectionView reloadData];
-//     }];
-//    [sando saveInBackground];
-
-        //[self.collectionView setPagingEnabled:YES];
-
+    [sando saveInBackground];
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     
-    return self.sandwichImages.count;
+    return self.sandoNames.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -81,37 +77,24 @@
     
     CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
 
-    //cell.imageView.image = [self.sandwichImages objectAtIndex:indexPath.row];
-    NSNumber *priceCount = self.sub[@"price"];
+    Sando *objectX = (Sando *)self.sandoNames[indexPath.item];
 
-    PFFile *sandoImage = [self.sando objectForKey:@"image"];
-    [sandoImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error)
-    {
-        UIImage *image = [UIImage imageWithData:data];
-        cell.imageView.image = image;
-    }];
+    NSString * nameX;
+    nameX = objectX[@"name"];
+    NSNumber * numberX;
+    numberX = objectX[@"price"];
 
-//    cell.sandoNameLabel.text = self.sando.name;
-//    cell.sandoPriceLabel.text = [NSString stringWithFormat:@"%@",priceCount];
-//    cell.creatorLabel.text = self.shopNames[indexPath.row];
+    cell.sandoNameLabel.text = nameX;
+    cell.sandoPriceLabel.text = [NSString stringWithFormat:@"%@",numberX];
 
-    cell.sandoNameLabel.text = self.sub[@"name"];
-    cell.sandoPriceLabel.text = [NSString stringWithFormat:@"%@",priceCount];
-
-    [self.sub saveInBackground];
-
+    //THIS IS THE IMAGE FEATURE,
+    //    PFFile *sandoImage = object.pic;
+    //    [sandoImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error)
+    //    {
+    //        UIImage *image = [UIImage imageWithData:data];
+    //        cell.imageView.image = image;
+    //    }];
     return cell;
-}
-
-//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    [self performSegueWithIdentifier:@"DetailSegue" sender:self];
-//    
-//}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
