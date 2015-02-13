@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FAd-WK-XiP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CsV-6k-LnL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -51,7 +51,7 @@
             </objects>
             <point key="canvasLocation" x="-504" y="137"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Pick Your Sub-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="RootViewController" sceneMemberID="viewController">
@@ -59,179 +59,24 @@
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" userLabel="iCarousel" customClass="iCarousel">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Eg7-eZ-ipN">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GS4-20-YGG">
-                                    <size key="itemSize" width="355" height="278"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="V3M-hE-HLN" customClass="CustomCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="355" height="278"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1mn-Ns-zlZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="2" y="2" width="353" height="276"/>
-                                                    </variation>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6g8-Zw-NOX">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Turkey Club">
-                                                            <attributes>
-                                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="8" width="133" height="33"/>
-                                                    </variation>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exY-dQ-dRr">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="23 minute walk">
-                                                            <attributes>
-                                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="214" y="245" width="133" height="33"/>
-                                                    </variation>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkI-UQ-pjk">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Joe's Deli">
-                                                            <attributes>
-                                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="14" y="245" width="133" height="33"/>
-                                                    </variation>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWL-74-uIh">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="$4.99">
-                                                            <attributes>
-                                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="214" y="0.0" width="133" height="33"/>
-                                                    </variation>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <variation key="default">
-                                            <mask key="subviews">
-                                                <exclude reference="1mn-Ns-zlZ"/>
-                                                <exclude reference="6g8-Zw-NOX"/>
-                                                <exclude reference="exY-dQ-dRr"/>
-                                                <exclude reference="DkI-UQ-pjk"/>
-                                                <exclude reference="HWL-74-uIh"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="subviews">
-                                                <include reference="1mn-Ns-zlZ"/>
-                                                <include reference="6g8-Zw-NOX"/>
-                                                <include reference="exY-dQ-dRr"/>
-                                                <include reference="DkI-UQ-pjk"/>
-                                                <include reference="HWL-74-uIh"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <outlet property="imageView" destination="1mn-Ns-zlZ" id="gom-W0-b2u"/>
-                                            <segue destination="dqU-LV-6Ae" kind="show" identifier="DetailSegue" id="GI8-02-xVu"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="74i-t3-Emh"/>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="fcf-8W-aez"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Eg7-eZ-ipN" secondAttribute="bottom" id="6DN-JC-L5V"/>
-                            <constraint firstItem="Eg7-eZ-ipN" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="I2a-L7-I37"/>
-                            <constraint firstAttribute="trailing" secondItem="Eg7-eZ-ipN" secondAttribute="trailing" id="IRa-9u-8yh"/>
-                            <constraint firstItem="Eg7-eZ-ipN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Mrc-ZA-zFT"/>
-                            <constraint firstItem="Eg7-eZ-ipN" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="NER-Rg-bkw"/>
-                            <constraint firstItem="Eg7-eZ-ipN" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="SNs-fR-xT7"/>
-                            <constraint firstAttribute="trailing" secondItem="Eg7-eZ-ipN" secondAttribute="trailing" id="c8r-NH-fuw"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Eg7-eZ-ipN" secondAttribute="bottom" id="xs0-Vc-Bsv"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Eg7-eZ-ipN"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="6DN-JC-L5V"/>
-                                <exclude reference="xs0-Vc-Bsv"/>
-                                <exclude reference="I2a-L7-I37"/>
-                                <exclude reference="IRa-9u-8yh"/>
-                                <exclude reference="Mrc-ZA-zFT"/>
-                                <exclude reference="NER-Rg-bkw"/>
-                                <exclude reference="SNs-fR-xT7"/>
-                                <exclude reference="c8r-NH-fuw"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Eg7-eZ-ipN"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="6DN-JC-L5V"/>
-                                <include reference="xs0-Vc-Bsv"/>
-                                <include reference="I2a-L7-I37"/>
-                                <include reference="IRa-9u-8yh"/>
-                                <include reference="Mrc-ZA-zFT"/>
-                                <include reference="NER-Rg-bkw"/>
-                                <include reference="SNs-fR-xT7"/>
-                                <include reference="c8r-NH-fuw"/>
-                            </mask>
-                        </variation>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="vXZ-lx-hvc" id="ely-JH-7yi"/>
+                            <outlet property="delegate" destination="vXZ-lx-hvc" id="u8p-SJ-tkQ"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="dkY-R3-uD5"/>
+                    <navigationItem key="navigationItem" title="Pick Your Sub" id="C2B-0J-OmI"/>
                     <connections>
-                        <outlet property="collectionView" destination="Eg7-eZ-ipN" id="ivT-3U-FSz"/>
+                        <outlet property="carousel" destination="kh9-bI-dsS" id="dDG-3t-aMF"/>
+                        <segue destination="dqU-LV-6Ae" kind="show" identifier="DetailSeg" id="LU6-ym-w1u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1207.5" y="137"/>
+            <point key="canvasLocation" x="2125.5" y="137"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="0Cs-JE-ecD">
@@ -371,7 +216,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2019" y="137"/>
+            <point key="canvasLocation" x="2937" y="137"/>
         </scene>
         <!--Custo Sando View Controller-->
         <scene sceneID="Z0C-tL-3wn">
@@ -389,7 +234,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qt2-wy-602">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="qt2-wy-602">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qt2-wy-602" id="Vyd-dC-rRQ">
@@ -421,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0d-aI-S1y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2836.5" y="137"/>
+            <point key="canvasLocation" x="3754.5" y="137"/>
         </scene>
         <!--Map Detail View Controller-->
         <scene sceneID="4mX-vp-7Ge">
@@ -463,22 +308,23 @@
             <point key="canvasLocation" x="2019" y="874"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="eKJ-YK-bpf">
+        <scene sceneID="tsC-SC-X5h">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FAd-WK-XiP" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CsV-6k-LnL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X0n-A1-qxA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="V5p-Z3-wwr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.16862745579999999" green="0.96470594409999999" blue="0.67450982329999998" alpha="1" colorSpace="deviceRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="m3Q-bB-Zuj"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="knI-1a-mOV"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C6l-oV-hbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2RJ-8C-agp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="324" y="137"/>
+            <point key="canvasLocation" x="1207.5" y="137"/>
         </scene>
     </scenes>
     <resources>

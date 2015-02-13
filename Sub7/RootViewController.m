@@ -12,17 +12,21 @@
 #import <Parse/Parse.h>
 
 
-@interface RootViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface RootViewController ()
 @property NSMutableArray *sandwichImages;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
 @implementation RootViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.carousel.type = iCarouselTypeRotary;
+    
+
     
 //    // Test Parse Connection
 //    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
@@ -42,8 +46,10 @@
     [self.sandwichImages addObject:[UIImage imageNamed:@"08.png"]];
     [self.sandwichImages addObject:[UIImage imageNamed:@"09.png"]];
     [self.sandwichImages addObject:[UIImage imageNamed:@"10.png"]];
+    
+   
 
-
+    [self.carousel reloadData];
     
     //[self.collectionView setPagingEnabled:YES];
 
@@ -51,29 +57,74 @@
 
 }
 
+#pragma -----------------------------------Carousel Delegate Methods----------------------------------------------
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    
+-(NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
     return self.sandwichImages.count;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
 {
-    
-
-    CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.imageView.image = [self.sandwichImages objectAtIndex:indexPath.row];
-    
-    return cell;
-    
+    if (option == iCarouselOptionSpacing)
+    {
+        return value * 1.1;
+    }
+    return value;
 }
 
-//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    [self performSegueWithIdentifier:@"DetailSegue" sender:self];
-//    
-//}
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
+}
+
+
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
+{
+    
+    
+    
+    UILabel *label = nil;
+    
+    //create new view if no view is available for recycling
+    if (view == nil)
+    {
+        //don't do anything specific to the index within
+        //this `if (view == nil) {...}` statement because the view will be
+        //recycled and used with other index values later
+        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300.0f, 300.0f)];
+        ((UIImageView *)view).image = [self.sandwichImages objectAtIndex:index];
+        view.contentMode = UIViewContentModeScaleAspectFit;
+        
+//        label = [[UILabel alloc] initWithFrame:view.bounds];
+//        label.backgroundColor = [UIColor clearColor];
+//        label.textAlignment = NSTextAlignmentCenter;
+//        label.font = [label.font fontWithSize:50];
+//        label.tag = 1;
+//        [view addSubview:label];
+    }
+    else
+    {
+        //get a reference to the label in the recycled view
+        label = (UILabel *)[view viewWithTag:1];
+    }
+    
+    //set item label
+    //remember to always set any properties of your carousel item
+    //views outside of the `if (view == nil) {...}` check otherwise
+    //you'll get weird issues with carousel item content appearing
+    //in the wrong place in the carousel
+//    label.text = [[self.sandwichImages objectAtIndex:index] stringValue];
+    
+    return view;
+}
+
+
+- (void)carousel:(__unused iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
+{
+    NSNumber *item = [self.sandwichImages objectAtIndex:index];
+    [self performSegueWithIdentifier:@"DetailSeg" sender:self];
+}
+
 
 
 - (void)didReceiveMemoryWarning {
