@@ -7,18 +7,33 @@
 //
 
 #import "Shop.h"
+#import <Parse/PFObject+Subclass.h>
 
 @implementation Shop
-@dynamic name,address,cashOnly;
+@dynamic name,address,city,state,zip,cashOnly,shopsArray;
 
-+(NSString *)parseClassName
++ (void)load
+{
+    [self registerSubclass];
+}
+
++ (NSString *)parseClassName
 {
     NSString *shop = @"Shop";
     return shop;
 }
 
-+(void)registerSubclass
+
+
++ (void)queryForAllShopsWithCompletion:(void (^)(NSArray *, NSError *))complete
 {
-    [self registerSubclass];
+    NSMutableArray *objectArray = [NSMutableArray new];
+    PFQuery *query = [Shop query];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [objectArray addObject:objectArray];
+        complete(objects, error);
+    }];
 }
+
+
 @end

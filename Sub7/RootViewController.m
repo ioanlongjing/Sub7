@@ -7,14 +7,18 @@
 //
 
 #import "RootViewController.h"
-
-#import "CustomCollectionViewCell.h"
 #import <Parse/Parse.h>
+#import "Sando.h"
+#import "Shop.h"
 
 
-@interface RootViewController ()
+@interface RootViewController () <iCarouselDelegate, iCarouselDataSource>
 @property NSMutableArray *sandwichImages;
-
+@property NSMutableArray *shopNames;
+@property NSArray *shopArray;
+@property NSArray *sandoObject;
+@property Sando *sando;
+@property Shop *shop;
 @end
 
 @implementation RootViewController
@@ -51,11 +55,51 @@
 
     [self.carousel reloadData];
     
-    //[self.collectionView setPagingEnabled:YES];
-
-
-
 }
+
+    //[self.collectionView setPagingEnabled:YES];
+//    Sando *sando = [Sando object];
+//    Shop *shop = [Shop object];
+//
+//    self.sub = [PFObject objectWithClassName:@"Sando"];
+//    self.sub[@"name"] = @"BLT";
+//    self.sub[@"price"] = @234;
+
+//    PFRelation *relation = [shop relationForKey:@"createdBy"];
+//    [relation addObject:sando];
+
+//    [sando queryForAllSandoWithCompletion:^(NSArray *array, NSError *error) {
+//        if (!error)
+//        {
+//            self.sandoObject = [NSArray arrayWithArray:array];
+//            [self.collectionView reloadData];
+//        }
+//        else
+//        {
+//            NSLog(@"Query Failed %@", error.localizedDescription);
+//        }
+//            }];
+//
+//    [sando saveInBackground];
+//}
+#pragma mark - Print Parse Objects
+//    Sando *objectX = (Sando *)self.sandoObject[indexPath.item];
+//
+//    NSString * nameX;
+//    nameX = objectX[@"name"];
+//    NSNumber * numberX;
+//    numberX = objectX[@"price"];
+//
+//    cell.sandoNameLabel.text = nameX;
+//    cell.sandoPriceLabel.text = [NSString stringWithFormat:@"%@",numberX];
+//
+//    //THIS IS THE IMAGE FEATURE,
+//    //    PFFile *sandoImage = object.pic;
+//    //    [sandoImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error)
+//    //    {
+//    //        UIImage *image = [UIImage imageWithData:data];
+//    //        cell.imageView.image = image;
+//    //    }];
 
 #pragma -----------------------------------Carousel Delegate Methods----------------------------------------------
 
@@ -126,10 +170,5 @@
 }
 
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

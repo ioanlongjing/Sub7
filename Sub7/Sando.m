@@ -11,6 +11,7 @@
 @implementation Sando
 @dynamic name,price,pic;
 
+
 +(NSString *)parseClassName
 {
     NSString *sando = @"Sando";
@@ -20,6 +21,16 @@
 + (void)registerSubclass
 {
     [self registerSubclass];
+}
+
++ (void)queryForAllSandoWithCompletion:(void (^)(NSArray *, NSError *))complete
+{
+    PFQuery *query = [Sando query];
+    [query includeKey:@"shop"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        complete(objects, error);
+    }];
+    
 }
 
 @end

@@ -12,6 +12,10 @@
 
 @property NSString *name;
 @property NSNumber *price;
-@property NSData *pic;
+@property PFFile *pic;
+
++ (void)queryForAllSandoWithCompletion:(void (^)(NSArray *, NSError *))complete;
+
++ (void)queryForAllSandosWithCompletion:(void(^)(NSArray *resultsArray, NSError *error))complete;
 
 @end
