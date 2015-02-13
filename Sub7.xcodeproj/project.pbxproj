@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F1270A01A8D331E0045090D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F12709F1A8D331E0045090D /* UIKit.framework */; };
 		2F1270A21A8D33440045090D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1270A11A8D33440045090D /* Foundation.framework */; };
-		2F1270A61A8D3C100045090D /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1270A51A8D3C100045090D /* iCarousel.m */; };
+		2F1270B01A8EB9A00045090D /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1270AF1A8EB9A00045090D /* iCarousel.m */; };
 		5775F9041A8BEC1A00B91A00 /* Sando.m in Sources */ = {isa = PBXBuildFile; fileRef = 5775F9011A8BEC1A00B91A00 /* Sando.m */; };
 		5775F9051A8BEC1A00B91A00 /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5775F9031A8BEC1A00B91A00 /* Shop.m */; };
 		578C811F1A8E874100B75827 /* CustomSandoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 578C811E1A8E874100B75827 /* CustomSandoAnnotation.m */; };
@@ -57,8 +57,8 @@
 /* Begin PBXFileReference section */
 		2F12709F1A8D331E0045090D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2F1270A11A8D33440045090D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		2F1270A41A8D3C100045090D /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iCarousel.h; path = "../../../../../Downloads/iCarousel-master/iCarousel/iCarousel.h"; sourceTree = "<group>"; };
-		2F1270A51A8D3C100045090D /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iCarousel.m; path = "../../../../../Downloads/iCarousel-master/iCarousel/iCarousel.m"; sourceTree = "<group>"; };
+		2F1270AE1A8EB9A00045090D /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		2F1270AF1A8EB9A00045090D /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		5775F9001A8BEC1A00B91A00 /* Sando.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sando.h; sourceTree = "<group>"; };
 		5775F9011A8BEC1A00B91A00 /* Sando.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sando.m; sourceTree = "<group>"; };
 		5775F9021A8BEC1A00B91A00 /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
@@ -143,13 +143,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F1270A31A8D3BEE0045090D /* iCarousel */ = {
+		2F1270AD1A8EB97B0045090D /* iCarousel */ = {
 			isa = PBXGroup;
 			children = (
-				2F1270A41A8D3C100045090D /* iCarousel.h */,
-				2F1270A51A8D3C100045090D /* iCarousel.m */,
+				2F1270AE1A8EB9A00045090D /* iCarousel.h */,
+				2F1270AF1A8EB9A00045090D /* iCarousel.m */,
 			);
-			name = iCarousel;
+			path = iCarousel;
 			sourceTree = "<group>";
 		};
 		5775F9061A8C526E00B91A00 /* Model */ = {
@@ -207,11 +207,11 @@
 				7A8A1AA31A894275006642F1 /* AppDelegate.m */,
 				5775F9071A8C529200B91A00 /* View */,
 				7A8A1AAB1A894275006642F1 /* Main.storyboard */,
+				2F1270AD1A8EB97B0045090D /* iCarousel */,
 				5775F9061A8C526E00B91A00 /* Model */,
 				7A8A1AAE1A894275006642F1 /* Images.xcassets */,
 				7A8A1AB01A894275006642F1 /* LaunchScreen.xib */,
 				7A8A1AA51A894275006642F1 /* Sub7.xcdatamodeld */,
-				2F1270A31A8D3BEE0045090D /* iCarousel */,
 				7A8A1A9E1A894275006642F1 /* Supporting Files */,
 			);
 			path = Sub7;
@@ -363,8 +363,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AA7F5CA1A8B095700946EEE /* CustomFlowLayout.m in Sources */,
-				2F1270A61A8D3C100045090D /* iCarousel.m in Sources */,
 				7A8A1AA41A894275006642F1 /* AppDelegate.m in Sources */,
 				7A8A1AA11A894275006642F1 /* main.m in Sources */,
 				7A0DD5C61A8D2CC100F2DA02 /* ShopEditViewController.m in Sources */,
@@ -374,6 +372,7 @@
 				7AA7F5D01A8B117200946EEE /* MapDetailViewController.m in Sources */,
 				7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */,
 				578C811F1A8E874100B75827 /* CustomSandoAnnotation.m in Sources */,
+				2F1270B01A8EB9A00045090D /* iCarousel.m in Sources */,
 				7AA7F5CD1A8B10FE00946EEE /* DetailViewController.m in Sources */,
 				5775F9041A8BEC1A00B91A00 /* Sando.m in Sources */,
 			);
