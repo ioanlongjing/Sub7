@@ -22,6 +22,14 @@
     [self registerSubclass];
 }
 
-
++ (void)queryForAllSandosWithCompletion:(void(^)(NSArray *, NSError *))complete
+{
+    PFQuery *query = [Sando query];
+    [query includeKey:@"shop"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        complete(objects, error);
+    }];
+    
+}
 
 @end

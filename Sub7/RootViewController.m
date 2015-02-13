@@ -17,9 +17,10 @@
 @property NSMutableArray *sandwichImages;
 @property NSMutableArray *shopNames;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property Sando *sando;
-@property Shop *shop;
-@property PFObject *sub;
+//@property Sando *sando;
+//@property Shop *shop;
+//@property PFObject *sub;
+@property NSArray *subs;
 @end
 
 @implementation RootViewController
@@ -27,6 +28,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+//    self.subs = [Shop queryForAllShopsWithCompletion];
+    [Shop queryForAllShopsWithCompletion:^(NSArray *resultsArray, NSError *error) {
+        if (!error) {
+            self.subs = resultsArray;
+        }
+    }];
     
 //    
 //    self.sandwichImages = [NSMutableArray new];
@@ -41,18 +49,18 @@
 //    [self.sandwichImages addObject:[UIImage imageNamed:@"09.png"]];
 //    [self.sandwichImages addObject:[UIImage imageNamed:@"10.png"]];
 
-    Sando *sando = [Sando object];
-    Shop *shop = [Shop object];
+//    Sando *sando = [Sando object];
+//    Shop *shop = [Shop object];
+//
+//    self.sub = [PFObject objectWithClassName:@"Sando"];
+//    self.sub[@"name"] = @"BLT";
+//    self.sub[@"price"] = @234;
 
-    self.sub = [PFObject objectWithClassName:@"Sando"];
-    self.sub[@"name"] = @"BLT";
-    self.sub[@"price"] = @234;
 
-
-    PFRelation *relation = [shop relationForKey:@"createdBy"];
-    [relation addObject:sando];
-
-    [self.sub saveInBackground];
+//    PFRelation *relation = [shop relationForKey:@"createdBy"];
+//    [relation addObject:sando];
+//
+//    [self.sub saveInBackground];
 //    PFQuery *query = [Sando query];
 //    [query whereKey:@"createdBy" equalTo:self.shop.name];
 //    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)

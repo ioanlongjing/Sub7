@@ -10,6 +10,7 @@
 
 @interface Shop : PFObject <PFSubclassing>
 + (NSString *)parseClassName;
++ (void)queryForAllShopsWithCompletion:(void (^)(NSArray *resultsArray, NSError *error))complete;
 
 @property NSString *name;
 @property NSString *address;

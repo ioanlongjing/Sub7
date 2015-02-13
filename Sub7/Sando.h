@@ -15,4 +15,6 @@
 @property NSData *pic;
 @property NSMutableArray *sandoNames;
 
++ (void)queryForAllSandosWithCompletion:(void(^)(NSArray *resultsArray, NSError *error))complete;
+
 @end
