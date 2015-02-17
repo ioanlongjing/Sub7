@@ -6,25 +6,24 @@
 //  Copyright (c) 2015 Clint Chilcott. All rights reserved.
 //
 
-#import "Sando.h"
+#import "Sandwich.h"
 
-@implementation Sando
-@dynamic name,price,pic,sandoNames;
+@implementation Sandwich
+@dynamic name,price,image,stockIngredients;
 
-+(NSString *)parseClassName
++ (NSString *)parseClassName
 {
-    NSString *sando = @"Sando";
-    return sando;
+    NSString *sandwich = @"Sandwich";
+    return sandwich;
 }
 
 + (void)registerSubclass
 {
     [self registerSubclass];
 }
-
-+ (void)queryForAllSandosWithCompletion:(void(^)(NSArray *, NSError *))complete
++ (void)queryForAllSandwichesWithCompletion:(void(^)(NSArray *resultsArray, NSError *error))complete
 {
-    PFQuery *query = [Sando query];
+    PFQuery *query = [Sandwich query];
     [query includeKey:@"shop"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         complete(objects, error);

@@ -7,21 +7,15 @@
 //
 
 #import "RootViewController.h"
-#import "CustomCollectionViewCell.h"
 #import <Parse/Parse.h>
-#import "Sando.h"
+#import "Sandwich.h"
 #import "Shop.h"
 #import "TableViewCell.h"
 
 
 @interface RootViewController () <UITableViewDataSource, UITableViewDelegate>
 @property NSMutableArray *sandwichImages;
-@property NSMutableArray *shopNames;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-//@property Sando *sando;
-//@property Shop *shop;
-//@property PFObject *sub;
-@property NSArray *subs;
+@property NSArray *allSandwiches;
 @end
 
 @implementation RootViewController
@@ -30,73 +24,41 @@
 {
     [super viewDidLoad];
     
-//    self.subs = [Shop queryForAllShopsWithCompletion];
-    [Shop queryForAllShopsWithCompletion:^(NSArray *resultsArray, NSError *error) {
-        if (!error) {
-            self.subs = resultsArray;
-        }
+    
+    [Sandwich queryForAllSandwichesWithCompletion:^(NSArray *resultsArray, NSError *error) {
+        self.allSandwiches = resultsArray;
+        NSLog(@"%@", self.allSandwiches);
     }];
     
     
-    self.sandwichImages = [NSMutableArray new];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"01.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"02.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"03.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"04.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"05.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"06.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"07.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"08.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"09.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"10.png"]];
-
-//    Sando *sando = [Sando object];
-//    Shop *shop = [Shop object];
-//
-//    self.sub = [PFObject objectWithClassName:@"Sando"];
-//    self.sub[@"name"] = @"BLT";
-//    self.sub[@"price"] = @234;
-
-
-//    PFRelation *relation = [shop relationForKey:@"createdBy"];
-//    [relation addObject:sando];
-//
-//    [self.sub saveInBackground];
-//    PFQuery *query = [Sando query];
-//    [query whereKey:@"createdBy" equalTo:self.shop.name];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-//     {
-//         for (Shop *shop in objects)
-//         {
-//             [self.shopNames addObject:shop];
-//         }
-//         [self.collectionView reloadData];
-//     }];
-//    [sando saveInBackground];
-
-        //[self.collectionView setPagingEnabled:YES];
+    
+    
+//    self.sandwichImages = [NSMutableArray new];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"01.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"02.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"03.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"04.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"05.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"06.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"07.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"08.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"09.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"10.png"]];
 
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    return cell;
+}
 
-//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-//{
-//    
-//    return self.sandwichImages.count;
-//}
-
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    
-////    cell = UITableViewCell
-//    
-//    return cell;
-//}
-
-//-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    return self.sandwichImages.count;
-//}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.sandwichImages.count;
+}
 
 //- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 //{

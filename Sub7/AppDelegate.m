@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "Sandwich.h"
 
 @interface AppDelegate ()
 
@@ -20,10 +21,11 @@
     // Override point for customization after application launch.
 
     [Parse enableLocalDatastore];
-
+    
+    [Sandwich registerSubclass];
     // Initialize Parse.
-    [Parse setApplicationId:@"NkuDqUi814oiz79AV2jrujixxqaGBvzn5CaDkwpg"
-                  clientKey:@"1leeRzx3iVi1mxPEZm9nve7pRKBjPS1cYAOqx6j4"];
+    [Parse setApplicationId:@"Ip0P6pVeB41g0c5oBzH5pT407mYjI1CHbKwg830r"
+                  clientKey:@"vgZmo10Emwx9t1DGtwcG7BIZ3i5HxygJUkoSwpEx"];
 
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
