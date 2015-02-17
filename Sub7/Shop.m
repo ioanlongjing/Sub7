@@ -25,7 +25,7 @@
 
 
 
-+ (void)queryForAllShopsWithCompletion:(void (^)(NSArray *, NSError *))complete
++ (void)queryForAllShopsWithCompletion:(void (^)(NSArray *resultsArray, NSError *error))complete
 {
     NSMutableArray *objectArray = [NSMutableArray new];
     PFQuery *query = [Shop query];

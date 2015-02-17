@@ -10,7 +10,8 @@
 		2F1270A01A8D331E0045090D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F12709F1A8D331E0045090D /* UIKit.framework */; };
 		2F1270A21A8D33440045090D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1270A11A8D33440045090D /* Foundation.framework */; };
 		2F1270B01A8EB9A00045090D /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1270AF1A8EB9A00045090D /* iCarousel.m */; };
-		5775F9041A8BEC1A00B91A00 /* Sando.m in Sources */ = {isa = PBXBuildFile; fileRef = 5775F9011A8BEC1A00B91A00 /* Sando.m */; };
+		2F1270B61A9322120045090D /* FindCurrentLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1270B51A9322120045090D /* FindCurrentLocationViewController.m */; };
+		2F1270B91A93AEC80045090D /* Sub.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1270B81A93AEC80045090D /* Sub.m */; };
 		5775F9051A8BEC1A00B91A00 /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5775F9031A8BEC1A00B91A00 /* Shop.m */; };
 		578C811F1A8E874100B75827 /* CustomSandoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 578C811E1A8E874100B75827 /* CustomSandoAnnotation.m */; };
 		57D69F111A8AE39400307834 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F101A8AE39400307834 /* AudioToolbox.framework */; };
@@ -59,8 +60,10 @@
 		2F1270A11A8D33440045090D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2F1270AE1A8EB9A00045090D /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		2F1270AF1A8EB9A00045090D /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
-		5775F9001A8BEC1A00B91A00 /* Sando.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sando.h; sourceTree = "<group>"; };
-		5775F9011A8BEC1A00B91A00 /* Sando.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sando.m; sourceTree = "<group>"; };
+		2F1270B41A9322120045090D /* FindCurrentLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindCurrentLocationViewController.h; sourceTree = "<group>"; };
+		2F1270B51A9322120045090D /* FindCurrentLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindCurrentLocationViewController.m; sourceTree = "<group>"; };
+		2F1270B71A93AEC80045090D /* Sub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sub.h; sourceTree = "<group>"; };
+		2F1270B81A93AEC80045090D /* Sub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sub.m; sourceTree = "<group>"; };
 		5775F9021A8BEC1A00B91A00 /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
 		5775F9031A8BEC1A00B91A00 /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
 		578C811D1A8E874100B75827 /* CustomSandoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSandoAnnotation.h; sourceTree = "<group>"; };
@@ -155,10 +158,10 @@
 		5775F9061A8C526E00B91A00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2F1270B71A93AEC80045090D /* Sub.h */,
+				2F1270B81A93AEC80045090D /* Sub.m */,
 				578C811D1A8E874100B75827 /* CustomSandoAnnotation.h */,
 				578C811E1A8E874100B75827 /* CustomSandoAnnotation.m */,
-				5775F9001A8BEC1A00B91A00 /* Sando.h */,
-				5775F9011A8BEC1A00B91A00 /* Sando.m */,
 				5775F9021A8BEC1A00B91A00 /* Shop.h */,
 				5775F9031A8BEC1A00B91A00 /* Shop.m */,
 			);
@@ -170,6 +173,8 @@
 			children = (
 				7A8A1AA81A894275006642F1 /* RootViewController.h */,
 				7A8A1AA91A894275006642F1 /* RootViewController.m */,
+				2F1270B41A9322120045090D /* FindCurrentLocationViewController.h */,
+				2F1270B51A9322120045090D /* FindCurrentLocationViewController.m */,
 				7AA7F5CB1A8B10FE00946EEE /* DetailViewController.h */,
 				7AA7F5CC1A8B10FE00946EEE /* DetailViewController.m */,
 				7AA7F5D11A8B11AD00946EEE /* CustoSandoViewController.h */,
@@ -373,8 +378,9 @@
 				7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */,
 				578C811F1A8E874100B75827 /* CustomSandoAnnotation.m in Sources */,
 				2F1270B01A8EB9A00045090D /* iCarousel.m in Sources */,
+				2F1270B61A9322120045090D /* FindCurrentLocationViewController.m in Sources */,
+				2F1270B91A93AEC80045090D /* Sub.m in Sources */,
 				7AA7F5CD1A8B10FE00946EEE /* DetailViewController.m in Sources */,
-				5775F9041A8BEC1A00B91A00 /* Sando.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

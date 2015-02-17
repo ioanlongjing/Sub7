@@ -12,13 +12,13 @@
 + (NSString *)parseClassName;
 + (void)queryForAllShopsWithCompletion:(void (^)(NSArray *resultsArray, NSError *error))complete;
 
-@property NSString *name;
-@property NSString *address;
-@property NSString *city;
-@property NSString *state;
-@property NSNumber *zip;
+@property (retain) NSString *name;
+@property (retain) NSString *address;
+@property (retain) NSString *city;
+@property (retain) NSString *state;
+@property (retain) NSNumber *zip;
 @property BOOL *cashOnly;
-@property NSMutableArray *shopsArray;
+@property (retain) NSMutableArray *shopsArray;
 
 
 @end

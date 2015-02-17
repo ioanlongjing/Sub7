@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "iCarousel.h"
+#import <MapKit/MapKit.h>
 
-@interface RootViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
+
+@interface RootViewController : UIViewController <iCarouselDataSource, iCarouselDelegate, MKMapViewDelegate, CLLocationManagerDelegate>
 
 
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
+@property CLLocation *currentLocation;
+
 
 @end
 

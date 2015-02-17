@@ -8,18 +8,11 @@
 
 #import "CustomSandoAnnotation.h"
 #import <Parse/Parse.h>
-#import "Sando.h"
 
 
 @implementation CustomSandoAnnotation
 
 
-+(void)getShopLocationWithCompletionHandler:(void(^)(NSArray *array, NSError *error))complete
-{
-    PFQuery *query = [Sando query];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        complete(objects,error);
-    }];
-}
+
 
 @end

@@ -12,7 +12,6 @@
 
 #import "MapDetailViewController.h"
 #import <MapKit/MapKit.h>
-#import "Sando.h"
 #import "Shop.h"
 
 @interface MapDetailViewController () <MKMapViewDelegate>

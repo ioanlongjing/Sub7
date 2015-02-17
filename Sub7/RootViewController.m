@@ -8,8 +8,8 @@
 
 #import "RootViewController.h"
 #import <Parse/Parse.h>
-#import "Sando.h"
 #import "Shop.h"
+#import "Sub.h"
 
 
 @interface RootViewController () <iCarouselDelegate, iCarouselDataSource>
@@ -17,7 +17,7 @@
 @property NSMutableArray *shopNames;
 @property NSArray *shopArray;
 @property NSArray *sandoObject;
-@property Sando *sando;
+@property NSArray *sandwiches;
 @property Shop *shop;
 @end
 
@@ -28,8 +28,35 @@
 {
     [super viewDidLoad];
     
+    
+    
     self.carousel.type = iCarouselTypeRotary;
     
+    PFQuery *query = [PFQuery queryWithClassName:@"Sub"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        Sub *sub = objects.firstObject;
+        NSLog(@"%@", sub.name);
+        for (PFObject *f in objects)
+        {
+            NSLog(@"%@", f);
+
+        }
+        self.sandwiches = objects;
+    }];
+    
+//    [self createShopPointer];
+    
+    
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        NSLog(@"%@", objects);
+//    }];
+     
+    
+    
+//    [Sandwich queryForSandwiches:^(NSArray *resultsArray, NSError *error) {
+//        NSLog(@"%@", resultsArray);
+//    }];
 
     
 //    // Test Parse Connection
@@ -39,23 +66,37 @@
     
     
     
-    self.sandwichImages = [NSMutableArray new];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"01.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"02.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"03.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"04.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"05.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"06.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"07.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"08.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"09.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"10.png"]];
-    
+//    self.sandwichImages = [NSMutableArray new];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"01.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"02.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"03.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"04.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"05.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"06.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"07.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"08.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"09.png"]];
+//    [self.sandwichImages addObject:[UIImage imageNamed:@"10.png"]];
+//    
    
 
-    [self.carousel reloadData];
+//    [self.carousel reloadData];
     
 }
+//-(void)createShopPointer {
+//    PFQuery *query = [PFQuery queryWithClassName:@"Shop"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        Shop *shop = objects.firstObject;
+//        [self setArray:shop];
+//    }];
+//
+//}
+//
+//-(void)setArray:(Shop *)theShop {
+//    Sub *newSub = [Sub new];
+//    newSub.stockIngredients = [NSMutableArray arrayWithObjects:theShop, nil];
+//    [newSub saveInBackground];
+//}
 
     //[self.collectionView setPagingEnabled:YES];
 //    Sando *sando = [Sando object];
@@ -135,7 +176,7 @@
         //don't do anything specific to the index within
         //this `if (view == nil) {...}` statement because the view will be
         //recycled and used with other index values later
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300.0f, 300.0f)];
+        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 350.0f, 350.0f)];
         ((UIImageView *)view).image = [self.sandwichImages objectAtIndex:index];
         view.contentMode = UIViewContentModeScaleAspectFit;
         
