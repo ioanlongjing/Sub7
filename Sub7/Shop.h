@@ -10,7 +10,6 @@
 
 @interface Shop : PFObject <PFSubclassing>
 + (NSString *)parseClassName;
-+ (void)queryForAllShopsWithCompletion:(void (^)(NSArray *resultsArray, NSError *error))complete;
 
 @property (retain) NSString *name;
 @property (retain) NSString *address;
@@ -19,6 +18,7 @@
 @property (retain) NSNumber *zip;
 @property BOOL *cashOnly;
 @property (retain) NSMutableArray *shopsArray;
+@property (retain) PFGeoPoint *location;
 
 
 @end

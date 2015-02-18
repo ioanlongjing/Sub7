@@ -44,103 +44,28 @@
         }
         self.sandwiches = objects;
     }];
-    
-//    [self createShopPointer];
-    
-    
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        NSLog(@"%@", objects);
-//    }];
-     
-    
-    
-//    [Sandwich queryForSandwiches:^(NSArray *resultsArray, NSError *error) {
-//        NSLog(@"%@", resultsArray);
-//    }];
 
     
-//    // Test Parse Connection
-//    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-//    testObject[@"foo"] = @"bar";
-//    [testObject saveInBackground];
     
     
+    self.sandwichImages = [NSMutableArray new];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"01.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"02.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"03.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"04.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"05.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"06.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"07.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"08.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"09.png"]];
+    [self.sandwichImages addObject:[UIImage imageNamed:@"10.png"]];
     
-//    self.sandwichImages = [NSMutableArray new];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"01.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"02.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"03.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"04.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"05.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"06.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"07.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"08.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"09.png"]];
-//    [self.sandwichImages addObject:[UIImage imageNamed:@"10.png"]];
-//    
    
 
-//    [self.carousel reloadData];
+    [self.carousel reloadData];
     
 }
-//-(void)createShopPointer {
-//    PFQuery *query = [PFQuery queryWithClassName:@"Shop"];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        Shop *shop = objects.firstObject;
-//        [self setArray:shop];
-//    }];
-//
-//}
-//
-//-(void)setArray:(Shop *)theShop {
-//    Sub *newSub = [Sub new];
-//    newSub.stockIngredients = [NSMutableArray arrayWithObjects:theShop, nil];
-//    [newSub saveInBackground];
-//}
 
-    //[self.collectionView setPagingEnabled:YES];
-//    Sando *sando = [Sando object];
-//    Shop *shop = [Shop object];
-//
-//    self.sub = [PFObject objectWithClassName:@"Sando"];
-//    self.sub[@"name"] = @"BLT";
-//    self.sub[@"price"] = @234;
-
-//    PFRelation *relation = [shop relationForKey:@"createdBy"];
-//    [relation addObject:sando];
-
-//    [sando queryForAllSandoWithCompletion:^(NSArray *array, NSError *error) {
-//        if (!error)
-//        {
-//            self.sandoObject = [NSArray arrayWithArray:array];
-//            [self.collectionView reloadData];
-//        }
-//        else
-//        {
-//            NSLog(@"Query Failed %@", error.localizedDescription);
-//        }
-//            }];
-//
-//    [sando saveInBackground];
-//}
-#pragma mark - Print Parse Objects
-//    Sando *objectX = (Sando *)self.sandoObject[indexPath.item];
-//
-//    NSString * nameX;
-//    nameX = objectX[@"name"];
-//    NSNumber * numberX;
-//    numberX = objectX[@"price"];
-//
-//    cell.sandoNameLabel.text = nameX;
-//    cell.sandoPriceLabel.text = [NSString stringWithFormat:@"%@",numberX];
-//
-//    //THIS IS THE IMAGE FEATURE,
-//    //    PFFile *sandoImage = object.pic;
-//    //    [sandoImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error)
-//    //    {
-//    //        UIImage *image = [UIImage imageWithData:data];
-//    //        cell.imageView.image = image;
-//    //    }];
 
 #pragma -----------------------------------Carousel Delegate Methods----------------------------------------------
 

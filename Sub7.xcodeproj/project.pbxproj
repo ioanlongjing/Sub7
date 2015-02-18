@@ -13,7 +13,6 @@
 		2F1270B61A9322120045090D /* FindCurrentLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1270B51A9322120045090D /* FindCurrentLocationViewController.m */; };
 		2F1270B91A93AEC80045090D /* Sub.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1270B81A93AEC80045090D /* Sub.m */; };
 		5775F9051A8BEC1A00B91A00 /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5775F9031A8BEC1A00B91A00 /* Shop.m */; };
-		578C811F1A8E874100B75827 /* CustomSandoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 578C811E1A8E874100B75827 /* CustomSandoAnnotation.m */; };
 		57D69F111A8AE39400307834 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F101A8AE39400307834 /* AudioToolbox.framework */; };
 		57D69F131A8AE39E00307834 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F121A8AE39E00307834 /* CFNetwork.framework */; };
 		57D69F151A8AE3AE00307834 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F141A8AE3AE00307834 /* CoreGraphics.framework */; };
@@ -66,8 +65,6 @@
 		2F1270B81A93AEC80045090D /* Sub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sub.m; sourceTree = "<group>"; };
 		5775F9021A8BEC1A00B91A00 /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
 		5775F9031A8BEC1A00B91A00 /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
-		578C811D1A8E874100B75827 /* CustomSandoAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSandoAnnotation.h; sourceTree = "<group>"; };
-		578C811E1A8E874100B75827 /* CustomSandoAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSandoAnnotation.m; sourceTree = "<group>"; };
 		57D69F101A8AE39400307834 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		57D69F121A8AE39E00307834 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		57D69F141A8AE3AE00307834 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -160,8 +157,6 @@
 			children = (
 				2F1270B71A93AEC80045090D /* Sub.h */,
 				2F1270B81A93AEC80045090D /* Sub.m */,
-				578C811D1A8E874100B75827 /* CustomSandoAnnotation.h */,
-				578C811E1A8E874100B75827 /* CustomSandoAnnotation.m */,
 				5775F9021A8BEC1A00B91A00 /* Shop.h */,
 				5775F9031A8BEC1A00B91A00 /* Shop.m */,
 			);
@@ -376,7 +371,6 @@
 				5775F9051A8BEC1A00B91A00 /* Shop.m in Sources */,
 				7AA7F5D01A8B117200946EEE /* MapDetailViewController.m in Sources */,
 				7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */,
-				578C811F1A8E874100B75827 /* CustomSandoAnnotation.m in Sources */,
 				2F1270B01A8EB9A00045090D /* iCarousel.m in Sources */,
 				2F1270B61A9322120045090D /* FindCurrentLocationViewController.m in Sources */,
 				2F1270B91A93AEC80045090D /* Sub.m in Sources */,

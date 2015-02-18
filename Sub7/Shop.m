@@ -10,7 +10,14 @@
 #import <Parse/PFObject+Subclass.h>
 
 @implementation Shop
-@dynamic name,address,city,state,zip,cashOnly,shopsArray;
+@dynamic name;
+@dynamic address;
+@dynamic city;
+@dynamic state;
+@dynamic zip;
+@dynamic cashOnly;
+@dynamic shopsArray;
+@dynamic location;
 
 + (void)load
 {
@@ -24,16 +31,6 @@
 }
 
 
-
-+ (void)queryForAllShopsWithCompletion:(void (^)(NSArray *resultsArray, NSError *error))complete
-{
-    NSMutableArray *objectArray = [NSMutableArray new];
-    PFQuery *query = [Shop query];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        [objectArray addObject:objectArray];
-        complete(objects, error);
-    }];
-}
 
 
 @end

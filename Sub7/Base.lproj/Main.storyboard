@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CsV-6k-LnL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cXm-mv-GgJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Find Current Location View Controller-->
         <scene sceneID="LAz-IW-fgM">
             <objects>
-                <viewController id="cXm-mv-GgJ" sceneMemberID="viewController">
+                <viewController id="cXm-mv-GgJ" customClass="FindCurrentLocationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oyj-kL-h83"/>
                         <viewControllerLayoutGuide type="bottom" id="2Tr-IT-S8m"/>
@@ -46,10 +46,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="show" id="gil-oJ-c9p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iB5-Ie-TNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-504" y="137"/>
+            <point key="canvasLocation" x="1207.5" y="859"/>
         </scene>
         <!--Pick Your Sub-->
         <scene sceneID="ufC-wZ-h7g">
@@ -511,7 +514,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oej-bs-edG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2787" y="-555"/>
+            <point key="canvasLocation" x="2808" y="-556"/>
         </scene>
         <!--Custo Sando View Controller-->
         <scene sceneID="Z0C-tL-3wn">
@@ -614,7 +617,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HgT-bB-Y0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2019" y="868"/>
+            <point key="canvasLocation" x="2115" y="866"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tsC-SC-X5h">
@@ -639,4 +642,7 @@
     <resources>
         <image name="01" width="915" height="915"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gil-oJ-c9p"/>
+    </inferredMetricsTieBreakers>
 </document>

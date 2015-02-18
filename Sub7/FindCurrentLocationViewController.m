@@ -9,12 +9,14 @@
 #import "FindCurrentLocationViewController.h"
 #import <MapKit/MapKit.h>
 #import "RootViewController.h"
+#import <Parse/Parse.h> 
 
 
 @interface FindCurrentLocationViewController ()<CLLocationManagerDelegate, MKMapViewDelegate>
 
 @property CLLocationManager *locationManager;
-@property CLLocation *currentLocation;
+@property PFGeoPoint *currentLocation;
+@property NSArray *shopsNearby;
 
 
 @end
@@ -24,24 +26,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.locationManager.delegate = self;
-
-}
-
--(void) updateCurrentLocation {
     [self.locationManager requestWhenInUseAuthorization];
-    [self.locationManager startUpdatingLocation];
-}
-
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    [self.locationManager stopUpdatingLocation];
-    self.currentLocation = locations.firstObject;
     
+    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
+        self.currentLocation = geoPoint;
+        
+        PFQuery *query = [PFQuery queryWithClassName:@"Shop"];
+        [query whereKey:@"location" nearGeoPoint:self.currentLocation withinMiles:1.0];
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray *proximateShops, NSError *error) {
+            self.shopsNearby = proximateShops;
+            
+            PFQuery *newQuery = [PFQuery queryWithClassName:@"Sub"];
+            [newQuery whereKey:@"shop" containedIn:self.shopsNearby];
+        }];
+    }];
+    
+
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    RootViewController *rvc = segue.destinationViewController;
-    rvc.currentLocation = self.currentLocation;
-}
+
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    RootViewController *rvc = segue.destinationViewController;
+//    rvc.currentLocation = self.currentLocation;
+//}
 
 
 
