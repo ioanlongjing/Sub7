@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-#import "Sandwich.h"
+
 
 @interface AppDelegate ()
 
@@ -22,7 +22,7 @@
 
     [Parse enableLocalDatastore];
     
-    [Sandwich registerSubclass];
+    
     // Initialize Parse.
     [Parse setApplicationId:@"Ip0P6pVeB41g0c5oBzH5pT407mYjI1CHbKwg830r"
                   clientKey:@"vgZmo10Emwx9t1DGtwcG7BIZ3i5HxygJUkoSwpEx"];

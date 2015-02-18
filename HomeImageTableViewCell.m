@@ -1,14 +1,14 @@
 //
-//  TableViewCell.m
+//  HomeImageTableViewCell.m
 //  Sub7
 //
-//  Created by Clint Chilcott on 2/13/15.
+//  Created by Clint Chilcott on 2/17/15.
 //  Copyright (c) 2015 Clint Chilcott. All rights reserved.
 //
 
-#import "TableViewCell.h"
+#import "HomeImageTableViewCell.h"
 
-@implementation TableViewCell
+@implementation HomeImageTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code

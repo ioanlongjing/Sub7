@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5775F9041A8BEC1A00B91A00 /* Sandwich.m in Sources */ = {isa = PBXBuildFile; fileRef = 5775F9011A8BEC1A00B91A00 /* Sandwich.m */; };
-		5775F9051A8BEC1A00B91A00 /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5775F9031A8BEC1A00B91A00 /* Shop.m */; };
 		57D69F111A8AE39400307834 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F101A8AE39400307834 /* AudioToolbox.framework */; };
 		57D69F131A8AE39E00307834 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F121A8AE39E00307834 /* CFNetwork.framework */; };
 		57D69F151A8AE3AE00307834 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F141A8AE3AE00307834 /* CoreGraphics.framework */; };
@@ -21,7 +19,6 @@
 		57D69F231A8AE3F200307834 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F221A8AE3F200307834 /* libz.dylib */; };
 		57D69F251A8AE3FC00307834 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F241A8AE3FC00307834 /* libsqlite3.dylib */; };
 		7A0DD5C61A8D2CC100F2DA02 /* ShopEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DD5C51A8D2CC100F2DA02 /* ShopEditViewController.m */; };
-		7A0DD5D21A8E799200F2DA02 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DD5D11A8E799200F2DA02 /* TableViewCell.m */; };
 		7A8A1AA11A894275006642F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AA01A894275006642F1 /* main.m */; };
 		7A8A1AA41A894275006642F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AA31A894275006642F1 /* AppDelegate.m */; };
 		7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1AA51A894275006642F1 /* Sub7.xcdatamodeld */; };
@@ -30,6 +27,9 @@
 		7A8A1AAF1A894275006642F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8A1AAE1A894275006642F1 /* Images.xcassets */; };
 		7A8A1AB21A894275006642F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8A1AB01A894275006642F1 /* LaunchScreen.xib */; };
 		7A8A1ABE1A894275006642F1 /* Sub7Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1ABD1A894275006642F1 /* Sub7Tests.m */; };
+		7AA3E60A1A93D2A30045F105 /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA3E6071A93D2A30045F105 /* Shop.m */; };
+		7AA3E60B1A93D2A30045F105 /* Sub.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA3E6091A93D2A30045F105 /* Sub.m */; };
+		7AA3E60E1A93D5A20045F105 /* HomeImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA3E60D1A93D5A20045F105 /* HomeImageTableViewCell.m */; };
 		7AA7F5C31A8AF38400946EEE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5BE1A8AF38400946EEE /* Bolts.framework */; };
 		7AA7F5C41A8AF38400946EEE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5BF1A8AF38400946EEE /* Parse.framework */; };
 		7AA7F5C51A8AF38400946EEE /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5C01A8AF38400946EEE /* ParseCrashReporting.framework */; };
@@ -52,10 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5775F9001A8BEC1A00B91A00 /* Sandwich.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sandwich.h; sourceTree = "<group>"; };
-		5775F9011A8BEC1A00B91A00 /* Sandwich.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sandwich.m; sourceTree = "<group>"; };
-		5775F9021A8BEC1A00B91A00 /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
-		5775F9031A8BEC1A00B91A00 /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
 		57D69F101A8AE39400307834 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		57D69F121A8AE39E00307834 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		57D69F141A8AE3AE00307834 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,8 +65,6 @@
 		57D69F241A8AE3FC00307834 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		7A0DD5C41A8D2CC100F2DA02 /* ShopEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopEditViewController.h; sourceTree = "<group>"; };
 		7A0DD5C51A8D2CC100F2DA02 /* ShopEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopEditViewController.m; sourceTree = "<group>"; };
-		7A0DD5D01A8E799200F2DA02 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
-		7A0DD5D11A8E799200F2DA02 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		7A8A1A9B1A894275006642F1 /* Sub7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sub7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8A1A9F1A894275006642F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A8A1AA01A894275006642F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +79,12 @@
 		7A8A1AB71A894275006642F1 /* Sub7Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sub7Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8A1ABC1A894275006642F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A8A1ABD1A894275006642F1 /* Sub7Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sub7Tests.m; sourceTree = "<group>"; };
+		7AA3E6061A93D2A30045F105 /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
+		7AA3E6071A93D2A30045F105 /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
+		7AA3E6081A93D2A30045F105 /* Sub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sub.h; sourceTree = "<group>"; };
+		7AA3E6091A93D2A30045F105 /* Sub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sub.m; sourceTree = "<group>"; };
+		7AA3E60C1A93D5A20045F105 /* HomeImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeImageTableViewCell.h; path = ../HomeImageTableViewCell.h; sourceTree = "<group>"; };
+		7AA3E60D1A93D5A20045F105 /* HomeImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeImageTableViewCell.m; path = ../HomeImageTableViewCell.m; sourceTree = "<group>"; };
 		7AA7F5BE1A8AF38400946EEE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		7AA7F5BF1A8AF38400946EEE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		7AA7F5C01A8AF38400946EEE /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -137,10 +137,10 @@
 		5775F9061A8C526E00B91A00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5775F9001A8BEC1A00B91A00 /* Sandwich.h */,
-				5775F9011A8BEC1A00B91A00 /* Sandwich.m */,
-				5775F9021A8BEC1A00B91A00 /* Shop.h */,
-				5775F9031A8BEC1A00B91A00 /* Shop.m */,
+				7AA3E6061A93D2A30045F105 /* Shop.h */,
+				7AA3E6071A93D2A30045F105 /* Shop.m */,
+				7AA3E6081A93D2A30045F105 /* Sub.h */,
+				7AA3E6091A93D2A30045F105 /* Sub.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -187,8 +187,8 @@
 				7A8A1AA31A894275006642F1 /* AppDelegate.m */,
 				5775F9071A8C529200B91A00 /* View */,
 				7A8A1AAB1A894275006642F1 /* Main.storyboard */,
-				7A0DD5D01A8E799200F2DA02 /* TableViewCell.h */,
-				7A0DD5D11A8E799200F2DA02 /* TableViewCell.m */,
+				7AA3E60C1A93D5A20045F105 /* HomeImageTableViewCell.h */,
+				7AA3E60D1A93D5A20045F105 /* HomeImageTableViewCell.m */,
 				5775F9061A8C526E00B91A00 /* Model */,
 				7A8A1AAE1A894275006642F1 /* Images.xcassets */,
 				7A8A1AB01A894275006642F1 /* LaunchScreen.xib */,
@@ -342,17 +342,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA3E60B1A93D2A30045F105 /* Sub.m in Sources */,
 				7A8A1AA41A894275006642F1 /* AppDelegate.m in Sources */,
-				7A0DD5D21A8E799200F2DA02 /* TableViewCell.m in Sources */,
 				7A8A1AA11A894275006642F1 /* main.m in Sources */,
 				7A0DD5C61A8D2CC100F2DA02 /* ShopEditViewController.m in Sources */,
 				7A8A1AAA1A894275006642F1 /* RootViewController.m in Sources */,
+				7AA3E60A1A93D2A30045F105 /* Shop.m in Sources */,
 				7AA7F5D31A8B11AD00946EEE /* CustoSandoViewController.m in Sources */,
-				5775F9051A8BEC1A00B91A00 /* Shop.m in Sources */,
+				7AA3E60E1A93D5A20045F105 /* HomeImageTableViewCell.m in Sources */,
 				7AA7F5D01A8B117200946EEE /* MapDetailViewController.m in Sources */,
 				7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */,
 				7AA7F5CD1A8B10FE00946EEE /* DetailViewController.m in Sources */,
-				5775F9041A8BEC1A00B91A00 /* Sandwich.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,14 +8,16 @@
 
 #import "RootViewController.h"
 #import <Parse/Parse.h>
-#import "Sandwich.h"
+#import "Sub.h"
 #import "Shop.h"
-#import "TableViewCell.h"
+#import "HomeImageTableViewCell.h"
+
 
 
 @interface RootViewController () <UITableViewDataSource, UITableViewDelegate>
 @property NSMutableArray *sandwichImages;
 @property NSArray *allSandwiches;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation RootViewController
@@ -25,9 +27,9 @@
     [super viewDidLoad];
     
     
-    [Sandwich queryForAllSandwichesWithCompletion:^(NSArray *resultsArray, NSError *error) {
+    [Sub queryForAllSubsWithCompletion:^(NSArray *resultsArray, NSError *error) {
         self.allSandwiches = resultsArray;
-        NSLog(@"%@", self.allSandwiches);
+        [self.tableView reloadData];
     }];
     
     
@@ -50,14 +52,19 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    HomeImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    Sub *tempSub = [self.allSandwiches objectAtIndex:indexPath.row];
+    cell.subNameLabel.text = tempSub.name;
+    cell.priceLabel.text = [NSString stringWithFormat:@"$%.02f", [tempSub.price floatValue]];
+    cell.shopLabel.text = tempSub.shop.name;
     
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.sandwichImages.count;
+    return self.allSandwiches.count;
 }
 
 //- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
