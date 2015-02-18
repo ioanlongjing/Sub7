@@ -7,18 +7,15 @@
 //
 
 #import "RootViewController.h"
-#import <Parse/Parse.h>
 #import "Shop.h"
 #import "Sub.h"
 
 
 @interface RootViewController () <iCarouselDelegate, iCarouselDataSource>
+
 @property NSMutableArray *sandwichImages;
-@property NSMutableArray *shopNames;
-@property NSArray *shopArray;
-@property NSArray *sandoObject;
-@property NSArray *sandwiches;
-@property Shop *shop;
+@property PFFile *stockFile;
+
 @end
 
 @implementation RootViewController
@@ -27,41 +24,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
+    UIImage *subImage = [UIImage imageNamed:@"stock"];
+    NSData *data = UIImageJPEGRepresentation(subImage, 1.0);
+    self.stockFile = [PFFile fileWithData:data];
     
     self.carousel.type = iCarouselTypeRotary;
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Sub"];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        Sub *sub = objects.firstObject;
-        NSLog(@"%@", sub.name);
-        for (PFObject *f in objects)
-        {
-            NSLog(@"%@", f);
-
-        }
-        self.sandwiches = objects;
-    }];
-
-    
-    
-    
-    self.sandwichImages = [NSMutableArray new];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"01.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"02.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"03.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"04.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"05.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"06.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"07.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"08.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"09.png"]];
-    [self.sandwichImages addObject:[UIImage imageNamed:@"10.png"]];
-    
-   
-
     [self.carousel reloadData];
     
 }
@@ -70,7 +37,7 @@
 #pragma -----------------------------------Carousel Delegate Methods----------------------------------------------
 
 -(NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
-    return self.sandwichImages.count;
+    return self.subs.count;
 }
 
 - (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
@@ -101,9 +68,31 @@
         //don't do anything specific to the index within
         //this `if (view == nil) {...}` statement because the view will be
         //recycled and used with other index values later
+        
         view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 350.0f, 350.0f)];
-        ((UIImageView *)view).image = [self.sandwichImages objectAtIndex:index];
-        view.contentMode = UIViewContentModeScaleAspectFit;
+        
+        Sub *sub = [self.subs objectAtIndex:index];
+        if (sub.imageFile) {
+            [sub.imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                if (!error) {
+                    UIImage *image = [UIImage imageWithData:data];
+                    ((UIImageView *)view).image = image;
+                    view.contentMode = UIViewContentModeScaleAspectFit;
+                }
+            }];
+        }
+        else {
+            sub.imageFile = self.stockFile;
+            [sub.imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                if (!error) {
+                    UIImage *image = [UIImage imageWithData:data];
+                    ((UIImageView *)view).image = image;
+                    view.contentMode = UIViewContentModeScaleAspectFit;
+                }
+            }];
+        }
+        
+        
         
 //        label = [[UILabel alloc] initWithFrame:view.bounds];
 //        label.backgroundColor = [UIColor clearColor];
@@ -131,7 +120,7 @@
 
 - (void)carousel:(__unused iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
 {
-    NSNumber *item = [self.sandwichImages objectAtIndex:index];
+    NSNumber *item = [self.subs objectAtIndex:index];
     [self performSegueWithIdentifier:@"DetailSeg" sender:self];
 }
 

@@ -47,7 +47,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="show" id="gil-oJ-c9p"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="pickSubSeg" id="8xe-vY-c6E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iB5-Ie-TNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -643,6 +643,6 @@
         <image name="01" width="915" height="915"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gil-oJ-c9p"/>
+        <segue reference="8xe-vY-c6E"/>
     </inferredMetricsTieBreakers>
 </document>

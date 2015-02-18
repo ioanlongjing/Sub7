@@ -17,6 +17,7 @@
 @property (retain) NSString *price;
 @property (retain) NSMutableArray *stockIngredients;
 @property (retain) Shop *shop;
+@property (retain) PFFile *imageFile;
 
 
 @end
