@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "DetailViewController.h"
 #import "Shop.h"
 #import "Sub.h"
 
@@ -14,6 +15,7 @@
 @interface RootViewController () <iCarouselDelegate, iCarouselDataSource>
 
 @property NSMutableArray *sandwichImages;
+@property Sub *tappedSub;
 @property PFFile *stockFile;
 
 @end
@@ -120,10 +122,14 @@
 
 - (void)carousel:(__unused iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
 {
-    NSNumber *item = [self.subs objectAtIndex:index];
+    self.tappedSub = [self.subs objectAtIndex:index];
     [self performSegueWithIdentifier:@"DetailSeg" sender:self];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    DetailViewController *dvc = segue.destinationViewController;
+    dvc.selectedSub = self.tappedSub;
+}
 
 
 @end
