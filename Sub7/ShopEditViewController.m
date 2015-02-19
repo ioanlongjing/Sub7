@@ -29,12 +29,12 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    self.selectedShop.name
-    self.selectedShop.address
-    self.selectedShop.city
-    self.selectedShop.state
-    self.selectedShop.zip
-    self.selectedShop.cashOnly
+//    self.selectedShop.name
+//    self.selectedShop.address
+//    self.selectedShop.city
+//    self.selectedShop.state
+//    self.selectedShop.zip
+//    self.selectedShop.cashOnly
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

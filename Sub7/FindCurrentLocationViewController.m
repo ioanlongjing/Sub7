@@ -39,6 +39,9 @@
             
             PFQuery *newQuery = [PFQuery queryWithClassName:@"Sub"];
             [newQuery whereKey:@"shop" containedIn:self.shopsNearby];
+            
+            
+            [self performSegueWithIdentifier:@"SearchEnded" sender:self];
         }];
     }];
     

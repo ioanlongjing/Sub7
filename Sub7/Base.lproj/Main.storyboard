@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="F9e-mM-tWA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cXm-mv-GgJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -18,25 +18,63 @@
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Mrr-yS-eof">
                                 <rect key="frame" x="-10" y="-10" width="20" height="20"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="182" y="281" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="LfL-7Z-wUT"/>
+                                    <constraint firstAttribute="height" constant="37" id="kA8-xm-xHc"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LfL-7Z-wUT"/>
+                                        <exclude reference="kA8-xm-xHc"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="LfL-7Z-wUT"/>
+                                        <include reference="kA8-xm-xHc"/>
+                                    </mask>
                                 </variation>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching for sandos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qU9-x2-cye">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching for Subs" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qU9-x2-cye">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="HPd-U8-qrZ"/>
+                                    <constraint firstAttribute="width" constant="164" id="OyP-GJ-XcS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="71" y="104" width="259" height="144"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="HPd-U8-qrZ"/>
+                                        <exclude reference="OyP-GJ-XcS"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="HPd-U8-qrZ"/>
+                                        <include reference="OyP-GJ-XcS"/>
+                                    </mask>
                                 </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Mrr-yS-eof" secondAttribute="centerX" id="8fS-FM-fCB"/>
+                            <constraint firstAttribute="centerY" secondItem="Mrr-yS-eof" secondAttribute="centerY" id="EBs-iP-aag"/>
+                            <constraint firstItem="Mrr-yS-eof" firstAttribute="top" secondItem="qU9-x2-cye" secondAttribute="bottom" constant="33" id="FuU-56-KCe"/>
+                            <constraint firstAttribute="centerX" secondItem="qU9-x2-cye" secondAttribute="centerX" id="yLK-9y-5y9"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Mrr-yS-eof"/>
                                 <exclude reference="qU9-x2-cye"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="yLK-9y-5y9"/>
+                                <exclude reference="8fS-FM-fCB"/>
+                                <exclude reference="EBs-iP-aag"/>
+                                <exclude reference="FuU-56-KCe"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -44,10 +82,16 @@
                                 <include reference="Mrr-yS-eof"/>
                                 <include reference="qU9-x2-cye"/>
                             </mask>
+                            <mask key="constraints">
+                                <include reference="yLK-9y-5y9"/>
+                                <include reference="8fS-FM-fCB"/>
+                                <include reference="EBs-iP-aag"/>
+                                <include reference="FuU-56-KCe"/>
+                            </mask>
                         </variation>
                     </view>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="show" id="gil-oJ-c9p"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="SearchEnded" id="gil-oJ-c9p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iB5-Ie-TNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -652,15 +696,6 @@
                                     <segue destination="NDk-I4-zAz" kind="show" identifier="DetailSegue" id="f6o-g7-3zb"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tUY-eW-TcD">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="dqU-LV-6Ae" id="7KE-BD-VNW"/>
-                                </connections>
-                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -672,7 +707,6 @@
                                 <exclude reference="byJ-P4-pGH"/>
                                 <exclude reference="2pn-Ng-ub4"/>
                                 <exclude reference="9dA-yf-wfu"/>
-                                <exclude reference="tUY-eW-TcD"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -684,7 +718,6 @@
                                 <include reference="byJ-P4-pGH"/>
                                 <include reference="2pn-Ng-ub4"/>
                                 <include reference="9dA-yf-wfu"/>
-                                <include reference="tUY-eW-TcD"/>
                             </mask>
                         </variation>
                     </view>
@@ -799,7 +832,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HgT-bB-Y0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2115" y="866"/>
+            <point key="canvasLocation" x="2937" y="859"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tsC-SC-X5h">
