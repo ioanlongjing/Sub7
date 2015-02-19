@@ -9,16 +9,20 @@
 #import <Parse/Parse.h>
 
 @interface Shop : PFObject <PFSubclassing>
-+ (NSString *)parseClassName;
+
 
 @property (retain) NSString *name;
 @property (retain) NSString *address;
 @property (retain) NSString *city;
 @property (retain) NSString *state;
 @property (retain) NSNumber *zip;
+@property (retain) NSString *phone;
 @property BOOL *cashOnly;
 @property (retain) NSMutableArray *shopsArray;
 @property (retain) PFGeoPoint *location;
+
++ (NSString *)parseClassName;
++ (void)queryForAllShopsWithCompletion:(void (^)(NSArray *resultsArray, NSError *error))complete;
 
 
 @end

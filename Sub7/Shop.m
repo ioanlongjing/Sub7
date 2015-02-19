@@ -15,6 +15,7 @@
 @dynamic city;
 @dynamic state;
 @dynamic zip;
+@dynamic phone;
 @dynamic cashOnly;
 @dynamic shopsArray;
 @dynamic location;
@@ -30,7 +31,15 @@
     return shop;
 }
 
-
++ (void)queryForAllShopsWithCompletion:(void (^)(NSArray *resultsArray, NSError *error))complete
+{
+    NSMutableArray *objectArray = [NSMutableArray new];
+    PFQuery *query = [Shop query];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [objectArray addObject:objectArray];
+        complete(objects, error);
+    }];
+}
 
 
 @end

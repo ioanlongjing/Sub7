@@ -23,4 +23,15 @@
     return @"Sub";
 }
 
++ (void)queryForSubsInShopWithCompletion:(void (^)(NSArray *resultsArray, NSError *error))complete shop:(Shop *)selectedShop
+{
+    NSMutableArray *objectArray = [NSMutableArray new];
+    PFQuery *query = [Sub query];
+    [query whereKey:@"shop" equalTo:selectedShop];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [objectArray addObject:objectArray];
+        complete(objects, error);
+    }];
+}
+
 @end

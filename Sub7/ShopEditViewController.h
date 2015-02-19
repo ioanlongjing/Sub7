@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Shop.h"
 
 @interface ShopEditViewController : UIViewController
+@property Shop *selectedShop;
 
 @end

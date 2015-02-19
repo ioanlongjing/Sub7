@@ -11,12 +11,12 @@
 
 @interface Sub : PFObject<PFSubclassing>
 
-+ (NSString *)parseClassName;
-
 @property (retain) NSString *name;
 @property (retain) NSString *price;
 @property (retain) NSMutableArray *stockIngredients;
 @property (retain) Shop *shop;
 
++ (NSString *)parseClassName;
++ (void)queryForSubsInShopWithCompletion:(void (^)(NSArray *resultsArray, NSError *error))complete shop:(Shop *)selectedShop;
 
 @end

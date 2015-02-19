@@ -33,6 +33,9 @@
 		7A8A1AAF1A894275006642F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8A1AAE1A894275006642F1 /* Images.xcassets */; };
 		7A8A1AB21A894275006642F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8A1AB01A894275006642F1 /* LaunchScreen.xib */; };
 		7A8A1ABE1A894275006642F1 /* Sub7Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A1ABD1A894275006642F1 /* Sub7Tests.m */; };
+		7A9F5DE31A955D54004F6395 /* AllShopsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F5DE21A955D54004F6395 /* AllShopsViewController.m */; };
+		7A9F5DE61A964F35004F6395 /* AllSubsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F5DE51A964F35004F6395 /* AllSubsViewController.m */; };
+		7A9F5DE91A965AB5004F6395 /* SubEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F5DE81A965AB5004F6395 /* SubEditViewController.m */; };
 		7AA7F5C31A8AF38400946EEE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5BE1A8AF38400946EEE /* Bolts.framework */; };
 		7AA7F5C41A8AF38400946EEE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5BF1A8AF38400946EEE /* Parse.framework */; };
 		7AA7F5C51A8AF38400946EEE /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5C01A8AF38400946EEE /* ParseCrashReporting.framework */; };
@@ -92,6 +95,12 @@
 		7A8A1AB71A894275006642F1 /* Sub7Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sub7Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8A1ABC1A894275006642F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A8A1ABD1A894275006642F1 /* Sub7Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sub7Tests.m; sourceTree = "<group>"; };
+		7A9F5DE11A955D54004F6395 /* AllShopsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllShopsViewController.h; sourceTree = "<group>"; };
+		7A9F5DE21A955D54004F6395 /* AllShopsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllShopsViewController.m; sourceTree = "<group>"; };
+		7A9F5DE41A964F35004F6395 /* AllSubsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllSubsViewController.h; sourceTree = "<group>"; };
+		7A9F5DE51A964F35004F6395 /* AllSubsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllSubsViewController.m; sourceTree = "<group>"; };
+		7A9F5DE71A965AB5004F6395 /* SubEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubEditViewController.h; sourceTree = "<group>"; };
+		7A9F5DE81A965AB5004F6395 /* SubEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubEditViewController.m; sourceTree = "<group>"; };
 		7AA7F5BE1A8AF38400946EEE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		7AA7F5BF1A8AF38400946EEE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		7AA7F5C01A8AF38400946EEE /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -166,6 +175,7 @@
 		5775F9071A8C529200B91A00 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7A9F5DE01A955D0C004F6395 /* Edit Shops & Subs */,
 				7A8A1AA81A894275006642F1 /* RootViewController.h */,
 				7A8A1AA91A894275006642F1 /* RootViewController.m */,
 				2F1270B41A9322120045090D /* FindCurrentLocationViewController.h */,
@@ -176,8 +186,6 @@
 				7AA7F5D21A8B11AD00946EEE /* CustoSandoViewController.m */,
 				7AA7F5CE1A8B117200946EEE /* MapDetailViewController.h */,
 				7AA7F5CF1A8B117200946EEE /* MapDetailViewController.m */,
-				7A0DD5C41A8D2CC100F2DA02 /* ShopEditViewController.h */,
-				7A0DD5C51A8D2CC100F2DA02 /* ShopEditViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -205,8 +213,8 @@
 			children = (
 				7A8A1AA21A894275006642F1 /* AppDelegate.h */,
 				7A8A1AA31A894275006642F1 /* AppDelegate.m */,
-				5775F9071A8C529200B91A00 /* View */,
 				7A8A1AAB1A894275006642F1 /* Main.storyboard */,
+				5775F9071A8C529200B91A00 /* View */,
 				2F1270AD1A8EB97B0045090D /* iCarousel */,
 				5775F9061A8C526E00B91A00 /* Model */,
 				7A8A1AAE1A894275006642F1 /* Images.xcassets */,
@@ -260,6 +268,21 @@
 				7A8A1ABC1A894275006642F1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7A9F5DE01A955D0C004F6395 /* Edit Shops & Subs */ = {
+			isa = PBXGroup;
+			children = (
+				7A9F5DE11A955D54004F6395 /* AllShopsViewController.h */,
+				7A9F5DE21A955D54004F6395 /* AllShopsViewController.m */,
+				7A0DD5C41A8D2CC100F2DA02 /* ShopEditViewController.h */,
+				7A0DD5C51A8D2CC100F2DA02 /* ShopEditViewController.m */,
+				7A9F5DE41A964F35004F6395 /* AllSubsViewController.h */,
+				7A9F5DE51A964F35004F6395 /* AllSubsViewController.m */,
+				7A9F5DE71A965AB5004F6395 /* SubEditViewController.h */,
+				7A9F5DE81A965AB5004F6395 /* SubEditViewController.m */,
+			);
+			name = "Edit Shops & Subs";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,8 +396,11 @@
 				7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */,
 				2F1270B01A8EB9A00045090D /* iCarousel.m in Sources */,
 				2F1270B61A9322120045090D /* FindCurrentLocationViewController.m in Sources */,
+				7A9F5DE31A955D54004F6395 /* AllShopsViewController.m in Sources */,
+				7A9F5DE61A964F35004F6395 /* AllSubsViewController.m in Sources */,
 				2F1270B91A93AEC80045090D /* Sub.m in Sources */,
 				7AA7F5CD1A8B10FE00946EEE /* DetailViewController.m in Sources */,
+				7A9F5DE91A965AB5004F6395 /* SubEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
