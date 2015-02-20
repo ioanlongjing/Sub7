@@ -49,7 +49,7 @@
     if ([segue.identifier isEqualToString:@"SelectedShop"]){
         dvc.selectedShop = [self.allShops objectAtIndex:[self.tableView indexPathForSelectedRow].row];
     } else if ([segue.identifier isEqualToString:@"AddShop"]) {
-        dvc.selectedShop = [Shop new];
+        dvc.selectedShop = nil;
     }
     
 }

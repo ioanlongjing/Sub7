@@ -176,10 +176,10 @@
 			isa = PBXGroup;
 			children = (
 				7A9F5DE01A955D0C004F6395 /* Edit Shops & Subs */,
-				7A8A1AA81A894275006642F1 /* RootViewController.h */,
-				7A8A1AA91A894275006642F1 /* RootViewController.m */,
 				2F1270B41A9322120045090D /* FindCurrentLocationViewController.h */,
 				2F1270B51A9322120045090D /* FindCurrentLocationViewController.m */,
+				7A8A1AA81A894275006642F1 /* RootViewController.h */,
+				7A8A1AA91A894275006642F1 /* RootViewController.m */,
 				7AA7F5CB1A8B10FE00946EEE /* DetailViewController.h */,
 				7AA7F5CC1A8B10FE00946EEE /* DetailViewController.m */,
 				7AA7F5D11A8B11AD00946EEE /* CustoSandoViewController.h */,
@@ -533,6 +533,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -551,6 +552,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

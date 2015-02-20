@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Sub.h"
 
 @interface DetailViewController : UIViewController
+
+@property Sub *selectedSub;
 
 @end

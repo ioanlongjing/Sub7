@@ -9,13 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "iCarousel.h"
 #import <MapKit/MapKit.h>
+#import <Parse/Parse.h>
+
 
 
 @interface RootViewController : UIViewController <iCarouselDataSource, iCarouselDelegate, MKMapViewDelegate, CLLocationManagerDelegate>
 
 
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
-@property CLLocation *currentLocation;
+@property PFGeoPoint *currentLocation;
+@property NSArray *subs;
 
 
 @end
