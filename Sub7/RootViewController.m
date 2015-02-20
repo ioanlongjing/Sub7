@@ -10,17 +10,32 @@
 #import "DetailViewController.h"
 #import "Shop.h"
 #import "Sub.h"
+#import "FindCurrentLocationViewController.h"
 
 
-@interface RootViewController () <iCarouselDelegate, iCarouselDataSource>
+@interface RootViewController () <iCarouselDelegate, iCarouselDataSource, FindLocationDelegate>
 
 @property NSMutableArray *sandwichImages;
 @property Sub *tappedSub;
 @property PFFile *stockFile;
+@property FindCurrentLocationViewController *fclvc;
 
 @end
 
 @implementation RootViewController
+
+-(void)viewWillAppear:(BOOL)animated {
+    if (!self.currentLocation) {
+        [self performSegueWithIdentifier:@"pickSubSeg" sender:self];
+    }
+}
+
+
+-(void)currentLocationDetermined:(PFGeoPoint *)currentLocation withSubs:(NSArray *)subsArray {
+    self.currentLocation = currentLocation;
+    self.subs = subsArray;
+    [self.carousel reloadData];
+}
 
 
 - (void)viewDidLoad
@@ -62,7 +77,7 @@
     
     
     
-    UILabel *label = nil;
+    UIImageView *imageView = nil;
     
     //create new view if no view is available for recycling
     if (view == nil)
@@ -72,29 +87,7 @@
         //recycled and used with other index values later
         
         view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 350.0f, 350.0f)];
-        
-        Sub *sub = [self.subs objectAtIndex:index];
-        if (sub.imageFile) {
-            [sub.imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-                if (!error) {
-                    UIImage *image = [UIImage imageWithData:data];
-                    ((UIImageView *)view).image = image;
-                    view.contentMode = UIViewContentModeScaleAspectFit;
-                }
-            }];
-        }
-        else {
-            sub.imageFile = self.stockFile;
-            [sub.imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-                if (!error) {
-                    UIImage *image = [UIImage imageWithData:data];
-                    ((UIImageView *)view).image = image;
-                    view.contentMode = UIViewContentModeScaleAspectFit;
-                }
-            }];
-        }
-        
-        
+        view.tag = 1;
         
 //        label = [[UILabel alloc] initWithFrame:view.bounds];
 //        label.backgroundColor = [UIColor clearColor];
@@ -106,7 +99,7 @@
     else
     {
         //get a reference to the label in the recycled view
-        label = (UILabel *)[view viewWithTag:1];
+        imageView = (UIImageView *)[view viewWithTag:1];
     }
     
     //set item label
@@ -115,6 +108,28 @@
     //you'll get weird issues with carousel item content appearing
     //in the wrong place in the carousel
 //    label.text = [[self.sandwichImages objectAtIndex:index] stringValue];
+    Sub *sub = [self.subs objectAtIndex:index];
+    if (sub.imageFile) {
+        [sub.imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+                UIImage *image = [UIImage imageWithData:data];
+                ((UIImageView *)view).image = image;
+                view.contentMode = UIViewContentModeScaleAspectFit;
+            }
+        }];
+    }
+    else {
+        sub.imageFile = self.stockFile;
+        [sub.imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+                UIImage *image = [UIImage imageWithData:data];
+                ((UIImageView *)view).image = image;
+                view.contentMode = UIViewContentModeScaleAspectFit;
+            }
+        }];
+    }
+    
+
     
     return view;
 }
@@ -122,13 +137,21 @@
 
 - (void)carousel:(__unused iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
 {
+    NSLog(@"%ld", (long)index);
     self.tappedSub = [self.subs objectAtIndex:index];
     [self performSegueWithIdentifier:@"DetailSeg" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    DetailViewController *dvc = segue.destinationViewController;
-    dvc.selectedSub = self.tappedSub;
+    if ([segue.identifier isEqualToString:@"DetailSeg"]) {
+        DetailViewController *dvc = segue.destinationViewController;
+        dvc.selectedSub = self.tappedSub;
+    }
+    else if ([segue.identifier isEqualToString:@"pickSubSeg"]) {
+        FindCurrentLocationViewController *fclvc = segue.destinationViewController;
+        fclvc.delegate = self;
+    }
+    
 }
 
 
