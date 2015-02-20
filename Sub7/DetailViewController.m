@@ -9,7 +9,7 @@
 #import "DetailViewController.h"
 #import <MapKit/MapKit.h>
 
-@interface DetailViewController ()
+@interface DetailViewController ()<CLLocationManagerDelegate, MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
@@ -27,10 +27,10 @@
             });
         }
     }];
-
-
-
 }
+
+
+
 
 
 
