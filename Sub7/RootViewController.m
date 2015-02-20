@@ -146,6 +146,7 @@
     if ([segue.identifier isEqualToString:@"DetailSeg"]) {
         DetailViewController *dvc = segue.destinationViewController;
         dvc.selectedSub = self.tappedSub;
+        dvc.currentLocation = self.currentLocation;
     }
     else if ([segue.identifier isEqualToString:@"pickSubSeg"]) {
         FindCurrentLocationViewController *fclvc = segue.destinationViewController;
