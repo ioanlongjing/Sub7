@@ -9,16 +9,12 @@
 #import "FindCurrentLocationViewController.h"
 #import <MapKit/MapKit.h>
 #import "RootViewController.h"
-#import <Parse/Parse.h> 
 #import "Shop.h"
-#import "Sub.h"
-
 
 @interface FindCurrentLocationViewController ()<CLLocationManagerDelegate, MKMapViewDelegate>
 
 @property CLLocationManager *locationManager;
 @property PFGeoPoint *currentLocation;
-@property NSArray *subsNearby;
 @property Shop *shop;
 @property Sub *sub;
 
@@ -31,6 +27,7 @@
     [super viewDidLoad];
     self.locationManager.delegate = self;
     [self.locationManager requestWhenInUseAuthorization];
+
     
 //    PFQuery *objectQuery = [PFQuery queryWithClassName:@"Sub"];
 //    [objectQuery whereKey:@"name" equalTo:@"Chicken Breast"];
@@ -66,9 +63,10 @@
             PFQuery *newQuery = [PFQuery queryWithClassName:@"Sub"];
             [newQuery whereKey:@"shop" containedIn:proximateShops];
             [newQuery findObjectsInBackgroundWithBlock:^(NSArray *subs, NSError *error) {
-                self.subsNearby = subs;                
+                self.subsNearby = subs;
+                [self.delegate currentLocationDetermined:self.currentLocation withSubs:self.subsNearby];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self performSegueWithIdentifier:@"pickSubSeg" sender:self];
+                    [self dismissViewControllerAnimated:true completion:nil];
                 });
             
             }];
@@ -80,6 +78,11 @@
 
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = true;
+    
+    
+}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     RootViewController *rvc = segue.destinationViewController;
