@@ -24,8 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+
+    // dismiss keyboard when tapping outside of textfield
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)]];
     
 }
 
@@ -56,6 +57,23 @@
 }
 
 - (IBAction)onSaveButtonPressed:(id)sender {
+    
+    self.selectedShop.name = self.shopNameTextField.text;
+    self.selectedShop.address = self.shopStreetTextField.text;
+    self.selectedShop.city = self.shopCityTextField.text;
+    self.selectedShop.state = self.shopStateTextField.text;
+    
+    // convert string from textField to NSNumber
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    
+    self.selectedShop.zip = [formatter numberFromString:self.shopZipTextField.text];
+    
+    [self.selectedShop saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!succeeded) {
+            NSLog(@"%@", error);
+        }
+    }];
 }
 
 

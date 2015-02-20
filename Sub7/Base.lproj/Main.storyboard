@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="y6z-nQ-6jA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="F9e-mM-tWA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -207,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0KH-Hu-t1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708.5" y="-556"/>
+            <point key="canvasLocation" x="2881.5" y="-584"/>
         </scene>
         <!--Shop Edit View Controller-->
         <scene sceneID="f1j-7t-zod">
@@ -224,13 +224,10 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Joe's Deli" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kXX-qL-DQk" userLabel="shop.name">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="137" y="123" width="247" height="30"/>
                                 </variation>
-                                <connections>
-                                    <action selector="shopNameTextField:" destination="xdY-bu-CIk" eventType="editingDidEnd" id="1zm-Tx-F4j"/>
-                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shop.name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHp-S4-mNd">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -244,7 +241,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123 Fake St" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oxe-xH-PAg" userLabel="shop.street">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="137" y="161" width="247" height="30"/>
                                 </variation>
@@ -261,7 +258,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="San Francisco" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P9s-yS-k5E" userLabel="shot.city">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="137" y="199" width="247" height="30"/>
                                 </variation>
@@ -278,7 +275,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CA" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nR3-Oh-sCB" userLabel="shop.state">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="137" y="237" width="247" height="30"/>
                                 </variation>
@@ -295,7 +292,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="94110" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rUi-l4-pnQ" userLabel="shop.zip">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="137" y="275" width="247" height="30"/>
                                 </variation>
@@ -312,7 +309,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(415) 810-6932" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dmo-ii-IZE">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="137" y="313" width="247" height="30"/>
                                 </variation>
@@ -493,7 +490,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEy-fk-dK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2412" y="-556"/>
+            <point key="canvasLocation" x="3585" y="-584"/>
         </scene>
         <!--All Subs View Controller-->
         <scene sceneID="78N-uy-45G">
@@ -553,7 +550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Di4-DG-MFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3105" y="-556"/>
+            <point key="canvasLocation" x="4278" y="-584"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xkL-93-W1Y">
@@ -658,7 +655,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FlQ-gu-gvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3808.5" y="-556"/>
+            <point key="canvasLocation" x="4981.5" y="-584"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="0Cs-JE-ecD">
@@ -881,31 +878,6 @@
             </objects>
             <point key="canvasLocation" x="6508.5" y="137"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="A8j-iQ-8YJ">
-            <objects>
-                <viewController id="JiY-9c-Neo" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JbY-3k-14O"/>
-                        <viewControllerLayoutGuide type="bottom" id="wm8-eV-7Mm"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="F5Q-Oa-8iO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N7c-ka-W24">
-                                <rect key="frame" x="252" y="285" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="adp-vC-ceS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2125.5" y="859"/>
-        </scene>
         <!--Map Detail View Controller-->
         <scene sceneID="4mX-vp-7Ge">
             <objects>
@@ -993,12 +965,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0h-jc-Wql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1003.5" y="-556"/>
+            <point key="canvasLocation" x="2176.5" y="-584"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aw9-7L-Zi9"/>
-        <segue reference="vPs-ou-873"/>
         <segue reference="c6H-10-0VE"/>
+        <segue reference="vPs-ou-873"/>
+        <segue reference="aw9-7L-Zi9"/>
     </inferredMetricsTieBreakers>
 </document>
