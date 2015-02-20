@@ -7,6 +7,7 @@
 //
 
 #import "ShopEditViewController.h"
+#import "AllSubsViewController.h"
 
 @interface ShopEditViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *shopNameTextField;
@@ -35,16 +36,16 @@
         self.shopStreetTextField.text = self.selectedShop.address;
         self.shopCityTextField.text = self.selectedShop.city;
         self.shopStateTextField.text = self.selectedShop.state;
-        self.shopZipTextField.text = self.selectedShop.zip;
+        self.shopZipTextField.text = [NSString stringWithFormat:@"%@", self.selectedShop.zip];
         
-        if (self.selectedShop.cashOnly == nil) {
-            // nil means unknown, set to the third segment, seg 2
-            self.shopCashOnlySegControl.selectedSegmentIndex = 2;
-        } else if (self.selectedShop.cashOnly == NO) {
-            self.shopCashOnlySegControl.selectedSegmentIndex = 1;
-        } else if (self.selectedShop.cashOnly == YES) {
-            self.shopCashOnlySegControl.selectedSegmentIndex = 0;
-        }
+//        if (self.selectedShop.cashOnly == nil) {
+//            // nil means unknown, set to the third segment, seg 2
+//            self.shopCashOnlySegControl.selectedSegmentIndex = 2;
+//        } else if (self.selectedShop.cashOnly == NO) {
+//            self.shopCashOnlySegControl.selectedSegmentIndex = 1;
+//        } else if (self.selectedShop.cashOnly == YES) {
+//            self.shopCashOnlySegControl.selectedSegmentIndex = 0;
+//        }
         
         
     }
@@ -55,6 +56,18 @@
 }
 
 - (IBAction)onSaveButtonPressed:(id)sender {
+}
+
+
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    AllSubsViewController *dvc = segue.destinationViewController;
+    
+    dvc.selectedShop = self.selectedShop;
+
 }
 
 

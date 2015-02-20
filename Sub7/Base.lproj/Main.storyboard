@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cXm-mv-GgJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Find Current Location View Controller-->
@@ -354,18 +356,6 @@
                                     <rect key="frame" x="137" y="82" width="127" height="21"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VL0-Rq-XB9">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="To the Sandwiches!">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="133" y="525" width="134" height="30"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="68e-iq-jA8" kind="show" id="VdZ-QZ-wjI"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWM-aK-Bmv">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -373,10 +363,70 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="112" y="397" width="176" height="39"/>
+                                    <rect key="frame" x="112" y="384" width="176" height="39"/>
                                 </variation>
                                 <connections>
                                     <action selector="onSaveButtonPressed:" destination="xdY-bu-CIk" eventType="touchUpInside" id="w4t-98-2Sj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jx5-fV-toi">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Meats">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="179" y="431" width="43" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="68e-iq-jA8" kind="show" identifier="MeatSegue" id="vPs-ou-873"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stQ-3q-lCk">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Breads">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="176" y="494" width="49" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="68e-iq-jA8" kind="show" identifier="BreadSegue" id="Amd-Zd-ZAL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIm-pD-3RC">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Toppings">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="169" y="462" width="63" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="68e-iq-jA8" kind="show" identifier="ToppingsSegue" id="88o-SA-5i1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0B-hX-HXU">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Cheese">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="245" y="431" width="52" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="68e-iq-jA8" kind="show" identifier="CheeseSegue" id="Ib1-vl-toO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VL0-Rq-XB9">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="To the Sandwiches!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="133" y="527" width="134" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="68e-iq-jA8" kind="show" identifier="SandwichSegue" id="VdZ-QZ-wjI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -398,8 +448,12 @@
                                 <exclude reference="SmB-ue-Zud"/>
                                 <exclude reference="W2o-bY-z2N"/>
                                 <exclude reference="OIY-sz-MB5"/>
-                                <exclude reference="VL0-Rq-XB9"/>
                                 <exclude reference="LWM-aK-Bmv"/>
+                                <exclude reference="jx5-fV-toi"/>
+                                <exclude reference="stQ-3q-lCk"/>
+                                <exclude reference="UIm-pD-3RC"/>
+                                <exclude reference="P0B-hX-HXU"/>
+                                <exclude reference="VL0-Rq-XB9"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -419,8 +473,12 @@
                                 <include reference="SmB-ue-Zud"/>
                                 <include reference="W2o-bY-z2N"/>
                                 <include reference="OIY-sz-MB5"/>
-                                <include reference="VL0-Rq-XB9"/>
                                 <include reference="LWM-aK-Bmv"/>
+                                <include reference="jx5-fV-toi"/>
+                                <include reference="stQ-3q-lCk"/>
+                                <include reference="UIm-pD-3RC"/>
+                                <include reference="P0B-hX-HXU"/>
+                                <include reference="VL0-Rq-XB9"/>
                             </mask>
                         </variation>
                     </view>
@@ -617,8 +675,18 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2wf-x3-q8V">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="222"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="222" id="U30-a8-3UU"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="U30-a8-3UU"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="U30-a8-3UU"/>
+                                    </mask>
                                 </variation>
                             </imageView>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sz2-cD-2OE">
@@ -636,20 +704,40 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIL-95-YWa">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Z36-5a-AWT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="327" width="368" height="25"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Z36-5a-AWT"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Z36-5a-AWT"/>
+                                    </mask>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pn-Ng-ub4">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="InC-xk-E8d"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="327" width="368" height="25"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="InC-xk-E8d"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="InC-xk-E8d"/>
+                                    </mask>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dA-yf-wfu">
@@ -667,6 +755,17 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fIL-95-YWa" firstAttribute="trailing" secondItem="zmS-ob-xhi" secondAttribute="trailingMargin" id="1Nr-U2-wNx"/>
+                            <constraint firstItem="2pn-Ng-ub4" firstAttribute="leading" secondItem="zmS-ob-xhi" secondAttribute="leadingMargin" id="4jj-YI-qmZ"/>
+                            <constraint firstItem="2wf-x3-q8V" firstAttribute="leading" secondItem="zmS-ob-xhi" secondAttribute="leading" id="5zz-vv-AbP"/>
+                            <constraint firstItem="fIL-95-YWa" firstAttribute="top" secondItem="2wf-x3-q8V" secondAttribute="bottom" constant="41" id="AG9-w6-FFZ"/>
+                            <constraint firstItem="2pn-Ng-ub4" firstAttribute="top" secondItem="2wf-x3-q8V" secondAttribute="bottom" constant="41" id="FpM-Xv-ofC"/>
+                            <constraint firstItem="fIL-95-YWa" firstAttribute="leading" secondItem="zmS-ob-xhi" secondAttribute="leadingMargin" id="dZh-f1-CGi"/>
+                            <constraint firstItem="2pn-Ng-ub4" firstAttribute="trailing" secondItem="zmS-ob-xhi" secondAttribute="trailingMargin" id="hxB-Cf-Y2m"/>
+                            <constraint firstItem="2wf-x3-q8V" firstAttribute="top" secondItem="FDR-oq-Yn2" secondAttribute="bottom" id="n2y-Ok-q5Z"/>
+                            <constraint firstAttribute="trailing" secondItem="2wf-x3-q8V" secondAttribute="trailing" id="wjc-T8-0Qb"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="2wf-x3-q8V"/>
@@ -674,6 +773,17 @@
                                 <exclude reference="fIL-95-YWa"/>
                                 <exclude reference="2pn-Ng-ub4"/>
                                 <exclude reference="9dA-yf-wfu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="5zz-vv-AbP"/>
+                                <exclude reference="n2y-Ok-q5Z"/>
+                                <exclude reference="wjc-T8-0Qb"/>
+                                <exclude reference="4jj-YI-qmZ"/>
+                                <exclude reference="FpM-Xv-ofC"/>
+                                <exclude reference="hxB-Cf-Y2m"/>
+                                <exclude reference="1Nr-U2-wNx"/>
+                                <exclude reference="AG9-w6-FFZ"/>
+                                <exclude reference="dZh-f1-CGi"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -683,6 +793,17 @@
                                 <include reference="fIL-95-YWa"/>
                                 <include reference="2pn-Ng-ub4"/>
                                 <include reference="9dA-yf-wfu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="5zz-vv-AbP"/>
+                                <include reference="n2y-Ok-q5Z"/>
+                                <include reference="wjc-T8-0Qb"/>
+                                <include reference="4jj-YI-qmZ"/>
+                                <include reference="FpM-Xv-ofC"/>
+                                <include reference="hxB-Cf-Y2m"/>
+                                <include reference="1Nr-U2-wNx"/>
+                                <include reference="AG9-w6-FFZ"/>
+                                <include reference="dZh-f1-CGi"/>
                             </mask>
                         </variation>
                     </view>
@@ -748,6 +869,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0d-aI-S1y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3754.5" y="137"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="A8j-iQ-8YJ">
+            <objects>
+                <viewController id="JiY-9c-Neo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JbY-3k-14O"/>
+                        <viewControllerLayoutGuide type="bottom" id="wm8-eV-7Mm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F5Q-Oa-8iO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N7c-ka-W24">
+                                <rect key="frame" x="252" y="285" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="adp-vC-ceS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2125.5" y="859"/>
         </scene>
         <!--Map Detail View Controller-->
         <scene sceneID="4mX-vp-7Ge">
@@ -841,8 +987,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="knI-1a-mOV"/>
+        <segue reference="Amd-Zd-ZAL"/>
         <segue reference="c6H-10-0VE"/>
         <segue reference="aw9-7L-Zi9"/>
+        <segue reference="8xe-vY-c6E"/>
     </inferredMetricsTieBreakers>
 </document>
