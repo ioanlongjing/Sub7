@@ -11,12 +11,14 @@
 #import "RootViewController.h"
 #import "Shop.h"
 
-@interface FindCurrentLocationViewController ()<CLLocationManagerDelegate, MKMapViewDelegate>
+@interface FindCurrentLocationViewController ()<CLLocationManagerDelegate>
 
 @property CLLocationManager *locationManager;
 @property PFGeoPoint *currentLocation;
 @property Shop *shop;
 @property Sub *sub;
+@property PFFile *stockFile;
+@property NSMutableArray *subImages;
 
 
 @end
@@ -27,28 +29,9 @@
     [super viewDidLoad];
     self.locationManager.delegate = self;
     [self.locationManager requestWhenInUseAuthorization];
-
-    
-//    PFQuery *objectQuery = [PFQuery queryWithClassName:@"Sub"];
-//    [objectQuery whereKey:@"name" equalTo:@"Chicken Breast"];
-//    [objectQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        self.sub = objects.firstObject;
-//        UIImage *subImage = [UIImage imageNamed:@"chickenBreast"];
-//        NSData *pictureData = UIImageJPEGRepresentation(subImage, 1.0);
-//
-//        self.sub.imageFile = [PFFile fileWithData:pictureData];
-//        [self.sub saveInBackground];
-//    }];
-    
-//    PFQuery *shopQuery = [PFQuery queryWithClassName:@"Shop"];
-//    [shopQuery whereKey:@"name" equalTo:@"Good Luck Cafe & Deli"];
-//    [shopQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        self.shop = objects.firstObject;
-//        PFGeoPoint *location = [PFGeoPoint geoPointWithLatitude:37.793853 longitude:-122.404827];
-//        self.shop.location = location;
-//        [self.shop saveInBackground];
-//        
-//    }];
+    UIImage *subImage = [UIImage imageNamed:@"stock"];
+    NSData *stockData = UIImageJPEGRepresentation(subImage, 1.0);
+    self.stockFile = [PFFile fileWithData:stockData];
     
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
         self.currentLocation = geoPoint;
@@ -64,9 +47,29 @@
             [newQuery whereKey:@"shop" containedIn:proximateShops];
             [newQuery findObjectsInBackgroundWithBlock:^(NSArray *subs, NSError *error) {
                 self.subsNearby = subs;
-                [self.delegate currentLocationDetermined:self.currentLocation withSubs:self.subsNearby];
+                self.subImages = [NSMutableArray new];
+                for(Sub * sub in self.subsNearby)
+                {
+                    if (sub.imageFile) {
+                    
+                        NSData *imageData = [sub.imageFile getData];
+                        UIImage *image = [UIImage imageWithData:imageData];
+                        [self.subImages addObject:image];
+                            }
+            
+                
+                    else {
+                        sub.imageFile = self.stockFile;
+                        [sub.imageFile getData];
+                        UIImage *image = [UIImage imageWithData:stockData];
+                        [self.subImages addObject:image];
+
+                    }
+                }
+                
+                [self.delegate currentLocationDetermined:self.currentLocation withSubs:self.subsNearby withSubImages:[self.subImages mutableCopy]];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self dismissViewControllerAnimated:true completion:nil];
+                    [self dismissViewControllerAnimated:false completion:nil];
                 });
             
             }];
@@ -78,18 +81,26 @@
 
 }
 
--(void)viewWillAppear:(BOOL)animated {
-    self.navigationController.navigationBarHidden = true;
-    
-    
-}
+//    PFQuery *objectQuery = [PFQuery queryWithClassName:@"Sub"];
+//    [objectQuery whereKey:@"name" equalTo:@"Chicken Breast"];
+//    [objectQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        self.sub = objects.firstObject;
+//        UIImage *subImage = [UIImage imageNamed:@"chickenBreast"];
+//        NSData *pictureData = UIImageJPEGRepresentation(subImage, 1.0);
+//
+//        self.sub.imageFile = [PFFile fileWithData:pictureData];
+//        [self.sub saveInBackground];
+//    }];
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    RootViewController *rvc = segue.destinationViewController;
-    rvc.currentLocation = self.currentLocation;
-    rvc.subs = self.subsNearby;
-}
-
+//    PFQuery *shopQuery = [PFQuery queryWithClassName:@"Shop"];
+//    [shopQuery whereKey:@"name" equalTo:@"Good Luck Cafe & Deli"];
+//    [shopQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        self.shop = objects.firstObject;
+//        PFGeoPoint *location = [PFGeoPoint geoPointWithLatitude:37.793853 longitude:-122.404827];
+//        self.shop.location = location;
+//        [self.shop saveInBackground];
+//
+//    }];
 
 
 @end

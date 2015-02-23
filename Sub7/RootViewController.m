@@ -11,18 +11,25 @@
 #import "Shop.h"
 #import "Sub.h"
 #import "FindCurrentLocationViewController.h"
+#import "JBParallaxCell.h"
 
 
-@interface RootViewController () <iCarouselDelegate, iCarouselDataSource, FindLocationDelegate>
+@interface RootViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate, FindLocationDelegate>
 
 @property NSMutableArray *sandwichImages;
 @property Sub *tappedSub;
-@property PFFile *stockFile;
-@property FindCurrentLocationViewController *fclvc;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSArray *subImagesArray;
 
 @end
 
 @implementation RootViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+}
 
 -(void)viewWillAppear:(BOOL)animated {
     if (!self.currentLocation) {
@@ -30,122 +37,73 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self scrollViewDidScroll:nil];
+    
+}
 
--(void)currentLocationDetermined:(PFGeoPoint *)currentLocation withSubs:(NSArray *)subsArray {
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+#pragma-------------------------------------Custom Delegate---------------------------------------------------
+
+
+-(void)currentLocationDetermined:(PFGeoPoint *)currentLocation withSubs:(NSArray *)subsArray withSubImages:(NSArray *)subImagesArray {
     self.currentLocation = currentLocation;
     self.subs = subsArray;
-    [self.carousel reloadData];
+    self.subImagesArray = subImagesArray;
+    
 }
 
 
-- (void)viewDidLoad
+#pragma-----------------------------------TableView Data Source------------------------------------------------
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    [super viewDidLoad];
-    UIImage *subImage = [UIImage imageNamed:@"stock"];
-    NSData *data = UIImageJPEGRepresentation(subImage, 1.0);
-    self.stockFile = [PFFile fileWithData:data];
-    
-    self.carousel.type = iCarouselTypeRotary;
-    [self.carousel reloadData];
-    
-}
-
-
-#pragma -----------------------------------Carousel Delegate Methods----------------------------------------------
-
--(NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
     return self.subs.count;
 }
 
-- (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (option == iCarouselOptionSpacing)
-    {
-        return value * 1.1;
-    }
-    return value;
+    return 1;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES;
-}
-
-
-- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
-{
-    
-    
-    
-    UIImageView *imageView = nil;
-    
-    //create new view if no view is available for recycling
-    if (view == nil)
-    {
-        //don't do anything specific to the index within
-        //this `if (view == nil) {...}` statement because the view will be
-        //recycled and used with other index values later
-        
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 350.0f, 350.0f)];
-        view.tag = 1;
-        
-//        label = [[UILabel alloc] initWithFrame:view.bounds];
-//        label.backgroundColor = [UIColor clearColor];
-//        label.textAlignment = NSTextAlignmentCenter;
-//        label.font = [label.font fontWithSize:50];
-//        label.tag = 1;
-//        [view addSubview:label];
-    }
-    else
-    {
-        //get a reference to the label in the recycled view
-        imageView = (UIImageView *)[view viewWithTag:1];
-    }
-    
-    //set item label
-    //remember to always set any properties of your carousel item
-    //views outside of the `if (view == nil) {...}` check otherwise
-    //you'll get weird issues with carousel item content appearing
-    //in the wrong place in the carousel
-//    label.text = [[self.sandwichImages objectAtIndex:index] stringValue];
-    Sub *sub = [self.subs objectAtIndex:index];
-    if (sub.imageFile) {
-        [sub.imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-            if (!error) {
-                UIImage *image = [UIImage imageWithData:data];
-                ((UIImageView *)view).image = image;
-                view.contentMode = UIViewContentModeScaleAspectFit;
-            }
-        }];
-    }
-    else {
-        sub.imageFile = self.stockFile;
-        [sub.imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-            if (!error) {
-                UIImage *image = [UIImage imageWithData:data];
-                ((UIImageView *)view).image = image;
-                view.contentMode = UIViewContentModeScaleAspectFit;
-            }
-        }];
-    }
-    
-
-    
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, 20.0)];
+    view.backgroundColor = [UIColor blackColor];
     return view;
 }
 
-
-- (void)carousel:(__unused iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%ld", (long)index);
-    self.tappedSub = [self.subs objectAtIndex:index];
-    [self performSegueWithIdentifier:@"DetailSeg" sender:self];
+    JBParallaxCell *cell = [tableView dequeueReusableCellWithIdentifier:@"parallaxCell"];
+    cell.nameLabel.text = [NSString stringWithFormat:@"%@", [self.subs[indexPath.section]name]];
+    cell.priceLabel.text = [NSString stringWithFormat:@"%@", [self.subs[indexPath.section] price]];
+    cell.parallaxImage.image = self.subImagesArray[indexPath.section];
+    return cell;
+}
+
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    // Get visible cells on table view.
+    NSArray *visibleCells = [self.tableView visibleCells];
+    
+    for (JBParallaxCell *cell in visibleCells) {
+        [cell cellOnTableView:self.tableView didScrollOnView:self.view];
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"DetailSeg"]) {
         DetailViewController *dvc = segue.destinationViewController;
-        dvc.selectedSub = self.tappedSub;
+        dvc.selectedSub = [self.subs objectAtIndex:[self.tableView indexPathForSelectedRow].section];
         dvc.currentLocation = self.currentLocation;
     }
     else if ([segue.identifier isEqualToString:@"pickSubSeg"]) {

@@ -14,7 +14,7 @@
 @protocol FindLocationDelegate <NSObject>
 @optional
 
--(void) currentLocationDetermined:(PFGeoPoint *)currentLocation withSubs:(NSArray *)subsArray;
+-(void) currentLocationDetermined:(PFGeoPoint *)currentLocation withSubs:(NSArray *)subsArray withSubImages:(NSArray *)subImagesArray;
 
 
 @end
