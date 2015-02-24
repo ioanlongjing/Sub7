@@ -109,10 +109,11 @@
         DetailViewController *dvc = segue.destinationViewController;
         dvc.selectedSub = [self.subs objectAtIndex:[self.tableView indexPathForSelectedRow].section];
         dvc.currentLocation = self.currentLocation;
-    }
-    else if ([segue.identifier isEqualToString:@"pickSubSeg"]) {
+    } else if ([segue.identifier isEqualToString:@"pickSubSeg"]) {
         FindCurrentLocationViewController *fclvc = segue.destinationViewController;
         fclvc.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"SuggestSub"]) {
+        
     }
     
 }

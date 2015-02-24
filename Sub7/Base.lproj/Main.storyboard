@@ -173,7 +173,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="PLr-rK-SLE" kind="show" id="HMK-vo-A7E"/>
+                                    <segue destination="PLr-rK-SLE" kind="show" identifier="SuggestSub" id="HMK-vo-A7E"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -241,11 +241,24 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tgb-SL-Hdq">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="gu3-Er-fgX"/>
+                                    <constraint firstAttribute="height" constant="30" id="lGH-u9-Fm8"/>
+                                </constraints>
                                 <state key="normal" title="Continue">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="169" y="556" width="62" height="30"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gu3-Er-fgX"/>
+                                        <exclude reference="lGH-u9-Fm8"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="gu3-Er-fgX"/>
+                                        <include reference="lGH-u9-Fm8"/>
+                                    </mask>
                                 </variation>
                                 <connections>
                                     <segue destination="UfJ-pP-gwK" kind="show" id="Zt5-3S-x1F"/>
@@ -253,11 +266,24 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggest a Sub $7 Sandwich" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yqd-gs-koj">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="jnM-qm-ll6"/>
+                                    <constraint firstAttribute="width" constant="218" id="u98-9k-DAm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="91" y="76" width="218" height="21"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jnM-qm-ll6"/>
+                                        <exclude reference="u98-9k-DAm"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="jnM-qm-ll6"/>
+                                        <include reference="u98-9k-DAm"/>
+                                    </mask>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhq-5Z-0eo">
@@ -270,11 +296,16 @@
                                 </variation>
                                 <connections>
                                     <action selector="onAddPhotoButtonPressed:" destination="PLr-rK-SLE" eventType="touchUpInside" id="e93-xF-zcp"/>
-                                    <action selector="onAddPhotoPressed:" destination="PLr-rK-SLE" eventType="touchUpInside" id="vzI-jQ-2qV"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Tgb-SL-Hdq" secondAttribute="centerX" id="D1I-t1-DQV"/>
+                            <constraint firstAttribute="centerX" secondItem="Yqd-gs-koj" secondAttribute="centerX" id="pLk-Yf-a6c"/>
+                            <constraint firstItem="Yqd-gs-koj" firstAttribute="top" secondItem="SIy-Fb-tBY" secondAttribute="bottom" constant="12" id="qeN-eE-r6m"/>
+                            <constraint firstItem="oeI-t1-72s" firstAttribute="top" secondItem="Tgb-SL-Hdq" secondAttribute="bottom" constant="14" id="sLk-8B-3Q5"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="kxr-u7-cIA"/>
@@ -285,6 +316,12 @@
                                 <exclude reference="Tgb-SL-Hdq"/>
                                 <exclude reference="Yqd-gs-koj"/>
                                 <exclude reference="Jhq-5Z-0eo"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="pLk-Yf-a6c"/>
+                                <exclude reference="qeN-eE-r6m"/>
+                                <exclude reference="D1I-t1-DQV"/>
+                                <exclude reference="sLk-8B-3Q5"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -298,11 +335,15 @@
                                 <include reference="Yqd-gs-koj"/>
                                 <include reference="Jhq-5Z-0eo"/>
                             </mask>
+                            <mask key="constraints">
+                                <include reference="pLk-Yf-a6c"/>
+                                <include reference="qeN-eE-r6m"/>
+                                <include reference="D1I-t1-DQV"/>
+                                <include reference="sLk-8B-3Q5"/>
+                            </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="priceTextField" destination="vvI-52-xTh" id="ID2-yE-llI"/>
-                        <outlet property="sandwichTextField" destination="kxr-u7-cIA" id="9xc-dU-XXx"/>
                         <outlet property="subImageView" destination="kEf-oq-KFp" id="Hqb-Ok-wN1"/>
                         <outlet property="subNameTextField" destination="kxr-u7-cIA" id="SZP-KX-2Cv"/>
                         <outlet property="subPriceTextField" destination="vvI-52-xTh" id="Hti-l7-wFt"/>
@@ -401,11 +442,24 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gu-eL-eCK">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FrU-2d-Lbq"/>
+                                    <constraint firstAttribute="width" constant="62" id="cfI-6m-hyo"/>
+                                </constraints>
                                 <state key="normal" title="Continue">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="169" y="550" width="62" height="30"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="FrU-2d-Lbq"/>
+                                        <exclude reference="cfI-6m-hyo"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="FrU-2d-Lbq"/>
+                                        <include reference="cfI-6m-hyo"/>
+                                    </mask>
                                 </variation>
                                 <connections>
                                     <segue destination="wcE-hn-95V" kind="show" id="JbQ-H5-lBw"/>
@@ -498,6 +552,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="2Gu-eL-eCK" secondAttribute="centerX" id="2AP-M6-Lsu"/>
+                            <constraint firstItem="ClJ-MK-cGY" firstAttribute="top" secondItem="2Gu-eL-eCK" secondAttribute="bottom" constant="20" id="BHa-8o-5ek"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="DOE-x9-a4e"/>
@@ -516,6 +574,10 @@
                                 <exclude reference="92W-qb-edQ"/>
                                 <exclude reference="skK-Qa-284"/>
                                 <exclude reference="f8f-il-JMM"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2AP-M6-Lsu"/>
+                                <exclude reference="BHa-8o-5ek"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -536,6 +598,10 @@
                                 <include reference="92W-qb-edQ"/>
                                 <include reference="skK-Qa-284"/>
                                 <include reference="f8f-il-JMM"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2AP-M6-Lsu"/>
+                                <include reference="BHa-8o-5ek"/>
                             </mask>
                         </variation>
                     </view>
@@ -565,11 +631,24 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbQ-7q-two">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ah9-u3-z62"/>
+                                    <constraint firstAttribute="width" constant="49" id="HtK-jV-kbo"/>
+                                </constraints>
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="176" y="550" width="49" height="30"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ah9-u3-z62"/>
+                                        <exclude reference="HtK-jV-kbo"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Ah9-u3-z62"/>
+                                        <include reference="HtK-jV-kbo"/>
+                                    </mask>
                                 </variation>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sandwich" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHn-E5-BO3">
@@ -688,6 +767,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="nbQ-7q-two" secondAttribute="centerX" id="r4n-Ln-e82"/>
+                            <constraint firstItem="5vc-Nr-c7W" firstAttribute="top" secondItem="nbQ-7q-two" secondAttribute="bottom" constant="20" id="sFe-of-YZ0"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="nbQ-7q-two"/>
@@ -704,6 +787,10 @@
                                 <exclude reference="8qC-k9-pF3"/>
                                 <exclude reference="jXT-9g-g9T"/>
                                 <exclude reference="FQS-xM-fMu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="r4n-Ln-e82"/>
+                                <exclude reference="sFe-of-YZ0"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -722,6 +809,10 @@
                                 <include reference="8qC-k9-pF3"/>
                                 <include reference="jXT-9g-g9T"/>
                                 <include reference="FQS-xM-fMu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="r4n-Ln-e82"/>
+                                <include reference="sFe-of-YZ0"/>
                             </mask>
                         </variation>
                     </view>
