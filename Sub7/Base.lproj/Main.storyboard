@@ -784,8 +784,10 @@
                             </imageView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VvV-yV-lIj">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="dqU-LV-6Ae" id="Qhs-vA-5v2"/>
+                                    <outletCollection property="gestureRecognizers" destination="LFI-nr-GLE" appends="YES" id="rNN-HW-P9e"/>
                                 </connections>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0P-P9-zdp">
@@ -867,13 +869,13 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="VvV-yV-lIj" secondAttribute="trailing" constant="-8" id="4pt-O9-n2U"/>
                             <constraint firstItem="2wf-x3-q8V" firstAttribute="leading" secondItem="zmS-ob-xhi" secondAttribute="leadingMargin" constant="-16" id="C2e-1g-wFo"/>
-                            <constraint firstItem="VvV-yV-lIj" firstAttribute="leading" secondItem="zmS-ob-xhi" secondAttribute="leadingMargin" constant="-8" id="C2f-3D-ndh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="M0P-P9-zdp" secondAttribute="trailing" constant="-16" id="Gmw-Nk-vEm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VvV-yV-lIj" secondAttribute="trailing" constant="-8" id="IeV-nG-0UL"/>
                             <constraint firstItem="M0P-P9-zdp" firstAttribute="top" secondItem="2wf-x3-q8V" secondAttribute="bottom" id="Kbe-qs-Ne4"/>
-                            <constraint firstItem="VvV-yV-lIj" firstAttribute="top" secondItem="M0P-P9-zdp" secondAttribute="bottom" constant="8" id="TiK-0C-GK6"/>
-                            <constraint firstItem="Lgh-zs-6Zt" firstAttribute="top" secondItem="VvV-yV-lIj" secondAttribute="bottom" constant="8" id="XYJ-y7-GeV"/>
+                            <constraint firstItem="VvV-yV-lIj" firstAttribute="leading" secondItem="zmS-ob-xhi" secondAttribute="leadingMargin" constant="-8" id="MlH-hh-czr"/>
+                            <constraint firstItem="VvV-yV-lIj" firstAttribute="top" secondItem="M0P-P9-zdp" secondAttribute="bottom" constant="58" id="Nxk-oc-BZ6"/>
+                            <constraint firstItem="Lgh-zs-6Zt" firstAttribute="top" secondItem="VvV-yV-lIj" secondAttribute="bottom" constant="8" id="UEX-G5-tJm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2wf-x3-q8V" secondAttribute="trailing" constant="-16" id="dYY-Kb-4dF"/>
                             <constraint firstItem="2wf-x3-q8V" firstAttribute="top" secondItem="FDR-oq-Yn2" secondAttribute="bottom" id="k3N-lK-2wg"/>
                             <constraint firstItem="M0P-P9-zdp" firstAttribute="leading" secondItem="zmS-ob-xhi" secondAttribute="leadingMargin" constant="-16" id="vTY-Qj-wuK"/>
@@ -885,13 +887,13 @@
                                 <exclude reference="M0P-P9-zdp"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="XYJ-y7-GeV"/>
+                                <exclude reference="UEX-G5-tJm"/>
                                 <exclude reference="C2e-1g-wFo"/>
                                 <exclude reference="dYY-Kb-4dF"/>
                                 <exclude reference="k3N-lK-2wg"/>
-                                <exclude reference="4pt-O9-n2U"/>
-                                <exclude reference="C2f-3D-ndh"/>
-                                <exclude reference="TiK-0C-GK6"/>
+                                <exclude reference="IeV-nG-0UL"/>
+                                <exclude reference="MlH-hh-czr"/>
+                                <exclude reference="Nxk-oc-BZ6"/>
                                 <exclude reference="Gmw-Nk-vEm"/>
                                 <exclude reference="Kbe-qs-Ne4"/>
                                 <exclude reference="vTY-Qj-wuK"/>
@@ -904,13 +906,13 @@
                                 <include reference="M0P-P9-zdp"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="XYJ-y7-GeV"/>
+                                <include reference="UEX-G5-tJm"/>
                                 <include reference="C2e-1g-wFo"/>
                                 <include reference="dYY-Kb-4dF"/>
                                 <include reference="k3N-lK-2wg"/>
-                                <include reference="4pt-O9-n2U"/>
-                                <include reference="C2f-3D-ndh"/>
-                                <include reference="TiK-0C-GK6"/>
+                                <include reference="IeV-nG-0UL"/>
+                                <include reference="MlH-hh-czr"/>
+                                <include reference="Nxk-oc-BZ6"/>
                                 <include reference="Gmw-Nk-vEm"/>
                                 <include reference="Kbe-qs-Ne4"/>
                                 <include reference="vTY-Qj-wuK"/>
@@ -920,10 +922,16 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="imageView" destination="2wf-x3-q8V" id="99G-iz-bUZ"/>
+                        <outlet property="labelsView" destination="M0P-P9-zdp" id="x4T-Ro-5cc"/>
                         <outlet property="mapView" destination="VvV-yV-lIj" id="OEJ-Q1-o7o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LK7-BH-sQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="LFI-nr-GLE">
+                    <connections>
+                        <action selector="mapViewTapped:" destination="dqU-LV-6Ae" id="RRA-la-YCJ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="5691" y="137"/>
         </scene>

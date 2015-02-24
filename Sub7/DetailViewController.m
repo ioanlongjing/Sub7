@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property CLLocationManager *locationManager;
 @property MKPointAnnotation *sandwichAnnotation;
+@property (weak, nonatomic) IBOutlet UIView *labelsView;
+@property CGRect originalFrame;
+@property UIBarButtonItem *doneButton;
 
 @end
 
@@ -97,6 +100,33 @@
     }
     return nil;
 }
+
+
+- (IBAction)mapViewTapped:(UITapGestureRecognizer *)gesture {
+    CGPoint touchPoint = [gesture locationInView:self.view];
+    self.originalFrame = CGRectMake(self.mapView.frame.origin.x, self.mapView.frame.origin.y, self.mapView.frame.size.width, self.mapView.frame.size.height);
+    CGRect newFrame = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+    if (CGRectContainsPoint(self.mapView.frame, touchPoint)) {
+        [self.navigationItem setHidesBackButton:true];
+        self.labelsView.hidden = true;
+        [UIView animateWithDuration:0.4 animations:^{
+            self.mapView.frame = newFrame;
+        }];
+        self.doneButton = [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(restoreOriginalView)];
+        self.navigationItem.rightBarButtonItem = self.doneButton;
+        [self.mapView showAnnotations: self.mapView.annotations animated:YES];
+    }
+}
+
+-(void)restoreOriginalView {
+    self.doneButton.title = @"";
+    self.doneButton.enabled = false;
+    self.mapView.frame = self.originalFrame;
+    [self.mapView showAnnotations:self.mapView.annotations animated:YES];
+    [self.navigationItem setHidesBackButton:false];
+    self.labelsView.hidden = false;
+}
+
 
 -(void) displaySubImage {
     NSData *data = [self.selectedSub.imageFile getData];
