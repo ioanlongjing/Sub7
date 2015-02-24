@@ -26,7 +26,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self displaySubImage];
-    
     self.locationManager = [CLLocationManager new];
     self.mapView.showsUserLocation = true;
     self.sandwichAnnotation = [MKPointAnnotation new];
@@ -35,6 +34,7 @@
     [self.mapView addAnnotation:self.sandwichAnnotation];
     [self getDirections];
     [self.mapView showAnnotations: self.mapView.annotations animated:YES];
+    
 }
 
 -(MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
@@ -50,6 +50,7 @@
         return nil;
     }
 }
+
 
 -(void) getDirections {
     CLLocation *currentLocation = [[CLLocation alloc]initWithLatitude:self.currentLocation.latitude longitude:self.currentLocation.longitude];
@@ -115,8 +116,10 @@
         self.doneButton = [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(restoreOriginalView)];
         self.navigationItem.rightBarButtonItem = self.doneButton;
         [self.mapView showAnnotations: self.mapView.annotations animated:YES];
+
     }
 }
+
 
 -(void)restoreOriginalView {
     self.doneButton.title = @"";
@@ -125,6 +128,17 @@
     [self.mapView showAnnotations:self.mapView.annotations animated:YES];
     [self.navigationItem setHidesBackButton:false];
     self.labelsView.hidden = false;
+}
+- (IBAction)callButtonTapped:(id)sender {
+    NSString *phoneNumber = self.selectedSub.shop.phone;
+    NSURL *phoneURL = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt:%@",phoneNumber]];
+    if ([[UIApplication sharedApplication] canOpenURL:phoneURL]) {
+        [[UIApplication sharedApplication] openURL:phoneURL];
+    } else
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Call failed" message:@"Sorry, an error occured in connecting you. Please try again." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
 
 

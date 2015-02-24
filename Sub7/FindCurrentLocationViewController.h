@@ -22,6 +22,5 @@
 @interface FindCurrentLocationViewController : UIViewController
 
 @property (nonatomic, weak) id <FindLocationDelegate> delegate;
-@property NSArray *subsNearby;
 
 @end

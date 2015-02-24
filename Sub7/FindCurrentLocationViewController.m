@@ -18,6 +18,7 @@
 @property Shop *shop;
 @property Sub *sub;
 @property PFFile *stockFile;
+@property NSArray *subsNearby;
 @property NSMutableArray *subImages;
 
 
@@ -29,17 +30,15 @@
     [super viewDidLoad];
     self.locationManager.delegate = self;
     [self.locationManager requestWhenInUseAuthorization];
-    UIImage *subImage = [UIImage imageNamed:@"stock"];
-    NSData *stockData = UIImageJPEGRepresentation(subImage, 1.0);
-    self.stockFile = [PFFile fileWithData:stockData];
     
+
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
         self.currentLocation = geoPoint;
         NSLog(@"%@", self.currentLocation);
         
         
         PFQuery *query = [PFQuery queryWithClassName:@"Shop"];
-        [query whereKey:@"location" nearGeoPoint:self.currentLocation withinMiles:1.0];
+        [query whereKey:@"location" nearGeoPoint:self.currentLocation withinMiles:10.0];
         [query findObjectsInBackgroundWithBlock:^(NSArray *proximateShops, NSError *error) {
             
             NSLog(@"%@",error.description);
@@ -50,21 +49,9 @@
                 self.subImages = [NSMutableArray new];
                 for(Sub * sub in self.subsNearby)
                 {
-                    if (sub.imageFile) {
-                    
-                        NSData *imageData = [sub.imageFile getData];
-                        UIImage *image = [UIImage imageWithData:imageData];
-                        [self.subImages addObject:image];
-                            }
-            
-                
-                    else {
-                        sub.imageFile = self.stockFile;
-                        [sub.imageFile getData];
-                        UIImage *image = [UIImage imageWithData:stockData];
-                        [self.subImages addObject:image];
-
-                    }
+                    NSData *imageData = [sub.imageFile getData];
+                    UIImage *image = [UIImage imageWithData:imageData];
+                    [self.subImages addObject:image];
                 }
                 
                 [self.delegate currentLocationDetermined:self.currentLocation withSubs:self.subsNearby withSubImages:[self.subImages mutableCopy]];
@@ -77,8 +64,6 @@
         }];
     }];
     
-    
-
 }
 
 //    PFQuery *objectQuery = [PFQuery queryWithClassName:@"Sub"];

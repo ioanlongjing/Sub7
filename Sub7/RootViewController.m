@@ -20,6 +20,7 @@
 @property Sub *tappedSub;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *subImagesArray;
+@property UIRefreshControl *refreshControl;
 
 @end
 
@@ -28,14 +29,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+//    self.refreshControl = [[UIRefreshControl alloc] init];
+//    self.refreshControl.backgroundColor = [UIColor purpleColor];
+//    self.refreshControl.tintColor = [UIColor whiteColor];
+//    [self.refreshControl addTarget:self
+//                            action:@selector(findSubs)
+//                  forControlEvents:UIControlEventValueChanged];
+
     
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    self.title = @"Pick Your Sub";
     if (!self.currentLocation) {
         [self performSegueWithIdentifier:@"pickSubSeg" sender:self];
     }
 }
+
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -83,7 +93,7 @@
 {
     JBParallaxCell *cell = [tableView dequeueReusableCellWithIdentifier:@"parallaxCell"];
     cell.nameLabel.text = [NSString stringWithFormat:@"%@", [self.subs[indexPath.section]name]];
-    cell.priceLabel.text = [NSString stringWithFormat:@"%@", [self.subs[indexPath.section] price]];
+    cell.priceLabel.text = [NSString stringWithFormat:@"$%.02f",[[self.subs[indexPath.section]price]floatValue]];
     cell.parallaxImage.image = self.subImagesArray[indexPath.section];
     return cell;
 }
@@ -105,6 +115,7 @@
         DetailViewController *dvc = segue.destinationViewController;
         dvc.selectedSub = [self.subs objectAtIndex:[self.tableView indexPathForSelectedRow].section];
         dvc.currentLocation = self.currentLocation;
+        self.title = @"Subs";
     }
     else if ([segue.identifier isEqualToString:@"pickSubSeg"]) {
         FindCurrentLocationViewController *fclvc = segue.destinationViewController;
