@@ -25,6 +25,10 @@
 @end
 
 @implementation RootViewController
+- (IBAction)fuckthisshit:(UIButton *)sender {
+    
+    [self.tableView reloadData];
+}
 
 - (void)viewDidLoad
 {
@@ -37,6 +41,7 @@
 //                  forControlEvents:UIControlEventValueChanged];
 
     
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -44,6 +49,7 @@
     if (!self.currentLocation) {
         [self performSegueWithIdentifier:@"pickSubSeg" sender:self];
     }
+
 }
 
 
@@ -83,7 +89,7 @@
     return 1;
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, 20.0)];
     view.backgroundColor = [UIColor blackColor];
     return view;
@@ -95,6 +101,8 @@
     cell.nameLabel.text = [NSString stringWithFormat:@"%@", [self.subs[indexPath.section]name]];
     cell.priceLabel.text = [NSString stringWithFormat:@"$%.02f",[[self.subs[indexPath.section]price]floatValue]];
     cell.parallaxImage.image = self.subImagesArray[indexPath.section];
+
+    
     return cell;
 }
 
