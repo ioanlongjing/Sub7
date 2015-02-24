@@ -20,14 +20,20 @@
 @property Sub *tappedSub;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *subImagesArray;
+@property NSMutableArray *scanwichImages;
 
 @end
 
 @implementation RootViewController
+- (IBAction)fuckthisshit:(UIButton *)sender {
+    
+    [self.tableView reloadData];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     
 }
 
@@ -35,6 +41,7 @@
     if (!self.currentLocation) {
         [self performSegueWithIdentifier:@"pickSubSeg" sender:self];
     }
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -73,7 +80,7 @@
     return 1;
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, 20.0)];
     view.backgroundColor = [UIColor blackColor];
     return view;
@@ -83,8 +90,10 @@
 {
     JBParallaxCell *cell = [tableView dequeueReusableCellWithIdentifier:@"parallaxCell"];
     cell.nameLabel.text = [NSString stringWithFormat:@"%@", [self.subs[indexPath.section]name]];
-    cell.priceLabel.text = [NSString stringWithFormat:@"%@", [self.subs[indexPath.section] price]];
+//    cell.priceLabel.text = [NSString stringWithFormat:@"%@", [self.subs[indexPath.section] price]];
     cell.parallaxImage.image = self.subImagesArray[indexPath.section];
+
+    
     return cell;
 }
 
