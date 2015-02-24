@@ -25,15 +25,10 @@
 @end
 
 @implementation RootViewController
-- (IBAction)fuckthisshit:(UIButton *)sender {
-    
-    [self.tableView reloadData];
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     
 }
 
