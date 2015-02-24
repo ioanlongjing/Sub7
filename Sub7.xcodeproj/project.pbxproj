@@ -46,6 +46,9 @@
 		7AA7F5D01A8B117200946EEE /* MapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7F5CF1A8B117200946EEE /* MapDetailViewController.m */; };
 		7AA7F5D31A8B11AD00946EEE /* CustoSandoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7F5D21A8B11AD00946EEE /* CustoSandoViewController.m */; };
 		7AA7F5D51A8B131E00946EEE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5D41A8B131E00946EEE /* MapKit.framework */; };
+		7ABA093C1A9D040C008513EB /* SuggestConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA093B1A9D040C008513EB /* SuggestConfirmViewController.m */; };
+		7ABA093F1A9D0422008513EB /* SuggestShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA093E1A9D0422008513EB /* SuggestShopViewController.m */; };
+		7ABA09421A9D0433008513EB /* SuggestSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA09411A9D0433008513EB /* SuggestSubViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +119,12 @@
 		7AA7F5D11A8B11AD00946EEE /* CustoSandoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustoSandoViewController.h; sourceTree = "<group>"; };
 		7AA7F5D21A8B11AD00946EEE /* CustoSandoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustoSandoViewController.m; sourceTree = "<group>"; };
 		7AA7F5D41A8B131E00946EEE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7ABA093A1A9D040C008513EB /* SuggestConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestConfirmViewController.h; sourceTree = "<group>"; };
+		7ABA093B1A9D040C008513EB /* SuggestConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestConfirmViewController.m; sourceTree = "<group>"; };
+		7ABA093D1A9D0422008513EB /* SuggestShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestShopViewController.h; sourceTree = "<group>"; };
+		7ABA093E1A9D0422008513EB /* SuggestShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestShopViewController.m; sourceTree = "<group>"; };
+		7ABA09401A9D0433008513EB /* SuggestSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestSubViewController.h; sourceTree = "<group>"; };
+		7ABA09411A9D0433008513EB /* SuggestSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestSubViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +178,7 @@
 		5775F9071A8C529200B91A00 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7ABA09431A9D0BAD008513EB /* Suggest Sub/Shop */,
 				7A9F5DE01A955D0C004F6395 /* Edit Shops & Subs */,
 				2F1270B41A9322120045090D /* FindCurrentLocationViewController.h */,
 				2F1270B51A9322120045090D /* FindCurrentLocationViewController.m */,
@@ -282,6 +292,19 @@
 			name = "Edit Shops & Subs";
 			sourceTree = "<group>";
 		};
+		7ABA09431A9D0BAD008513EB /* Suggest Sub/Shop */ = {
+			isa = PBXGroup;
+			children = (
+				7ABA09401A9D0433008513EB /* SuggestSubViewController.h */,
+				7ABA09411A9D0433008513EB /* SuggestSubViewController.m */,
+				7ABA093D1A9D0422008513EB /* SuggestShopViewController.h */,
+				7ABA093E1A9D0422008513EB /* SuggestShopViewController.m */,
+				7ABA093A1A9D040C008513EB /* SuggestConfirmViewController.h */,
+				7ABA093B1A9D040C008513EB /* SuggestConfirmViewController.m */,
+			);
+			name = "Suggest Sub/Shop";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -388,10 +411,13 @@
 				7A0DD5C61A8D2CC100F2DA02 /* ShopEditViewController.m in Sources */,
 				2F87DAE21A9D1FF000469D29 /* FindSubs.m in Sources */,
 				7A8A1AAA1A894275006642F1 /* RootViewController.m in Sources */,
+				7ABA09421A9D0433008513EB /* SuggestSubViewController.m in Sources */,
 				7AA7F5D31A8B11AD00946EEE /* CustoSandoViewController.m in Sources */,
 				5775F9051A8BEC1A00B91A00 /* Shop.m in Sources */,
+				7ABA093F1A9D0422008513EB /* SuggestShopViewController.m in Sources */,
 				7AA7F5D01A8B117200946EEE /* MapDetailViewController.m in Sources */,
 				7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */,
+				7ABA093C1A9D040C008513EB /* SuggestConfirmViewController.m in Sources */,
 				2F1270B61A9322120045090D /* FindCurrentLocationViewController.m in Sources */,
 				7A9F5DE31A955D54004F6395 /* AllShopsViewController.m in Sources */,
 				7A9F5DE61A964F35004F6395 /* AllSubsViewController.m in Sources */,

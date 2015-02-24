@@ -25,10 +25,6 @@
 @end
 
 @implementation RootViewController
-- (IBAction)fuckthisshit:(UIButton *)sender {
-    
-    [self.tableView reloadData];
-}
 
 - (void)viewDidLoad
 {
@@ -40,7 +36,6 @@
 //                            action:@selector(findSubs)
 //                  forControlEvents:UIControlEventValueChanged];
 
-    
     
 }
 
@@ -123,11 +118,11 @@
         DetailViewController *dvc = segue.destinationViewController;
         dvc.selectedSub = [self.subs objectAtIndex:[self.tableView indexPathForSelectedRow].section];
         dvc.currentLocation = self.currentLocation;
-        self.title = @"Subs";
-    }
-    else if ([segue.identifier isEqualToString:@"pickSubSeg"]) {
+    } else if ([segue.identifier isEqualToString:@"pickSubSeg"]) {
         FindCurrentLocationViewController *fclvc = segue.destinationViewController;
         fclvc.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"SuggestSub"]) {
+        
     }
     
 }
