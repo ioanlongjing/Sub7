@@ -94,7 +94,7 @@
 {
     JBParallaxCell *cell = [tableView dequeueReusableCellWithIdentifier:@"parallaxCell"];
     cell.nameLabel.text = [NSString stringWithFormat:@"%@", [self.subs[indexPath.section]name]];
-    cell.priceLabel.text = [NSString stringWithFormat:@"$%.02f",[[self.subs[indexPath.section]price]floatValue]];
+//    cell.priceLabel.text = [NSString stringWithFormat:@"$%.02f",[[self.subs[indexPath.section]price]floatValue]];
     cell.parallaxImage.image = self.subImagesArray[indexPath.section];
 
     
