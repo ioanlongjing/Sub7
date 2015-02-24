@@ -1,44 +1,37 @@
 //
-//  Sub.m
+//  Meat.m
 //  Sub7
 //
-//  Created by Joseph Lynch on 2/17/15.
+//  Created by Clint Chilcott on 2/23/15.
 //  Copyright (c) 2015 Clint Chilcott. All rights reserved.
 //
 
-#import "Sub.h"
+#import "Meat.h"
 
-@implementation Sub
+@implementation Meat
 
+@dynamic shop;
 @dynamic name;
 @dynamic price;
-@dynamic stockIngredients;
-@dynamic shop;
-@dynamic imageFile;
 
 +(void)load {
     [self registerSubclass];
 }
 
 +(NSString *)parseClassName {
-    return @"Sub";
+    return @"Meat";
 }
 
-+ (void)queryForSubsInShop:(Shop *)selectedShop withCompletion:(void (^)(NSArray *resultsArray, NSError *error))complete
++ (void)queryForMeatsInShopWithCompletion:(void (^)(NSArray *resultsArray, NSError *error))complete shop:(Shop *)selectedShop
 {
     NSMutableArray *objectArray = [NSMutableArray new];
-    
-    PFQuery *query;
-    //ifCheese
-    query = [b]
-    
-    
-    PFQuery *query = [Sub query];
+    PFQuery *query = [Meat query];
     [query whereKey:@"shop" equalTo:selectedShop];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         [objectArray addObject:objectArray];
         complete(objects, error);
     }];
+    
 }
 
 @end

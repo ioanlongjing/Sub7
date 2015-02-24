@@ -1,44 +1,37 @@
 //
-//  Sub.m
+//  Bread.m
 //  Sub7
 //
-//  Created by Joseph Lynch on 2/17/15.
+//  Created by Clint Chilcott on 2/23/15.
 //  Copyright (c) 2015 Clint Chilcott. All rights reserved.
 //
 
-#import "Sub.h"
+#import "Bread.h"
 
-@implementation Sub
+@implementation Bread
 
-@dynamic name;
-@dynamic price;
-@dynamic stockIngredients;
 @dynamic shop;
-@dynamic imageFile;
+@dynamic name;
+
 
 +(void)load {
     [self registerSubclass];
 }
 
 +(NSString *)parseClassName {
-    return @"Sub";
+    return @"Bread";
 }
 
-+ (void)queryForSubsInShop:(Shop *)selectedShop withCompletion:(void (^)(NSArray *resultsArray, NSError *error))complete
++ (void)queryForBreadsInShopWithCompletion:(void (^)(NSArray *resultsArray, NSError *error))complete shop:(Shop *)selectedShop
 {
     NSMutableArray *objectArray = [NSMutableArray new];
-    
-    PFQuery *query;
-    //ifCheese
-    query = [b]
-    
-    
-    PFQuery *query = [Sub query];
+    PFQuery *query = [Bread query];
     [query whereKey:@"shop" equalTo:selectedShop];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         [objectArray addObject:objectArray];
         complete(objects, error);
     }];
+    
 }
 
 @end

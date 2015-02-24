@@ -15,7 +15,7 @@
 @property (retain) NSString *address;
 @property (retain) NSString *city;
 @property (retain) NSString *state;
-@property (retain) NSNumber *zip;
+@property (retain) NSString *zip;
 @property (retain) NSString *phone;
 @property BOOL *cashOnly;
 @property (retain) NSMutableArray *shopsArray;

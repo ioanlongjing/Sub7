@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Shop.h"
 
-@interface AllSubsViewController : UIViewController
+@interface AllObjectsViewController : UIViewController
 @property Shop *selectedShop;
+@property NSString *selectedClass;
+@property NSArray *classObjects;
 
 @end
