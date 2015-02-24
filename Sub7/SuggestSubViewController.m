@@ -7,6 +7,7 @@
 //
 
 #import "SuggestSubViewController.h"
+#import "SuggestShopViewController.h"
 
 @interface SuggestSubViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *subNameTextField;
@@ -29,14 +30,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    SuggestShopViewController *dvc = segue.destinationViewController;
+    self.suggestedSub.name = self.subNameTextField.text;
+    self.suggestedSub.price = self.subPriceTextField.text;
+//    self.suggestedSub.imageFile
+    
+    dvc.suggestedSub = self.suggestedSub;
+    
 }
-*/
 
 @end

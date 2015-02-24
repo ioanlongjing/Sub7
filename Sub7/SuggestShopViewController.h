@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Sub.h"
+#import "Shop.h"
 
 @interface SuggestShopViewController : UIViewController
+@property Shop *selectedShop;
+@property Sub *suggestedSub;
 
 @end

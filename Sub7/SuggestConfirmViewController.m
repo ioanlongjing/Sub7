@@ -26,6 +26,24 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    self.subNameLabel.text = self.suggestedSub.name;
+    self.subPriceLabel.text = self.suggestedSub.price;
+    //self.subImageView.image =
+    
+    self.shopNameLabel.text = self.selectedShop.name;
+    self.shopAddressLabel.text = self.selectedShop.address;
+    self.shopPhoneLabel.text = self.selectedShop.phone;
+    
+    if (self.selectedShop.cashOnly) {
+        self.shopAcceptsCardsLabel.text = @"Not Accepting Credit Cards";
+    } else if (!self.selectedShop.cashOnly) {
+        self.shopAcceptsCardsLabel.text = @"Accepts Credit Cards";
+    }
+    
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
