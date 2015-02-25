@@ -684,8 +684,7 @@
                                         <exclude reference="m52-S1-cuE"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="255" y="228" width="24" height="24"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="Tdz-td-9kY"/>
                                         <include reference="m52-S1-cuE"/>

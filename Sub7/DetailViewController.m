@@ -10,7 +10,6 @@
 #import <MapKit/MapKit.h>
 #import "PhoneNumberFormatter.h"
 
-#define kMapViewTopConstraintOriginalConstant 364
 
 @interface DetailViewController ()<CLLocationManagerDelegate, MKMapViewDelegate, MKOverlay>
 
@@ -175,7 +174,7 @@
 
 
 -(void) displaySubImage {
-    NSData *data = [self.selectedSub.imageFile getData];
+    NSData *data = [self.selectedSub.image getData];
     UIImage *image = [UIImage imageWithData:data];
     self.imageView.image = image;
 }

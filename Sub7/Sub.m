@@ -14,7 +14,7 @@
 @dynamic price;
 @dynamic stockIngredients;
 @dynamic shop;
-@dynamic imageFile;
+@dynamic image;
 
 +(void)load {
     [self registerSubclass];

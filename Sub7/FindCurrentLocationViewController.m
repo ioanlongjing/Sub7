@@ -47,7 +47,7 @@
                 self.subImages = [NSMutableArray new];
                 for(Sub * sub in self.subsNearby)
                 {
-                    NSData *imageData = [sub.imageFile getData];
+                    NSData *imageData = [sub.image getData];
                     UIImage *image = [UIImage imageWithData:imageData];
                     [self.subImages addObject:image];
                 }
@@ -64,26 +64,26 @@
     
 }
 
+//
+//- (void)viewDidLoad {
 //    PFQuery *objectQuery = [PFQuery queryWithClassName:@"Sub"];
-//    [objectQuery whereKey:@"name" equalTo:@"Chicken Breast"];
+//    [objectQuery whereKey:@"name" equalTo:@"Mortadella"];
 //    [objectQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 //        self.sub = objects.firstObject;
-//        UIImage *subImage = [UIImage imageNamed:@"chickenBreast"];
+//        UIImage *subImage = [UIImage imageNamed:@"mortadella"];
 //        NSData *pictureData = UIImageJPEGRepresentation(subImage, 1.0);
 //
-//        self.sub.imageFile = [PFFile fileWithData:pictureData];
+//        self.sub.image = [PFFile fileWithData:pictureData];
 //        [self.sub saveInBackground];
 //    }];
 
 //    PFQuery *shopQuery = [PFQuery queryWithClassName:@"Shop"];
-//    [shopQuery whereKey:@"name" equalTo:@"Good Luck Cafe & Deli"];
-//    [shopQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        self.shop = objects.firstObject;
-//        PFGeoPoint *location = [PFGeoPoint geoPointWithLatitude:37.793853 longitude:-122.404827];
-//        self.shop.location = location;
-//        [self.shop saveInBackground];
+//    Shop *shop = (Shop *)[shopQuery getObjectWithId:@"zfOrgziTN5"];
+//    PFGeoPoint *location = [PFGeoPoint geoPointWithLatitude:37.798691 longitude:-122.407880];
+//    shop.location = location;
+//    [shop saveInBackground];
+//    [self dismissViewControllerAnimated:false completion:nil];
 //
-//    }];
-
+//}
 
 @end
