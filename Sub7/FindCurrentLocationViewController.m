@@ -33,8 +33,7 @@
 
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
         self.currentLocation = geoPoint;
-        NSLog(@"%@", self.currentLocation);
-        
+        NSLog(@"%@", self.currentLocation)
         
         PFQuery *query = [PFQuery queryWithClassName:@"Shop"];
         [query whereKey:@"location" nearGeoPoint:self.currentLocation withinMiles:10.0];

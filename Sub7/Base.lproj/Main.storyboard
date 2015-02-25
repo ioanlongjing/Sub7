@@ -365,7 +365,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Spicy Turkey Avocado" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kxr-u7-cIA">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Spicy Turkey Avocado" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kxr-u7-cIA">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="dtQ-M2-OM4"/>
@@ -2277,7 +2277,7 @@
                                     <constraint firstAttribute="width" constant="80" id="eEy-CW-yKv"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="999 min">
+                                    <fragment content=" min">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="18" name="HelveticaNeue"/>
@@ -2389,6 +2389,12 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ASN-Ax-nwe">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="300" y="294" width="20" height="20"/>
+                                </variation>
+                            </activityIndicatorView>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
@@ -2441,6 +2447,7 @@
                                 <exclude reference="d7l-zf-oai"/>
                                 <exclude reference="VvV-yV-lIj"/>
                                 <exclude reference="4bW-Nk-aVl"/>
+                                <exclude reference="ASN-Ax-nwe"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="WPs-mZ-rcC"/>
@@ -2489,6 +2496,7 @@
                                 <include reference="d7l-zf-oai"/>
                                 <include reference="VvV-yV-lIj"/>
                                 <include reference="4bW-Nk-aVl"/>
+                                <include reference="ASN-Ax-nwe"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="WPs-mZ-rcC"/>
