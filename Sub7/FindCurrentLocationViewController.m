@@ -7,7 +7,6 @@
 //
 
 #import "FindCurrentLocationViewController.h"
-#import <MapKit/MapKit.h>
 #import "RootViewController.h"
 #import "Shop.h"
 

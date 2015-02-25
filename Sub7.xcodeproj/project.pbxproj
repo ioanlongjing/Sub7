@@ -11,7 +11,7 @@
 		2F1270A21A8D33440045090D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1270A11A8D33440045090D /* Foundation.framework */; };
 		2F1270B61A9322120045090D /* FindCurrentLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1270B51A9322120045090D /* FindCurrentLocationViewController.m */; };
 		2F1270B91A93AEC80045090D /* Sub.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1270B81A93AEC80045090D /* Sub.m */; };
-		2F87DAE21A9D1FF000469D29 /* FindSubs.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F87DAE11A9D1FF000469D29 /* FindSubs.m */; };
+		2F87DAE51A9D299400469D29 /* GetSubs.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F87DAE41A9D299400469D29 /* GetSubs.m */; };
 		2FC0CF0A1A98353E004F975C /* JBParallaxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC0CF091A98353D004F975C /* JBParallaxCell.m */; };
 		5775F9051A8BEC1A00B91A00 /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5775F9031A8BEC1A00B91A00 /* Shop.m */; };
 		57D69F111A8AE39400307834 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F101A8AE39400307834 /* AudioToolbox.framework */; };
@@ -65,8 +65,8 @@
 		2F1270B51A9322120045090D /* FindCurrentLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindCurrentLocationViewController.m; sourceTree = "<group>"; };
 		2F1270B71A93AEC80045090D /* Sub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sub.h; sourceTree = "<group>"; };
 		2F1270B81A93AEC80045090D /* Sub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sub.m; sourceTree = "<group>"; };
-		2F87DAE01A9D1FF000469D29 /* FindSubs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindSubs.h; sourceTree = "<group>"; };
-		2F87DAE11A9D1FF000469D29 /* FindSubs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindSubs.m; sourceTree = "<group>"; };
+		2F87DAE31A9D299400469D29 /* GetSubs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetSubs.h; path = ../GetSubs.h; sourceTree = "<group>"; };
+		2F87DAE41A9D299400469D29 /* GetSubs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetSubs.m; path = ../GetSubs.m; sourceTree = "<group>"; };
 		2FC0CF081A983534004F975C /* JBParallaxCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBParallaxCell.h; sourceTree = "<group>"; };
 		2FC0CF091A98353D004F975C /* JBParallaxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBParallaxCell.m; sourceTree = "<group>"; };
 		5775F9021A8BEC1A00B91A00 /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
@@ -162,6 +162,8 @@
 				2F1270B81A93AEC80045090D /* Sub.m */,
 				5775F9021A8BEC1A00B91A00 /* Shop.h */,
 				5775F9031A8BEC1A00B91A00 /* Shop.m */,
+				2F87DAE31A9D299400469D29 /* GetSubs.h */,
+				2F87DAE41A9D299400469D29 /* GetSubs.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -172,8 +174,6 @@
 				7A9F5DE01A955D0C004F6395 /* Edit Shops & Subs */,
 				2F1270B41A9322120045090D /* FindCurrentLocationViewController.h */,
 				2F1270B51A9322120045090D /* FindCurrentLocationViewController.m */,
-				2F87DAE01A9D1FF000469D29 /* FindSubs.h */,
-				2F87DAE11A9D1FF000469D29 /* FindSubs.m */,
 				7A8A1AA81A894275006642F1 /* RootViewController.h */,
 				7A8A1AA91A894275006642F1 /* RootViewController.m */,
 				2FC0CF081A983534004F975C /* JBParallaxCell.h */,
@@ -384,9 +384,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A8A1AA41A894275006642F1 /* AppDelegate.m in Sources */,
+				2F87DAE51A9D299400469D29 /* GetSubs.m in Sources */,
 				7A8A1AA11A894275006642F1 /* main.m in Sources */,
 				7A0DD5C61A8D2CC100F2DA02 /* ShopEditViewController.m in Sources */,
-				2F87DAE21A9D1FF000469D29 /* FindSubs.m in Sources */,
 				7A8A1AAA1A894275006642F1 /* RootViewController.m in Sources */,
 				7AA7F5D31A8B11AD00946EEE /* CustoSandoViewController.m in Sources */,
 				5775F9051A8BEC1A00B91A00 /* Shop.m in Sources */,

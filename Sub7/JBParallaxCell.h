@@ -29,7 +29,7 @@
 @interface JBParallaxCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *parallaxImage;
-//@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 - (void)cellOnTableView:(UITableView *)tableView didScrollOnView:(UIView *)view;

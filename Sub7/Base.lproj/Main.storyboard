@@ -806,36 +806,39 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lD2-Qu-ZT9">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="qg1-4b-R4K"/>
+                                            <constraint firstAttribute="height" constant="30" id="G1y-BE-PQF"/>
+                                            <constraint firstAttribute="width" constant="80" id="ebt-Bg-7EO"/>
                                         </constraints>
                                         <attributedString key="attributedText">
-                                            <fragment content="Label">
+                                            <fragment content="TravelTime">
                                                 <attributes>
-                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <font key="NSFont" size="17" name="Helvetica"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="qg1-4b-R4K"/>
+                                                <exclude reference="G1y-BE-PQF"/>
+                                                <exclude reference="ebt-Bg-7EO"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
                                             <mask key="constraints">
-                                                <include reference="qg1-4b-R4K"/>
+                                                <include reference="G1y-BE-PQF"/>
+                                                <include reference="ebt-Bg-7EO"/>
                                             </mask>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ED1-4m-Fia">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="ivD-wD-vPm"/>
+                                            <constraint firstAttribute="width" constant="80" id="53y-kK-LKd"/>
+                                            <constraint firstAttribute="height" constant="30" id="WM2-7x-pR6"/>
                                         </constraints>
                                         <attributedString key="attributedText">
-                                            <fragment content="testel">
+                                            <fragment content="Shop">
                                                 <attributes>
                                                     <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <font key="NSFont" size="17" name="HelveticaNeue"/>
@@ -846,22 +849,24 @@
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="ivD-wD-vPm"/>
+                                                <exclude reference="53y-kK-LKd"/>
+                                                <exclude reference="WM2-7x-pR6"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
                                             <mask key="constraints">
-                                                <include reference="ivD-wD-vPm"/>
+                                                <include reference="53y-kK-LKd"/>
+                                                <include reference="WM2-7x-pR6"/>
                                             </mask>
                                         </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="lD2-Qu-ZT9" secondAttribute="trailing" constant="8" id="2LU-A8-xKj"/>
-                                    <constraint firstItem="ED1-4m-Fia" firstAttribute="top" secondItem="M0P-P9-zdp" secondAttribute="top" constant="16" id="Ia2-t4-5eD"/>
-                                    <constraint firstItem="lD2-Qu-ZT9" firstAttribute="top" secondItem="M0P-P9-zdp" secondAttribute="top" constant="16" id="qhA-XW-Q9F"/>
-                                    <constraint firstItem="ED1-4m-Fia" firstAttribute="leading" secondItem="M0P-P9-zdp" secondAttribute="leading" constant="8" id="tes-kS-5Vz"/>
+                                    <constraint firstItem="lD2-Qu-ZT9" firstAttribute="top" secondItem="M0P-P9-zdp" secondAttribute="top" constant="16" id="BDJ-co-fCc"/>
+                                    <constraint firstAttribute="trailing" secondItem="lD2-Qu-ZT9" secondAttribute="trailing" constant="8" id="FhT-5M-CJU"/>
+                                    <constraint firstItem="ED1-4m-Fia" firstAttribute="top" secondItem="M0P-P9-zdp" secondAttribute="top" constant="16" id="L1b-A0-a1n"/>
+                                    <constraint firstItem="ED1-4m-Fia" firstAttribute="leading" secondItem="M0P-P9-zdp" secondAttribute="leading" constant="8" id="c0H-CS-guB"/>
                                     <constraint firstAttribute="height" constant="70" id="uWs-3j-tyn"/>
                                 </constraints>
                                 <variation key="default">
@@ -871,10 +876,10 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="uWs-3j-tyn"/>
-                                        <exclude reference="Ia2-t4-5eD"/>
-                                        <exclude reference="tes-kS-5Vz"/>
-                                        <exclude reference="2LU-A8-xKj"/>
-                                        <exclude reference="qhA-XW-Q9F"/>
+                                        <exclude reference="L1b-A0-a1n"/>
+                                        <exclude reference="c0H-CS-guB"/>
+                                        <exclude reference="BDJ-co-fCc"/>
+                                        <exclude reference="FhT-5M-CJU"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -884,10 +889,10 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="uWs-3j-tyn"/>
-                                        <include reference="Ia2-t4-5eD"/>
-                                        <include reference="tes-kS-5Vz"/>
-                                        <include reference="2LU-A8-xKj"/>
-                                        <include reference="qhA-XW-Q9F"/>
+                                        <include reference="L1b-A0-a1n"/>
+                                        <include reference="c0H-CS-guB"/>
+                                        <include reference="BDJ-co-fCc"/>
+                                        <include reference="FhT-5M-CJU"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -920,10 +925,10 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="dqU-LV-6Ae" id="Qhs-vA-5v2"/>
-                                    <outletCollection property="gestureRecognizers" destination="LFI-nr-GLE" appends="YES" id="rNN-HW-P9e"/>
                                 </connections>
                             </mapView>
                         </subviews>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Xae-bZ-pmd" firstAttribute="top" secondItem="VvV-yV-lIj" secondAttribute="bottom" constant="19" id="1hw-B2-RfQ"/>
                             <constraint firstItem="VvV-yV-lIj" firstAttribute="leading" secondItem="zmS-ob-xhi" secondAttribute="leadingMargin" constant="-8" id="4y9-Yz-LOX"/>
@@ -947,19 +952,19 @@
                                 <exclude reference="VvV-yV-lIj"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="C2e-1g-wFo"/>
-                                <exclude reference="dYY-Kb-4dF"/>
-                                <exclude reference="k3N-lK-2wg"/>
-                                <exclude reference="Gmw-Nk-vEm"/>
-                                <exclude reference="Kbe-qs-Ne4"/>
-                                <exclude reference="vTY-Qj-wuK"/>
-                                <exclude reference="4y9-Yz-LOX"/>
-                                <exclude reference="BI4-Ty-9EU"/>
-                                <exclude reference="zea-hj-2ss"/>
+                                <exclude reference="UD5-14-Skd"/>
                                 <exclude reference="1hw-B2-RfQ"/>
                                 <exclude reference="DIT-ci-HWt"/>
                                 <exclude reference="OgT-F9-a7v"/>
-                                <exclude reference="UD5-14-Skd"/>
+                                <exclude reference="C2e-1g-wFo"/>
+                                <exclude reference="dYY-Kb-4dF"/>
+                                <exclude reference="k3N-lK-2wg"/>
+                                <exclude reference="4y9-Yz-LOX"/>
+                                <exclude reference="BI4-Ty-9EU"/>
+                                <exclude reference="zea-hj-2ss"/>
+                                <exclude reference="Gmw-Nk-vEm"/>
+                                <exclude reference="Kbe-qs-Ne4"/>
+                                <exclude reference="vTY-Qj-wuK"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -970,33 +975,37 @@
                                 <include reference="VvV-yV-lIj"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="C2e-1g-wFo"/>
-                                <include reference="dYY-Kb-4dF"/>
-                                <include reference="k3N-lK-2wg"/>
-                                <include reference="Gmw-Nk-vEm"/>
-                                <include reference="Kbe-qs-Ne4"/>
-                                <include reference="vTY-Qj-wuK"/>
-                                <include reference="4y9-Yz-LOX"/>
-                                <include reference="BI4-Ty-9EU"/>
-                                <include reference="zea-hj-2ss"/>
+                                <include reference="UD5-14-Skd"/>
                                 <include reference="1hw-B2-RfQ"/>
                                 <include reference="DIT-ci-HWt"/>
                                 <include reference="OgT-F9-a7v"/>
-                                <include reference="UD5-14-Skd"/>
+                                <include reference="C2e-1g-wFo"/>
+                                <include reference="dYY-Kb-4dF"/>
+                                <include reference="k3N-lK-2wg"/>
+                                <include reference="4y9-Yz-LOX"/>
+                                <include reference="BI4-Ty-9EU"/>
+                                <include reference="zea-hj-2ss"/>
+                                <include reference="Gmw-Nk-vEm"/>
+                                <include reference="Kbe-qs-Ne4"/>
+                                <include reference="vTY-Qj-wuK"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="S9l-d9-Sue" appends="YES" id="N6j-pC-uhx"/>
+                        </connections>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="imageView" destination="2wf-x3-q8V" id="99G-iz-bUZ"/>
                         <outlet property="labelsView" destination="M0P-P9-zdp" id="x4T-Ro-5cc"/>
                         <outlet property="mapView" destination="VvV-yV-lIj" id="OEJ-Q1-o7o"/>
+                        <outlet property="travelTimeLabel" destination="lD2-Qu-ZT9" id="dl1-oR-iNe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LK7-BH-sQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="LFI-nr-GLE">
+                <tapGestureRecognizer id="S9l-d9-Sue">
                     <connections>
-                        <action selector="mapViewTapped:" destination="dqU-LV-6Ae" id="RRA-la-YCJ"/>
+                        <action selector="mapViewTapped:" destination="dqU-LV-6Ae" id="Ucu-c3-hS2"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
