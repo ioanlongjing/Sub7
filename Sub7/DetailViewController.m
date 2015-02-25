@@ -50,10 +50,21 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
+    Shop *selectedShop = [Shop new];
+    selectedShop = self.selectedSub.shop;
+    
+    self.subShopLabel.text = selectedShop.name;
+    self.subShopAddressLabel.text = selectedShop.address;
+    
+    self.subNameLabel.text = [NSString stringWithFormat:@"%@", self.selectedSub.name];
+    self.subPriceLabel.text = [NSString stringWithFormat:@"$%.02f",[self.selectedSub.price floatValue]];;
+    
     // set title of call button to "Call (555) 415-5392"
     PhoneNumberFormatter *formatter = [[PhoneNumberFormatter alloc] init];
     NSString *phoneInFormat = [formatter format:self.selectedSub.shop.phone withLocale:@"us"];
     [self.callButton setTitle:[NSString stringWithFormat:@"Call %@", phoneInFormat] forState:UIControlStateNormal];
+    
     
 }
 
@@ -61,7 +72,7 @@
     MKPinAnnotationView *pin = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:nil];
     
     if (annotation == self.sandwichAnnotation) {
-        //        pin.image = [UIImage imageNamed:@"pinImage"];
+        pin.image = [UIImage imageNamed:@"pin"];
         pin.canShowCallout = YES;
         pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         return pin;

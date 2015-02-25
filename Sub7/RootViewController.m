@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
     self.refreshControl = [[UIRefreshControl alloc] init];
-    self.refreshControl.backgroundColor = [UIColor blackColor];
+//    self.refreshControl.backgroundColor = [UIColor blackColor];
     self.refreshControl.tintColor = [UIColor whiteColor];
     [self.refreshControl addTarget:self
                             action:@selector(refreshTableView)
@@ -110,8 +110,8 @@
 {
     TableViewCellAsHeader *headerCell = [tableView dequeueReusableCellWithIdentifier:@"HeaderCell"];
     headerCell.backgroundColor = [UIColor whiteColor];
-//    headerCell.nameLabel.text = [NSString stringWithFormat:@"%@", [self.subs[indexPath.section]name]];
-//    cell.priceLabel.text = [NSString stringWithFormat:@"$%.02f",[[self.subs[indexPath.section]price]floatValue]];
+    headerCell.nameLabel.text = [NSString stringWithFormat:@"%@", [self.subs[section]name]];
+    headerCell.priceLabel.text = [NSString stringWithFormat:@"$%.02f",[[self.subs[section]price]floatValue]];
     
     return headerCell;
 }

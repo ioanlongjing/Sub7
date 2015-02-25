@@ -188,14 +188,11 @@
 			children = (
 				7ABA09431A9D0BAD008513EB /* Suggest Sub/Shop */,
 				7A9F5DE01A955D0C004F6395 /* Edit Shops & Subs */,
+				7A98A8E11A9E3314008FB6D7 /* Custom TableViewCell */,
 				2F1270B41A9322120045090D /* FindCurrentLocationViewController.h */,
 				2F1270B51A9322120045090D /* FindCurrentLocationViewController.m */,
 				7A8A1AA81A894275006642F1 /* RootViewController.h */,
 				7A8A1AA91A894275006642F1 /* RootViewController.m */,
-				7AA0EFE01A9E0EF700E49E3D /* TableViewCellAsHeader.h */,
-				7AA0EFE11A9E0EF700E49E3D /* TableViewCellAsHeader.m */,
-				2FC0CF081A983534004F975C /* JBParallaxCell.h */,
-				2FC0CF091A98353D004F975C /* JBParallaxCell.m */,
 				7AA7F5CB1A8B10FE00946EEE /* DetailViewController.h */,
 				7AA7F5CC1A8B10FE00946EEE /* DetailViewController.m */,
 				7AA0EFDD1A9D9D5800E49E3D /* PhoneNumberFormatter.h */,
@@ -285,6 +282,17 @@
 				7A8A1ABC1A894275006642F1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7A98A8E11A9E3314008FB6D7 /* Custom TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7AA0EFE01A9E0EF700E49E3D /* TableViewCellAsHeader.h */,
+				7AA0EFE11A9E0EF700E49E3D /* TableViewCellAsHeader.m */,
+				2FC0CF081A983534004F975C /* JBParallaxCell.h */,
+				2FC0CF091A98353D004F975C /* JBParallaxCell.m */,
+			);
+			name = "Custom TableViewCell";
 			sourceTree = "<group>";
 		};
 		7A9F5DE01A955D0C004F6395 /* Edit Shops & Subs */ = {
