@@ -12,6 +12,7 @@
 #import "Sub.h"
 #import "FindCurrentLocationViewController.h"
 #import "JBParallaxCell.h"
+#import "GetSubs.h"
 #import "SuggestSubViewController.h"
 
 
@@ -30,14 +31,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    self.refreshControl = [[UIRefreshControl alloc] init];
-//    self.refreshControl.backgroundColor = [UIColor purpleColor];
-//    self.refreshControl.tintColor = [UIColor whiteColor];
-//    [self.refreshControl addTarget:self
-//                            action:@selector(findSubs)
-//                  forControlEvents:UIControlEventValueChanged];
-
-    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor blackColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(refreshTableView)
+                  forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -119,7 +119,10 @@
         DetailViewController *dvc = segue.destinationViewController;
         dvc.selectedSub = [self.subs objectAtIndex:[self.tableView indexPathForSelectedRow].section];
         dvc.currentLocation = self.currentLocation;
-    } else if ([segue.identifier isEqualToString:@"pickSubSeg"]) {
+        dvc.title = dvc.selectedSub.name;
+        self.title = @"Subs";
+    }
+    else if ([segue.identifier isEqualToString:@"pickSubSeg"]) {
         FindCurrentLocationViewController *fclvc = segue.destinationViewController;
         fclvc.delegate = self;
     } else if ([segue.identifier isEqualToString:@"SuggestSub"]) {
@@ -127,6 +130,15 @@
         dvc.suggestedSub = [Sub new];
     }
     
+}
+
+-(void)refreshTableView {
+    [GetSubs getSubsNearbywithCompletion:^(NSArray *subsArray, NSArray *subImagesArray) {
+        self.subImagesArray = subImagesArray;
+        self.subs = subsArray;
+        [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+    }];
 }
 
 
