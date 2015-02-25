@@ -38,6 +38,7 @@
 //    self.suggestedSub.imageFile
     
     dvc.suggestedSub = self.suggestedSub;
+    dvc.selectedShop = [Shop new];
     
 }
 

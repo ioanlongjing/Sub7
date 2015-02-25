@@ -12,6 +12,7 @@
 #import "Sub.h"
 #import "FindCurrentLocationViewController.h"
 #import "JBParallaxCell.h"
+#import "SuggestSubViewController.h"
 
 
 @interface RootViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate, FindLocationDelegate>
@@ -122,7 +123,8 @@
         FindCurrentLocationViewController *fclvc = segue.destinationViewController;
         fclvc.delegate = self;
     } else if ([segue.identifier isEqualToString:@"SuggestSub"]) {
-        
+        SuggestSubViewController *dvc = segue.destinationViewController;
+        dvc.suggestedSub = [Sub new];
     }
     
 }

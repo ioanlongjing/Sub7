@@ -44,17 +44,17 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     self.selectedShop.name = self.shopNameTextField.text;
-    self.selectedShop.address = self.shopNameTextField.text;
-    self.selectedShop.phone = self.shopNameTextField.text;
+    self.selectedShop.address = self.shopAddressTextField.text;
+    self.selectedShop.phone = self.shopPhoneTextField.text;
     
     
-    if (self.shopAcceptsCardsSwitch) {
-        // if shop accepts credit cards it is not cashOnly
-        self.selectedShop.cashOnly = NO;
-    } else if (!self.shopAcceptsCardsSwitch) {
-        // if shop does NOT accept credit cards it is cashOnly
-        self.selectedShop.cashOnly = YES;
-    }
+//    if (self.shopAcceptsCardsSwitch) {
+//        // if shop accepts credit cards it is not cashOnly
+//        self.selectedShop.cashOnly = NO;
+//    } else if (!self.shopAcceptsCardsSwitch) {
+//        // if shop does NOT accept credit cards it is cashOnly
+//        self.selectedShop.cashOnly = YES;
+//    }
     
     
     SuggestShopViewController *dvc = segue.destinationViewController;

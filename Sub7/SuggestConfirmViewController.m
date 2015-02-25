@@ -35,13 +35,22 @@
     self.shopAddressLabel.text = self.selectedShop.address;
     self.shopPhoneLabel.text = self.selectedShop.phone;
     
-    if (self.selectedShop.cashOnly) {
-        self.shopAcceptsCardsLabel.text = @"Not Accepting Credit Cards";
-    } else if (!self.selectedShop.cashOnly) {
-        self.shopAcceptsCardsLabel.text = @"Accepts Credit Cards";
-    }
+//    if (self.selectedShop.cashOnly) {
+//        self.shopAcceptsCardsLabel.text = @"Not Accepting Credit Cards";
+//    } else if (!self.selectedShop.cashOnly) {
+//        self.shopAcceptsCardsLabel.text = @"Accepts Credit Cards";
+//    }
     
     
+}
+- (IBAction)onSubmitButtonPressed:(UIButton *)sender {
+    [self.suggestedSub saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Saved Sub Successfully!");
+        } else {
+            NSLog(@"Error saving Sub! %@", error);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
