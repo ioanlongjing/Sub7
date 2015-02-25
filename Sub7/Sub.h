@@ -15,7 +15,7 @@
 @property (retain) NSString *price;
 @property (retain) NSMutableArray *stockIngredients;
 @property (retain) Shop *shop;
-@property (retain) PFFile *imageFile;
+@property (retain) PFFile *image;
 
 + (NSString *)parseClassName;
 + (void)queryForSubsInShopWithCompletion:(void (^)(NSArray *resultsArray, NSError *error))complete shop:(Shop *)selectedShop;

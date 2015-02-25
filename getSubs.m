@@ -27,7 +27,7 @@
                 NSMutableArray *subImages = [NSMutableArray new];
                 for(Sub * sub in subs)
                 {
-                    NSData *imageData = [sub.imageFile getData];
+                    NSData *imageData = [sub.image getData];
                     UIImage *image = [UIImage imageWithData:imageData];
                     [subImages addObject:image];
                 }
