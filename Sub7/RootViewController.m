@@ -14,6 +14,7 @@
 #import "JBParallaxCell.h"
 #import "GetSubs.h"
 #import "SuggestSubViewController.h"
+#import "TableViewCellAsHeader.h"
 
 
 @interface RootViewController () <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate, FindLocationDelegate>
@@ -32,7 +33,7 @@
 {
     [super viewDidLoad];
     self.refreshControl = [[UIRefreshControl alloc] init];
-    self.refreshControl.backgroundColor = [UIColor blackColor];
+//    self.refreshControl.backgroundColor = [UIColor blackColor];
     self.refreshControl.tintColor = [UIColor whiteColor];
     [self.refreshControl addTarget:self
                             action:@selector(refreshTableView)
@@ -41,7 +42,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    self.title = @"Pick Your Sub";
+    self.title = @"Select a Sandwich";
     if (!self.currentLocation) {
         [self performSegueWithIdentifier:@"pickSubSeg" sender:self];
     }
@@ -53,6 +54,19 @@
 {
     [super viewDidAppear:animated];
     [self scrollViewDidScroll:nil];
+    
+//    NSMutableAttributedString* attString = [[NSMutableAttributedString alloc] initWithString:textView.text];
+//    NSRange range = NSMakeRange(0, [attString length]);
+//    
+//    [attString addAttribute:NSFontAttributeName value:textView.font range:range];
+//    [attString addAttribute:NSForegroundColorAttributeName value:textView.textColor range:range];
+//    
+//    NSShadow* shadow = [[NSShadow alloc] init];
+//    shadow.shadowColor = [UIColor whiteColor];
+//    shadow.shadowOffset = CGSizeMake(0.0f, 1.0f);
+//    [attString addAttribute:NSShadowAttributeName value:shadow range:range];
+//    
+//    textView.attributedText = attString;
     
 }
 
@@ -85,11 +99,29 @@
     return 1;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, 20.0)];
-    view.backgroundColor = [UIColor blackColor];
-    return view;
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 32.0;
 }
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    TableViewCellAsHeader *headerCell = [tableView dequeueReusableCellWithIdentifier:@"HeaderCell"];
+    headerCell.backgroundColor = [UIColor whiteColor];
+    headerCell.nameLabel.text = [NSString stringWithFormat:@"%@", [self.subs[section]name]];
+    headerCell.priceLabel.text = [NSString stringWithFormat:@"$%.02f",[[self.subs[section]price]floatValue]];
+    
+    return headerCell;
+}
+
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, 90.0)];
+//    view.backgroundColor = [UIColor whiteColor];
+//    return view;
+//}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -114,13 +146,15 @@
     }
 }
 
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"DetailSeg"]) {
         DetailViewController *dvc = segue.destinationViewController;
         dvc.selectedSub = [self.subs objectAtIndex:[self.tableView indexPathForSelectedRow].section];
         dvc.currentLocation = self.currentLocation;
-        dvc.title = dvc.selectedSub.name;
-        self.title = @"Subs";
+        //dvc.title = dvc.selectedSub.name;
+        self.title = @"";
     }
     else if ([segue.identifier isEqualToString:@"pickSubSeg"]) {
         FindCurrentLocationViewController *fclvc = segue.destinationViewController;

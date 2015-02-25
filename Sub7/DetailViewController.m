@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import <MapKit/MapKit.h>
+#import "PhoneNumberFormatter.h"
 
 
 @interface DetailViewController ()<CLLocationManagerDelegate, MKMapViewDelegate, MKOverlay>
@@ -20,7 +21,12 @@
 @property CGRect originalFrame;
 @property UIBarButtonItem *doneButton;
 @property (weak, nonatomic) IBOutlet UILabel *travelTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subShopLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subShopAddressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subPriceLabel;
 @property BOOL mapTapped;
+@property (weak, nonatomic) IBOutlet UIButton *callButton;
 
 @end
 
@@ -38,13 +44,34 @@
     [self getDirections];
     [self.mapView showAnnotations: self.mapView.annotations animated:YES];
     
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    
+    Shop *selectedShop = [Shop new];
+    selectedShop = self.selectedSub.shop;
+    
+    self.subShopLabel.text = selectedShop.name;
+    self.subShopAddressLabel.text = selectedShop.address;
+    
+    self.subNameLabel.text = [NSString stringWithFormat:@"%@", self.selectedSub.name];
+    self.subPriceLabel.text = [NSString stringWithFormat:@"$%.02f",[self.selectedSub.price floatValue]];;
+    
+    // set title of call button to "Call (555) 415-5392"
+    PhoneNumberFormatter *formatter = [[PhoneNumberFormatter alloc] init];
+    NSString *phoneInFormat = [formatter format:self.selectedSub.shop.phone withLocale:@"us"];
+    [self.callButton setTitle:[NSString stringWithFormat:@"Call %@", phoneInFormat] forState:UIControlStateNormal];
+    
+    
 }
 
 -(MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     MKPinAnnotationView *pin = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:nil];
     
     if (annotation == self.sandwichAnnotation) {
-        //        pin.image = [UIImage imageNamed:@"pinImage"];
+        pin.image = [UIImage imageNamed:@"pin"];
         pin.canShowCallout = YES;
         pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         return pin;
@@ -80,8 +107,7 @@
             
             MKPolyline *line = [route polyline];
             [self.mapView addOverlay:line];
-            self.travelTimeLabel.text = [NSString stringWithFormat:@"%.0f mins",(route.expectedTravelTime/60)];
-            self.travelTimeLabel.textColor = [UIColor whiteColor];
+            self.travelTimeLabel.text = [NSString stringWithFormat:@"%.0f min",(route.expectedTravelTime/60)];
             
             NSArray *steps = [route steps];
             
@@ -97,7 +123,7 @@
 -(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay {
     if ([overlay isKindOfClass:[MKPolyline class]]) {
         MKPolylineView* aView = [[MKPolylineView alloc]initWithPolyline:(MKPolyline*)overlay] ;
-        aView.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
+        aView.strokeColor = [[UIColor colorWithRed:255/255.0 green:104/255.0 blue:57/255.0 alpha:1.0] colorWithAlphaComponent:0.5];
         aView.lineWidth = 10;
         return aView;
     }
@@ -134,7 +160,7 @@
     [self.navigationItem setHidesBackButton:false];
     self.labelsView.hidden = false;
 }
-- (IBAction)callButtonTapped:(id)sender {
+- (IBAction)callButtonTapped:(UIButton *)button {
     NSString *phoneNumber = self.selectedSub.shop.phone;
     NSURL *phoneURL = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt:%@",phoneNumber]];
     if ([[UIApplication sharedApplication] canOpenURL:phoneURL]) {
