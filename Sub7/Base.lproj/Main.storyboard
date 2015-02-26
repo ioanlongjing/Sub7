@@ -2584,6 +2584,7 @@
                         <outlet property="subShopAddressLabel" destination="pqt-Lb-qjP" id="krJ-Z6-F7z"/>
                         <outlet property="subShopLabel" destination="ED1-4m-Fia" id="Td4-pU-KAy"/>
                         <outlet property="travelTimeLabel" destination="lD2-Qu-ZT9" id="dl1-oR-iNe"/>
+                        <segue destination="oEd-c5-LBh" kind="show" identifier="MapDetailSeg" id="iMd-Ko-Y9J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LK7-BH-sQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2594,6 +2595,59 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3510" y="123"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="L2b-uk-LIj">
+            <objects>
+                <viewController id="oEd-c5-LBh" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qIo-Lj-OH6"/>
+                        <viewControllerLayoutGuide type="bottom" id="IKu-Q1-EVC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HhO-C2-Vbf">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CAa-WG-tNI">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CAa-WG-tNI" firstAttribute="top" secondItem="HhO-C2-Vbf" secondAttribute="topMargin" id="Mn0-P3-qTt"/>
+                            <constraint firstItem="CAa-WG-tNI" firstAttribute="leading" secondItem="HhO-C2-Vbf" secondAttribute="leadingMargin" constant="-16" id="WTd-UE-hEF"/>
+                            <constraint firstItem="IKu-Q1-EVC" firstAttribute="top" secondItem="CAa-WG-tNI" secondAttribute="bottom" id="iAl-sb-Lrx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CAa-WG-tNI" secondAttribute="trailing" constant="-16" id="obu-Qj-9ql"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="CAa-WG-tNI"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Mn0-P3-qTt"/>
+                                <exclude reference="WTd-UE-hEF"/>
+                                <exclude reference="obu-Qj-9ql"/>
+                                <exclude reference="iAl-sb-Lrx"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="CAa-WG-tNI"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Mn0-P3-qTt"/>
+                                <include reference="WTd-UE-hEF"/>
+                                <include reference="obu-Qj-9ql"/>
+                                <include reference="iAl-sb-Lrx"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="bigMapView" destination="CAa-WG-tNI" id="dMC-bm-80R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zgK-by-hkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4254" y="123"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PCb-CO-60H">
