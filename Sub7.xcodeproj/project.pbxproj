@@ -48,6 +48,11 @@
 		7AA7F5D01A8B117200946EEE /* MapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7F5CF1A8B117200946EEE /* MapDetailViewController.m */; };
 		7AA7F5D31A8B11AD00946EEE /* CustoSandoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7F5D21A8B11AD00946EEE /* CustoSandoViewController.m */; };
 		7AA7F5D51A8B131E00946EEE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5D41A8B131E00946EEE /* MapKit.framework */; };
+		7AB1F3B31A9EC6B50083BF80 /* JPSCameraButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1F3AB1A9EC6B50083BF80 /* JPSCameraButton.m */; };
+		7AB1F3B41A9EC6B50083BF80 /* JPSImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7AB1F3AC1A9EC6B50083BF80 /* JPSImagePickerController.bundle */; };
+		7AB1F3B51A9EC6B50083BF80 /* JPSImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1F3AE1A9EC6B50083BF80 /* JPSImagePickerController.m */; };
+		7AB1F3B61A9EC6B50083BF80 /* JPSVolumeButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1F3B01A9EC6B50083BF80 /* JPSVolumeButtonHandler.m */; };
+		7AB1F3B71A9EC6B50083BF80 /* UIImage+DrawBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1F3B21A9EC6B50083BF80 /* UIImage+DrawBlock.m */; };
 		7ABA093C1A9D040C008513EB /* SuggestConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA093B1A9D040C008513EB /* SuggestConfirmViewController.m */; };
 		7ABA093F1A9D0422008513EB /* SuggestShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA093E1A9D0422008513EB /* SuggestShopViewController.m */; };
 		7ABA09421A9D0433008513EB /* SuggestSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA09411A9D0433008513EB /* SuggestSubViewController.m */; };
@@ -125,6 +130,15 @@
 		7AA7F5D11A8B11AD00946EEE /* CustoSandoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustoSandoViewController.h; sourceTree = "<group>"; };
 		7AA7F5D21A8B11AD00946EEE /* CustoSandoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustoSandoViewController.m; sourceTree = "<group>"; };
 		7AA7F5D41A8B131E00946EEE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7AB1F3AA1A9EC6B50083BF80 /* JPSCameraButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSCameraButton.h; sourceTree = "<group>"; };
+		7AB1F3AB1A9EC6B50083BF80 /* JPSCameraButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSCameraButton.m; sourceTree = "<group>"; };
+		7AB1F3AC1A9EC6B50083BF80 /* JPSImagePickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JPSImagePickerController.bundle; sourceTree = "<group>"; };
+		7AB1F3AD1A9EC6B50083BF80 /* JPSImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSImagePickerController.h; sourceTree = "<group>"; };
+		7AB1F3AE1A9EC6B50083BF80 /* JPSImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSImagePickerController.m; sourceTree = "<group>"; };
+		7AB1F3AF1A9EC6B50083BF80 /* JPSVolumeButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSVolumeButtonHandler.h; sourceTree = "<group>"; };
+		7AB1F3B01A9EC6B50083BF80 /* JPSVolumeButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSVolumeButtonHandler.m; sourceTree = "<group>"; };
+		7AB1F3B11A9EC6B50083BF80 /* UIImage+DrawBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DrawBlock.h"; sourceTree = "<group>"; };
+		7AB1F3B21A9EC6B50083BF80 /* UIImage+DrawBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DrawBlock.m"; sourceTree = "<group>"; };
 		7ABA093A1A9D040C008513EB /* SuggestConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestConfirmViewController.h; sourceTree = "<group>"; };
 		7ABA093B1A9D040C008513EB /* SuggestConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestConfirmViewController.m; sourceTree = "<group>"; };
 		7ABA093D1A9D0422008513EB /* SuggestShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestShopViewController.h; sourceTree = "<group>"; };
@@ -231,6 +245,7 @@
 				7A8A1AAB1A894275006642F1 /* Main.storyboard */,
 				5775F9071A8C529200B91A00 /* View */,
 				5775F9061A8C526E00B91A00 /* Model */,
+				7AB1F3A91A9EC6B50083BF80 /* JPSImagePickerController */,
 				7A8A1AAE1A894275006642F1 /* Images.xcassets */,
 				7A8A1AB01A894275006642F1 /* LaunchScreen.xib */,
 				7A8A1AA51A894275006642F1 /* Sub7.xcdatamodeld */,
@@ -310,6 +325,22 @@
 			name = "Edit Shops & Subs";
 			sourceTree = "<group>";
 		};
+		7AB1F3A91A9EC6B50083BF80 /* JPSImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				7AB1F3AA1A9EC6B50083BF80 /* JPSCameraButton.h */,
+				7AB1F3AB1A9EC6B50083BF80 /* JPSCameraButton.m */,
+				7AB1F3AC1A9EC6B50083BF80 /* JPSImagePickerController.bundle */,
+				7AB1F3AD1A9EC6B50083BF80 /* JPSImagePickerController.h */,
+				7AB1F3AE1A9EC6B50083BF80 /* JPSImagePickerController.m */,
+				7AB1F3AF1A9EC6B50083BF80 /* JPSVolumeButtonHandler.h */,
+				7AB1F3B01A9EC6B50083BF80 /* JPSVolumeButtonHandler.m */,
+				7AB1F3B11A9EC6B50083BF80 /* UIImage+DrawBlock.h */,
+				7AB1F3B21A9EC6B50083BF80 /* UIImage+DrawBlock.m */,
+			);
+			path = JPSImagePickerController;
+			sourceTree = "<group>";
+		};
 		7ABA09431A9D0BAD008513EB /* Suggest Sub/Shop */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +418,12 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				it,
+				pt,
+				ru,
+				"sv-SE",
+				tr,
 			);
 			mainGroup = 7A8A1A921A894275006642F1;
 			productRefGroup = 7A8A1A9C1A894275006642F1 /* Products */;
@@ -405,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A8A1AAD1A894275006642F1 /* Main.storyboard in Resources */,
+				7AB1F3B41A9EC6B50083BF80 /* JPSImagePickerController.bundle in Resources */,
 				7A8A1AB21A894275006642F1 /* LaunchScreen.xib in Resources */,
 				7A8A1AAF1A894275006642F1 /* Images.xcassets in Resources */,
 			);
@@ -426,6 +464,9 @@
 			files = (
 				7A8A1AA41A894275006642F1 /* AppDelegate.m in Sources */,
 				2F87DAE51A9D299400469D29 /* GetSubs.m in Sources */,
+				7AB1F3B51A9EC6B50083BF80 /* JPSImagePickerController.m in Sources */,
+				7AB1F3B71A9EC6B50083BF80 /* UIImage+DrawBlock.m in Sources */,
+				7AB1F3B31A9EC6B50083BF80 /* JPSCameraButton.m in Sources */,
 				7A8A1AA11A894275006642F1 /* main.m in Sources */,
 				7A0DD5C61A8D2CC100F2DA02 /* ShopEditViewController.m in Sources */,
 				7A8A1AAA1A894275006642F1 /* RootViewController.m in Sources */,
@@ -440,6 +481,7 @@
 				7A9F5DE31A955D54004F6395 /* AllShopsViewController.m in Sources */,
 				7A9F5DE61A964F35004F6395 /* AllSubsViewController.m in Sources */,
 				2FC0CF0A1A98353E004F975C /* JBParallaxCell.m in Sources */,
+				7AB1F3B61A9EC6B50083BF80 /* JPSVolumeButtonHandler.m in Sources */,
 				7AA0EFE21A9E0EF700E49E3D /* TableViewCellAsHeader.m in Sources */,
 				7AA0EFDF1A9D9D5800E49E3D /* PhoneNumberFormatter.m in Sources */,
 				2F1270B91A93AEC80045090D /* Sub.m in Sources */,
@@ -573,8 +615,13 @@
 					"$(PROJECT_DIR)/parse-library-1",
 					"$(PROJECT_DIR)/Sub7",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = Sub7/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -592,8 +639,13 @@
 					"$(PROJECT_DIR)/parse-library-1",
 					"$(PROJECT_DIR)/Sub7",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = Sub7/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

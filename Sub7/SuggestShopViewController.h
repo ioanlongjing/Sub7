@@ -13,5 +13,6 @@
 @interface SuggestShopViewController : UIViewController
 @property Shop *selectedShop;
 @property Sub *suggestedSub;
+@property UIImage *capturedImage;
 
 @end

@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *shopPhoneTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *shopAcceptsCardsSwitch;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property NSArray *allShops;
 
 @end
@@ -60,6 +61,7 @@
     SuggestShopViewController *dvc = segue.destinationViewController;
     dvc.suggestedSub = self.suggestedSub;
     dvc.selectedShop = self.selectedShop;
+    dvc.capturedImage = self.capturedImage;
     
 }
 

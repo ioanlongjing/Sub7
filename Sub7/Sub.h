@@ -12,7 +12,7 @@
 @interface Sub : PFObject<PFSubclassing>
 
 @property (retain) NSString *name;
-@property (retain) NSString *price;
+@property (retain) NSNumber *price;
 @property (retain) NSMutableArray *stockIngredients;
 @property (retain) Shop *shop;
 @property (retain) PFFile *image;

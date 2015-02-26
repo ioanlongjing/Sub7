@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *shopPhoneLabel;
 @property (weak, nonatomic) IBOutlet UILabel *shopAcceptsCardsLabel;
 
+
 @end
 
 @implementation SuggestConfirmViewController
@@ -34,6 +35,8 @@
     self.shopNameLabel.text = self.selectedShop.name;
     self.shopAddressLabel.text = self.selectedShop.address;
     self.shopPhoneLabel.text = self.selectedShop.phone;
+    _subImageView.image = _capturedImage;
+    
     
 //    if (self.selectedShop.cashOnly) {
 //        self.shopAcceptsCardsLabel.text = @"Not Accepting Credit Cards";
@@ -44,13 +47,25 @@
     
 }
 - (IBAction)onSubmitButtonPressed:(UIButton *)sender {
-    [self.suggestedSub saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            NSLog(@"Saved Sub Successfully!");
-        } else {
-            NSLog(@"Error saving Sub! %@", error);
+    
+    
+    // convert image to JPEG and save suggested sub object
+    NSData *data = UIImageJPEGRepresentation(_capturedImage, 0.5f);
+    PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:data];
+    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            [self.suggestedSub setObject:imageFile forKey:@"image"];
+            [self.suggestedSub setObject:self.selectedShop forKey:@"shop"];
+            [self.suggestedSub saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error) {
+                    NSLog(@"Saved");
+                } else {
+                    NSLog(@"Error: %@ %@", error, [error userInfo]);
+                }
+            }];
         }
     }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
