@@ -64,27 +64,16 @@
     }];
     
 }
-
 //
 //- (void)viewDidLoad {
-//    PFQuery *objectQuery = [PFQuery queryWithClassName:@"Sub"];
-//    [objectQuery whereKey:@"name" equalTo:@"Mortadella"];
-//    [objectQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        self.sub = objects.firstObject;
-//        UIImage *subImage = [UIImage imageNamed:@"mortadella"];
+//    PFQuery *subQuery = [PFQuery queryWithClassName:@"Sub"];
+//    Sub *sub = (Sub *) [subQuery getObjectWithId:@"KAjmCj9U34"];
+//    UIImage *subImage = [UIImage imageNamed:@"eggSalad"];
 //        NSData *pictureData = UIImageJPEGRepresentation(subImage, 1.0);
+//        sub.image = [PFFile fileWithData:pictureData];
+//        [sub saveInBackground];
 //
-//        self.sub.image = [PFFile fileWithData:pictureData];
-//        [self.sub saveInBackground];
-//    }];
-
-//    PFQuery *shopQuery = [PFQuery queryWithClassName:@"Shop"];
-//    Shop *shop = (Shop *)[shopQuery getObjectWithId:@"zfOrgziTN5"];
-//    PFGeoPoint *location = [PFGeoPoint geoPointWithLatitude:37.798691 longitude:-122.407880];
-//    shop.location = location;
-//    [shop saveInBackground];
 //    [self dismissViewControllerAnimated:false completion:nil];
-//
 //}
 
 @end

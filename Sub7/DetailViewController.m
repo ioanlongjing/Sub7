@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import <MapKit/MapKit.h>
 #import "PhoneNumberFormatter.h"
+#import "MapViewController.h"
 
 
 @interface DetailViewController ()<CLLocationManagerDelegate, MKMapViewDelegate, MKOverlay>
@@ -17,9 +18,6 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property CLLocationManager *locationManager;
 @property MKPointAnnotation *sandwichAnnotation;
-@property (weak, nonatomic) IBOutlet UIView *labelsView;
-@property CGRect originalFrame;
-@property UIBarButtonItem *doneButton;
 @property (weak, nonatomic) IBOutlet UILabel *travelTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subShopLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subShopAddressLabel;
@@ -27,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *subPriceLabel;
 @property BOOL mapTapped;
 @property (weak, nonatomic) IBOutlet UIButton *callButton;
+@property MKRoute *route;
 
 @end
 
@@ -34,18 +33,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self displaySubImage];
     self.locationManager = [CLLocationManager new];
+    self.route = [MKRoute new];
+    self.locationManager.delegate = self;
     self.mapView.showsUserLocation = true;
     self.sandwichAnnotation = [MKPointAnnotation new];
     CLLocation *shopLocation = [[CLLocation alloc]initWithLatitude:self.selectedSub.shop.location.latitude longitude:self.selectedSub.shop.location.longitude];
     self.sandwichAnnotation.coordinate = shopLocation.coordinate;
     [self.mapView addAnnotation:self.sandwichAnnotation];
+    [self.mapView showAnnotations:self.mapView.annotations animated:YES];
     [self getDirections];
-    [self.mapView showAnnotations: self.mapView.annotations animated:YES];
-    
-    
 }
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -86,10 +87,9 @@
     CLLocation *currentLocation = [[CLLocation alloc]initWithLatitude:self.currentLocation.latitude longitude:self.currentLocation.longitude];
     MKPlacemark *source = [[MKPlacemark alloc]initWithCoordinate:currentLocation.coordinate addressDictionary:nil];
     MKMapItem *sourceMapItem = [[MKMapItem alloc]initWithPlacemark:source];
-    //    [sourceMapItem setName:@""];
     MKPlacemark *destination = [[MKPlacemark alloc]initWithCoordinate:self.sandwichAnnotation.coordinate addressDictionary:nil];
     MKMapItem *destinationMapItem = [[MKMapItem alloc]initWithPlacemark:destination];
-    //    [destinationMapItem setName:@""];
+    [destinationMapItem setName:[NSString stringWithFormat:@"%@", self.selectedSub.shop.name]];
     
     MKDirectionsRequest *request = [[MKDirectionsRequest alloc]init];
     [request setSource:sourceMapItem];
@@ -98,68 +98,30 @@
     MKDirections *directions = [[MKDirections alloc]initWithRequest:request];
     
     [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
-        
-        NSLog(@"response = %@",response);
         NSArray *routeDirections = [response routes];
         [routeDirections enumerateObjectsUsingBlock:^(id object, NSUInteger index, BOOL *stop) {
             
-            MKRoute *route = object;
+            self.route = object;
             
-            MKPolyline *line = [route polyline];
-            [self.mapView addOverlay:line];
-            self.travelTimeLabel.text = [NSString stringWithFormat:@"%.0f min",(route.expectedTravelTime/60)];
+
+            self.travelTimeLabel.text = [NSString stringWithFormat:@"%.0f min",(self.route.expectedTravelTime/60)];
             
-            NSArray *steps = [route steps];
             
-            NSLog(@"Total Steps : %lu",(unsigned long)[steps count]);
-            [steps enumerateObjectsUsingBlock:^(id object, NSUInteger index, BOOL *stop) {
-                NSLog(@"Route Instruction : %@",[object instructions]);
-                NSLog(@"Route Distance : %f",[object distance]);
-            }];
         }];
     }];
 }
 
--(MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay {
-    if ([overlay isKindOfClass:[MKPolyline class]]) {
-        MKPolylineView* aView = [[MKPolylineView alloc]initWithPolyline:(MKPolyline*)overlay] ;
-        aView.strokeColor = [[UIColor colorWithRed:255/255.0 green:104/255.0 blue:57/255.0 alpha:1.0] colorWithAlphaComponent:0.5];
-        aView.lineWidth = 10;
-        return aView;
-    }
-    return nil;
-}
 
 
 - (IBAction)mapViewTapped:(UITapGestureRecognizer *)gesture {
-    
         CGPoint touchPoint = [gesture locationInView:self.view];
-        self.originalFrame = CGRectMake(self.mapView.frame.origin.x, self.mapView.frame.origin.y, self.mapView.frame.size.width, self.mapView.frame.size.height);
-        CGRect newFrame = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.frame.size.width, self.view.frame.size.height);
         if (CGRectContainsPoint(self.mapView.frame, touchPoint)) {
-            [self.navigationItem setHidesBackButton:true];
-            self.labelsView.hidden = true;
-            [UIView animateWithDuration:0.4 animations:^{
-                self.mapView.frame = newFrame;
-
-            }];
-            self.doneButton = [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(restoreOriginalView)];
-            self.navigationItem.rightBarButtonItem = self.doneButton;
-            [self.mapView showAnnotations: self.mapView.annotations animated:YES];
+            [self performSegueWithIdentifier:@"MapDetailSeg" sender:self];
         }
     
     
 }
 
-
--(void)restoreOriginalView {
-    self.doneButton.title = @"";
-    self.doneButton.enabled = false;
-    self.mapView.frame = self.originalFrame;
-    [self.mapView showAnnotations:self.mapView.annotations animated:YES];
-    [self.navigationItem setHidesBackButton:false];
-    self.labelsView.hidden = false;
-}
 - (IBAction)callButtonTapped:(UIButton *)button {
     NSString *phoneNumber = self.selectedSub.shop.phone;
     NSURL *phoneURL = [NSURL URLWithString:[NSString stringWithFormat:@"telprompt:%@",phoneNumber]];
@@ -179,5 +141,13 @@
     self.imageView.image = image;
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    MapViewController *mvc = segue.destinationViewController;
+    mvc.subRoute = self.route;
+    mvc.shopAnnotation = self.sandwichAnnotation;
+    mvc.title = self.selectedSub.shop.name;
+    
+    
+}
 
 @end

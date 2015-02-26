@@ -12,6 +12,7 @@
 		2F1270B61A9322120045090D /* FindCurrentLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1270B51A9322120045090D /* FindCurrentLocationViewController.m */; };
 		2F1270B91A93AEC80045090D /* Sub.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1270B81A93AEC80045090D /* Sub.m */; };
 		2F87DAE51A9D299400469D29 /* GetSubs.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F87DAE41A9D299400469D29 /* GetSubs.m */; };
+		2FA3C5DC1A9EBCA40036CA01 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA3C5DB1A9EBCA40036CA01 /* MapViewController.m */; };
 		2FC0CF0A1A98353E004F975C /* JBParallaxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC0CF091A98353D004F975C /* JBParallaxCell.m */; };
 		5775F9051A8BEC1A00B91A00 /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5775F9031A8BEC1A00B91A00 /* Shop.m */; };
 		57D69F111A8AE39400307834 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D69F101A8AE39400307834 /* AudioToolbox.framework */; };
@@ -45,7 +46,6 @@
 		7AA7F5C61A8AF38400946EEE /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5C11A8AF38400946EEE /* ParseFacebookUtils.framework */; };
 		7AA7F5C71A8AF38400946EEE /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5C21A8AF38400946EEE /* ParseUI.framework */; };
 		7AA7F5CD1A8B10FE00946EEE /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7F5CC1A8B10FE00946EEE /* DetailViewController.m */; };
-		7AA7F5D01A8B117200946EEE /* MapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7F5CF1A8B117200946EEE /* MapDetailViewController.m */; };
 		7AA7F5D31A8B11AD00946EEE /* CustoSandoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA7F5D21A8B11AD00946EEE /* CustoSandoViewController.m */; };
 		7AA7F5D51A8B131E00946EEE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AA7F5D41A8B131E00946EEE /* MapKit.framework */; };
 		7ABA093C1A9D040C008513EB /* SuggestConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA093B1A9D040C008513EB /* SuggestConfirmViewController.m */; };
@@ -72,6 +72,8 @@
 		2F1270B81A93AEC80045090D /* Sub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sub.m; sourceTree = "<group>"; };
 		2F87DAE31A9D299400469D29 /* GetSubs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetSubs.h; path = ../GetSubs.h; sourceTree = "<group>"; };
 		2F87DAE41A9D299400469D29 /* GetSubs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetSubs.m; path = ../GetSubs.m; sourceTree = "<group>"; };
+		2FA3C5DA1A9EBCA40036CA01 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		2FA3C5DB1A9EBCA40036CA01 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		2FC0CF081A983534004F975C /* JBParallaxCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBParallaxCell.h; sourceTree = "<group>"; };
 		2FC0CF091A98353D004F975C /* JBParallaxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBParallaxCell.m; sourceTree = "<group>"; };
 		5775F9021A8BEC1A00B91A00 /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
@@ -120,8 +122,6 @@
 		7AA7F5C21A8AF38400946EEE /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		7AA7F5CB1A8B10FE00946EEE /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		7AA7F5CC1A8B10FE00946EEE /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		7AA7F5CE1A8B117200946EEE /* MapDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDetailViewController.h; sourceTree = "<group>"; };
-		7AA7F5CF1A8B117200946EEE /* MapDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDetailViewController.m; sourceTree = "<group>"; };
 		7AA7F5D11A8B11AD00946EEE /* CustoSandoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustoSandoViewController.h; sourceTree = "<group>"; };
 		7AA7F5D21A8B11AD00946EEE /* CustoSandoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustoSandoViewController.m; sourceTree = "<group>"; };
 		7AA7F5D41A8B131E00946EEE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -173,6 +173,8 @@
 		5775F9061A8C526E00B91A00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7AA0EFDD1A9D9D5800E49E3D /* PhoneNumberFormatter.h */,
+				7AA0EFDE1A9D9D5800E49E3D /* PhoneNumberFormatter.m */,
 				2F1270B71A93AEC80045090D /* Sub.h */,
 				2F1270B81A93AEC80045090D /* Sub.m */,
 				5775F9021A8BEC1A00B91A00 /* Shop.h */,
@@ -195,12 +197,10 @@
 				7A8A1AA91A894275006642F1 /* RootViewController.m */,
 				7AA7F5CB1A8B10FE00946EEE /* DetailViewController.h */,
 				7AA7F5CC1A8B10FE00946EEE /* DetailViewController.m */,
-				7AA0EFDD1A9D9D5800E49E3D /* PhoneNumberFormatter.h */,
-				7AA0EFDE1A9D9D5800E49E3D /* PhoneNumberFormatter.m */,
 				7AA7F5D11A8B11AD00946EEE /* CustoSandoViewController.h */,
 				7AA7F5D21A8B11AD00946EEE /* CustoSandoViewController.m */,
-				7AA7F5CE1A8B117200946EEE /* MapDetailViewController.h */,
-				7AA7F5CF1A8B117200946EEE /* MapDetailViewController.m */,
+				2FA3C5DA1A9EBCA40036CA01 /* MapViewController.h */,
+				2FA3C5DB1A9EBCA40036CA01 /* MapViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -433,7 +433,6 @@
 				7AA7F5D31A8B11AD00946EEE /* CustoSandoViewController.m in Sources */,
 				5775F9051A8BEC1A00B91A00 /* Shop.m in Sources */,
 				7ABA093F1A9D0422008513EB /* SuggestShopViewController.m in Sources */,
-				7AA7F5D01A8B117200946EEE /* MapDetailViewController.m in Sources */,
 				7A8A1AA71A894275006642F1 /* Sub7.xcdatamodeld in Sources */,
 				7ABA093C1A9D040C008513EB /* SuggestConfirmViewController.m in Sources */,
 				2F1270B61A9322120045090D /* FindCurrentLocationViewController.m in Sources */,
@@ -445,6 +444,7 @@
 				2F1270B91A93AEC80045090D /* Sub.m in Sources */,
 				7AA7F5CD1A8B10FE00946EEE /* DetailViewController.m in Sources */,
 				7A9F5DE91A965AB5004F6395 /* SubEditViewController.m in Sources */,
+				2FA3C5DC1A9EBCA40036CA01 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
