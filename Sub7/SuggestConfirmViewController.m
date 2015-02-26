@@ -29,7 +29,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     self.subNameLabel.text = self.suggestedSub.name;
-    self.subPriceLabel.text = self.suggestedSub.price;
+    self.subPriceLabel.text = [NSString stringWithFormat:@"%@", self.suggestedSub.price];
     //self.subImageView.image =
     
     self.shopNameLabel.text = self.selectedShop.name;

@@ -46,7 +46,33 @@
     
     self.selectedShop.name = self.shopNameTextField.text;
     self.selectedShop.address = self.shopAddressTextField.text;
-    self.selectedShop.phone = self.shopPhoneTextField.text;
+//    self.selectedShop.phone = self.shopPhoneTextField.text;
+    
+    NSString *phoneNumber = self.shopPhoneTextField.text;
+    
+    //FIXME: break out into method/class
+    // strips out any char but numbers
+    NSMutableString *myResult = [NSMutableString stringWithCapacity:phoneNumber.length];
+    
+    NSScanner *scanner = [NSScanner scannerWithString:phoneNumber];
+    NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    
+    while ([scanner isAtEnd] == NO)
+    {
+        NSString *buffer;
+        if ([scanner scanCharactersFromSet:numbers intoString:&buffer])
+        {
+            [myResult appendString:buffer];
+        }
+        else
+        {
+            [scanner setScanLocation:([scanner scanLocation] + 1)];
+        }
+    }
+    
+    NSLog(@"%@", myResult);
+    
+    self.selectedShop.phone = myResult;
     
     
 //    if (self.shopAcceptsCardsSwitch) {

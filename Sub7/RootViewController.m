@@ -149,7 +149,7 @@
 
 
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"DetailSeg"]) {
         DetailViewController *dvc = segue.destinationViewController;
         dvc.selectedSub = [self.subs objectAtIndex:[self.tableView indexPathForSelectedRow].section];
@@ -167,13 +167,18 @@
     
 }
 
--(void)refreshTableView {
+- (void)refreshTableView {
     [GetSubs getSubsNearbywithCompletion:^(NSArray *subsArray, NSArray *subImagesArray) {
         self.subImagesArray = subImagesArray;
         self.subs = subsArray;
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
     }];
+}
+
+- (IBAction)unwindToRootViewController:(UIStoryboardSegue *)segue {
+    //nothing goes here
+    
 }
 
 
